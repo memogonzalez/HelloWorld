@@ -22,4 +22,3 @@
 @property (nonatomic, retain) NSString * delegacion;
 
 @end
-

@@ -14,6 +14,8 @@
 		6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18814C68B5B005D3FB8 /* Multa.m */; };
 		6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */; };
 		6588D19014C68B5C005D3FB8 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18C14C68B5C005D3FB8 /* Tip.m */; };
+		65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BAB51914CD002700653727 /* DetallePinTableViewController.m */; };
+		65BAB51E14CD0ABD00653727 /* IngresarDatosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BAB51D14CD0ABD00653727 /* IngresarDatosTableViewController.m */; };
 		65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9414C7D5B7000703E9 /* MapKit.framework */; };
 		65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9714C7D609000703E9 /* CoreLocation.framework */; };
 		65DB3C8B14C3B647002DACC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8A14C3B647002DACC6 /* UIKit.framework */; };
@@ -48,6 +50,10 @@
 		6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuntoVehicular.m; path = PlacasDF/PuntoVehicular.m; sourceTree = "<group>"; };
 		6588D18B14C68B5C005D3FB8 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tip.h; path = PlacasDF/Tip.h; sourceTree = "<group>"; };
 		6588D18C14C68B5C005D3FB8 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tip.m; path = PlacasDF/Tip.m; sourceTree = "<group>"; };
+		65BAB51814CD002700653727 /* DetallePinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetallePinTableViewController.h; sourceTree = "<group>"; };
+		65BAB51914CD002700653727 /* DetallePinTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetallePinTableViewController.m; sourceTree = "<group>"; };
+		65BAB51C14CD0ABD00653727 /* IngresarDatosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngresarDatosTableViewController.h; sourceTree = "<group>"; };
+		65BAB51D14CD0ABD00653727 /* IngresarDatosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngresarDatosTableViewController.m; sourceTree = "<group>"; };
 		65C31E9414C7D5B7000703E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65C31E9714C7D609000703E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65C31E9B14C7D735000703E9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = PlacasDF/Header.h; sourceTree = "<group>"; };
@@ -149,12 +155,16 @@
 				65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */,
 				65DB3C9B14C3B647002DACC6 /* AppDelegate.h */,
 				65DB3C9C14C3B647002DACC6 /* AppDelegate.m */,
+				65BAB51C14CD0ABD00653727 /* IngresarDatosTableViewController.h */,
+				65BAB51D14CD0ABD00653727 /* IngresarDatosTableViewController.m */,
 				65DB3CBC14C3B80C002DACC6 /* MainViewController.h */,
 				65DB3CBD14C3B80C002DACC6 /* MainViewController.m */,
 				65DB3CBA14C3B80B002DACC6 /* CalendarioViewController.h */,
 				65DB3CBB14C3B80C002DACC6 /* CalendarioViewController.m */,
 				65DB3CBE14C3B80C002DACC6 /* MapasViewController.h */,
 				65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */,
+				65BAB51814CD002700653727 /* DetallePinTableViewController.h */,
+				65BAB51914CD002700653727 /* DetallePinTableViewController.m */,
 				65DB3CC014C3B80C002DACC6 /* MultasTableViewController.h */,
 				65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */,
 				65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */,
@@ -282,6 +292,8 @@
 				6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */,
 				6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */,
 				6588D19014C68B5C005D3FB8 /* Tip.m in Sources */,
+				65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */,
+				65BAB51E14CD0ABD00653727 /* IngresarDatosTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

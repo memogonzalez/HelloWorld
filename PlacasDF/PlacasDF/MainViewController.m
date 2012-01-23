@@ -32,31 +32,38 @@
 {
     [super viewDidLoad];
     
+    // TODO: Validar que sea la primera vez o que no haya datos del usuario
+    [self.tabBarController performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
+    
     [_scrollView setContentSize:CGSizeMake(3200, 100)];
     
-    NSArray * tips = [NSArray arrayWithObjects:@"tip1", @"tip2", @"tip3", @"tip4", @"tip5", @"tip6", @"tip7", @"tip8", @"tip9", nil];
+    // NSArray * tips = [NSArray arrayWithObjects:@"tip1", @"tip2", @"tip3", @"tip4", @"tip5", @"tip6", @"tip7", @"tip8", @"tip9", nil];
+    NSArray *tips = [self.fetchedResultsController fetchedObjects];
     
     //NSArray * tips = [self getTips];
     
-    /*NSMutableDictionary * diccionarioTip = [[NSMutableDictionary alloc] init];
+//    NSMutableDictionary * diccionarioTip = [[NSMutableDictionary alloc] init];
      
      // guardamos algunos tips dummies :)
-     for (int j = 0; j < 50; j++) {
-     
-     [diccionarioTip setValue:[NSString stringWithFormat:@"%d", j] forKey:@"tip_id"];
-     
-     [diccionarioTip setValue:[NSString stringWithFormat:@"Este es el tip %d", j] forKey:@"descripcion"];
-     
-     [self saveTip:diccionarioTip];
-     }*/
+//     for (int j = 0; j < 50; j++) {
+//     
+//     [diccionarioTip setValue:[NSString stringWithFormat:@"%d", j] forKey:@"tip_id"];
+//     
+//     [diccionarioTip setValue:[NSString stringWithFormat:@"Este es el tip %d", j] forKey:@"descripcion"];
+//     
+//     [self saveTip:diccionarioTip];
+//     }
     
     int i = 0;
     
-    for (NSString * tip in tips) {
+    for (id tip in tips) {
         
-        [self addTip:i++ tip:tip];
-        
+        [self addTip:i++ tip:[tip valueForKey:@"descripcion"]];
     }
+    
+    
+    
+    NSLog(@"hay :%d", [[self.fetchedResultsController fetchedObjects] count]);
 }
 
 - (void) saveTip:(NSMutableDictionary *) tipDiccionario {
@@ -112,6 +119,12 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -145,5 +158,53 @@
     return mutableFetchResults;
     
 } 
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    // Creamos el request para esta clase
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Editamos la entidad que se pide
+    NSEntityDescription *entity = [NSEntityDescription entityForName:kENTITY_NAME 
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Batch Size a 20 objetos a la vez
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Editamos un sort descriptor, devuelve los puntos vehiculares ordenados por titulo
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"tip_id" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = 
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                        managedObjectContext:self.managedObjectContext 
+                                          sectionNameKeyPath:nil 
+                                                   cacheName:@"MainCache"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+	    /*
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+	     */
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsController;
+}
 
 @end
