@@ -265,6 +265,7 @@
  @brief Metodo que devuelve un arreglo con objetos CoreData (ManagedObjectModel) tipo "PuntoVehicular" del tipo pasado como parametro
  @param kTipoPuntoVehicular: Enum que define el tipo de PuntoVehicular deseado
  @return (NSArray *): un arreglo con los objetos buscados
+ 
  */
 
 - (NSArray *)puntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular
