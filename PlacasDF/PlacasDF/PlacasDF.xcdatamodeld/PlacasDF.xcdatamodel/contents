@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Calendario" representedClassName="Calendario" syncable="YES">
+        <attribute name="imagen_raw" attributeType="Binary" syncable="YES"/>
+        <attribute name="tipo" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Multa" representedClassName="Multa" syncable="YES">
+        <attribute name="fecha_infraccion" attributeType="Date" syncable="YES"/>
+        <attribute name="folio" attributeType="String" syncable="YES"/>
+        <attribute name="fundamento" attributeType="String" syncable="YES"/>
+        <attribute name="motivo" attributeType="String" syncable="YES"/>
+        <attribute name="sancion" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="situacion" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+    </entity>
+    <entity name="PuntoVehicular" representedClassName="PuntoVehicular" syncable="YES">
+        <attribute name="delegacion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descripcion" attributeType="String" syncable="YES"/>
+        <attribute name="direccion" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitud" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipo" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="titulo" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tip" representedClassName="Tip" syncable="YES">
+        <attribute name="descripcion" attributeType="String" syncable="YES"/>
+        <attribute name="tip_id" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Calendario" positionX="133" positionY="171" width="128" height="75"/>
+        <element name="Multa" positionX="315" positionY="-18" width="128" height="135"/>
+        <element name="PuntoVehicular" positionX="133" positionY="-18" width="128" height="165"/>
+        <element name="Tip" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
+</model>

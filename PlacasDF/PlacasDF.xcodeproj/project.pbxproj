@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6588D18214C68B3C005D3FB8 /* ManejadorConexiones.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */; };
+		6588D18314C68B3C005D3FB8 /* ManejadorDatos.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */; };
+		6588D18414C68B3C005D3FB8 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18114C68B3C005D3FB8 /* Parser.m */; };
+		6588D18D14C68B5C005D3FB8 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18614C68B5B005D3FB8 /* Calendario.m */; };
+		6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18814C68B5B005D3FB8 /* Multa.m */; };
+		6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */; };
+		6588D19014C68B5C005D3FB8 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18C14C68B5C005D3FB8 /* Tip.m */; };
+		65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9414C7D5B7000703E9 /* MapKit.framework */; };
+		65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9714C7D609000703E9 /* CoreLocation.framework */; };
+		65DB3C8B14C3B647002DACC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8A14C3B647002DACC6 /* UIKit.framework */; };
+		65DB3C8D14C3B647002DACC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8C14C3B647002DACC6 /* Foundation.framework */; };
+		65DB3C8F14C3B647002DACC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8E14C3B647002DACC6 /* CoreGraphics.framework */; };
+		65DB3C9114C3B647002DACC6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C9014C3B647002DACC6 /* CoreData.framework */; };
+		65DB3C9714C3B647002DACC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65DB3C9514C3B647002DACC6 /* InfoPlist.strings */; };
+		65DB3C9914C3B647002DACC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3C9814C3B647002DACC6 /* main.m */; };
+		65DB3C9D14C3B647002DACC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3C9C14C3B647002DACC6 /* AppDelegate.m */; };
+		65DB3CA014C3B647002DACC6 /* PlacasDF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3C9E14C3B647002DACC6 /* PlacasDF.xcdatamodeld */; };
+		65DB3CB914C3B74C002DACC6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */; };
+		65DB3CC414C3B80C002DACC6 /* CalendarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBB14C3B80C002DACC6 /* CalendarioViewController.m */; };
+		65DB3CC514C3B80C002DACC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBD14C3B80C002DACC6 /* MainViewController.m */; };
+		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
+		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
+		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6588D17B14C68B2B005D3FB8 /* CoreDataAdminProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataAdminProtocol.h; path = PlacasDF/CoreDataAdminProtocol.h; sourceTree = "<group>"; };
+		6588D17C14C68B3B005D3FB8 /* ManejadorConexiones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManejadorConexiones.h; path = PlacasDF/ManejadorConexiones.h; sourceTree = "<group>"; };
+		6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManejadorConexiones.m; path = PlacasDF/ManejadorConexiones.m; sourceTree = "<group>"; };
+		6588D17E14C68B3B005D3FB8 /* ManejadorDatos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManejadorDatos.h; path = PlacasDF/ManejadorDatos.h; sourceTree = "<group>"; };
+		6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManejadorDatos.m; path = PlacasDF/ManejadorDatos.m; sourceTree = "<group>"; };
+		6588D18014C68B3B005D3FB8 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Parser.h; path = PlacasDF/Parser.h; sourceTree = "<group>"; };
+		6588D18114C68B3C005D3FB8 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Parser.m; path = PlacasDF/Parser.m; sourceTree = "<group>"; };
+		6588D18514C68B5B005D3FB8 /* Calendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calendario.h; path = PlacasDF/Calendario.h; sourceTree = "<group>"; };
+		6588D18614C68B5B005D3FB8 /* Calendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendario.m; path = PlacasDF/Calendario.m; sourceTree = "<group>"; };
+		6588D18714C68B5B005D3FB8 /* Multa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Multa.h; path = PlacasDF/Multa.h; sourceTree = "<group>"; };
+		6588D18814C68B5B005D3FB8 /* Multa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multa.m; path = PlacasDF/Multa.m; sourceTree = "<group>"; };
+		6588D18914C68B5B005D3FB8 /* PuntoVehicular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PuntoVehicular.h; path = PlacasDF/PuntoVehicular.h; sourceTree = "<group>"; };
+		6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuntoVehicular.m; path = PlacasDF/PuntoVehicular.m; sourceTree = "<group>"; };
+		6588D18B14C68B5C005D3FB8 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tip.h; path = PlacasDF/Tip.h; sourceTree = "<group>"; };
+		6588D18C14C68B5C005D3FB8 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tip.m; path = PlacasDF/Tip.m; sourceTree = "<group>"; };
+		65C31E9414C7D5B7000703E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		65C31E9714C7D609000703E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65C31E9B14C7D735000703E9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = PlacasDF/Header.h; sourceTree = "<group>"; };
+		65DB3C8614C3B647002DACC6 /* PlacasDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacasDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DB3C8A14C3B647002DACC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65DB3C8C14C3B647002DACC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		65DB3C8E14C3B647002DACC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65DB3C9014C3B647002DACC6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		65DB3C9414C3B647002DACC6 /* PlacasDF-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlacasDF-Info.plist"; sourceTree = "<group>"; };
+		65DB3C9614C3B647002DACC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		65DB3C9814C3B647002DACC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65DB3C9A14C3B647002DACC6 /* PlacasDF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlacasDF-Prefix.pch"; sourceTree = "<group>"; };
+		65DB3C9B14C3B647002DACC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		65DB3C9C14C3B647002DACC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		65DB3C9F14C3B647002DACC6 /* PlacasDF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlacasDF.xcdatamodel; sourceTree = "<group>"; };
+		65DB3CB814C3B74C002DACC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		65DB3CBA14C3B80B002DACC6 /* CalendarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioViewController.h; sourceTree = "<group>"; };
+		65DB3CBB14C3B80C002DACC6 /* CalendarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioViewController.m; sourceTree = "<group>"; };
+		65DB3CBC14C3B80C002DACC6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		65DB3CBD14C3B80C002DACC6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		65DB3CBE14C3B80C002DACC6 /* MapasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapasViewController.h; sourceTree = "<group>"; };
+		65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapasViewController.m; sourceTree = "<group>"; };
+		65DB3CC014C3B80C002DACC6 /* MultasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultasTableViewController.h; sourceTree = "<group>"; };
+		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
+		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65DB3C8314C3B647002DACC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */,
+				65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */,
+				65DB3C8B14C3B647002DACC6 /* UIKit.framework in Frameworks */,
+				65DB3C8D14C3B647002DACC6 /* Foundation.framework in Frameworks */,
+				65DB3C8F14C3B647002DACC6 /* CoreGraphics.framework in Frameworks */,
+				65DB3C9114C3B647002DACC6 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6588D17914C68A57005D3FB8 /* Protocol CoreDataAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				6588D17B14C68B2B005D3FB8 /* CoreDataAdminProtocol.h */,
+			);
+			name = "Protocol CoreDataAdmin";
+			sourceTree = "<group>";
+		};
+		65C31E9914C7D670000703E9 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				65C31E9B14C7D735000703E9 /* Header.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		65DB3C7B14C3B647002DACC6 = {
+			isa = PBXGroup;
+			children = (
+				65C31E9914C7D670000703E9 /* Headers */,
+				6588D17914C68A57005D3FB8 /* Protocol CoreDataAdmin */,
+				65DB3CDF14C3BBDF002DACC6 /* Clases Manejadores */,
+				65DB3CD814C3BAB1002DACC6 /* Entidades CoreData */,
+				65DB3C9214C3B647002DACC6 /* PlacasDF */,
+				65DB3C8914C3B647002DACC6 /* Frameworks */,
+				65DB3C8714C3B647002DACC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65DB3C8714C3B647002DACC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65DB3C8614C3B647002DACC6 /* PlacasDF.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65DB3C8914C3B647002DACC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65C31E9714C7D609000703E9 /* CoreLocation.framework */,
+				65C31E9414C7D5B7000703E9 /* MapKit.framework */,
+				65DB3C8A14C3B647002DACC6 /* UIKit.framework */,
+				65DB3C8C14C3B647002DACC6 /* Foundation.framework */,
+				65DB3C8E14C3B647002DACC6 /* CoreGraphics.framework */,
+				65DB3C9014C3B647002DACC6 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65DB3C9214C3B647002DACC6 /* PlacasDF */ = {
+			isa = PBXGroup;
+			children = (
+				65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */,
+				65DB3C9B14C3B647002DACC6 /* AppDelegate.h */,
+				65DB3C9C14C3B647002DACC6 /* AppDelegate.m */,
+				65DB3CBC14C3B80C002DACC6 /* MainViewController.h */,
+				65DB3CBD14C3B80C002DACC6 /* MainViewController.m */,
+				65DB3CBA14C3B80B002DACC6 /* CalendarioViewController.h */,
+				65DB3CBB14C3B80C002DACC6 /* CalendarioViewController.m */,
+				65DB3CBE14C3B80C002DACC6 /* MapasViewController.h */,
+				65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */,
+				65DB3CC014C3B80C002DACC6 /* MultasTableViewController.h */,
+				65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */,
+				65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */,
+				65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */,
+				65DB3C9314C3B647002DACC6 /* Supporting Files */,
+			);
+			path = PlacasDF;
+			sourceTree = "<group>";
+		};
+		65DB3C9314C3B647002DACC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65DB3C9414C3B647002DACC6 /* PlacasDF-Info.plist */,
+				65DB3C9514C3B647002DACC6 /* InfoPlist.strings */,
+				65DB3C9814C3B647002DACC6 /* main.m */,
+				65DB3C9A14C3B647002DACC6 /* PlacasDF-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65DB3CD814C3BAB1002DACC6 /* Entidades CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				65DB3C9E14C3B647002DACC6 /* PlacasDF.xcdatamodeld */,
+				6588D18514C68B5B005D3FB8 /* Calendario.h */,
+				6588D18614C68B5B005D3FB8 /* Calendario.m */,
+				6588D18714C68B5B005D3FB8 /* Multa.h */,
+				6588D18814C68B5B005D3FB8 /* Multa.m */,
+				6588D18914C68B5B005D3FB8 /* PuntoVehicular.h */,
+				6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */,
+				6588D18B14C68B5C005D3FB8 /* Tip.h */,
+				6588D18C14C68B5C005D3FB8 /* Tip.m */,
+			);
+			name = "Entidades CoreData";
+			sourceTree = "<group>";
+		};
+		65DB3CDF14C3BBDF002DACC6 /* Clases Manejadores */ = {
+			isa = PBXGroup;
+			children = (
+				6588D17C14C68B3B005D3FB8 /* ManejadorConexiones.h */,
+				6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */,
+				6588D17E14C68B3B005D3FB8 /* ManejadorDatos.h */,
+				6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */,
+				6588D18014C68B3B005D3FB8 /* Parser.h */,
+				6588D18114C68B3C005D3FB8 /* Parser.m */,
+			);
+			name = "Clases Manejadores";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65DB3C8514C3B647002DACC6 /* PlacasDF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65DB3CA314C3B647002DACC6 /* Build configuration list for PBXNativeTarget "PlacasDF" */;
+			buildPhases = (
+				65DB3C8214C3B647002DACC6 /* Sources */,
+				65DB3C8314C3B647002DACC6 /* Frameworks */,
+				65DB3C8414C3B647002DACC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlacasDF;
+			productName = PlacasDF;
+			productReference = 65DB3C8614C3B647002DACC6 /* PlacasDF.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65DB3C7D14C3B647002DACC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Caos Inc";
+			};
+			buildConfigurationList = 65DB3C8014C3B647002DACC6 /* Build configuration list for PBXProject "PlacasDF" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 65DB3C7B14C3B647002DACC6;
+			productRefGroup = 65DB3C8714C3B647002DACC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65DB3C8514C3B647002DACC6 /* PlacasDF */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65DB3C8414C3B647002DACC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65DB3C9714C3B647002DACC6 /* InfoPlist.strings in Resources */,
+				65DB3CB914C3B74C002DACC6 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65DB3C8214C3B647002DACC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65DB3C9914C3B647002DACC6 /* main.m in Sources */,
+				65DB3C9D14C3B647002DACC6 /* AppDelegate.m in Sources */,
+				65DB3CA014C3B647002DACC6 /* PlacasDF.xcdatamodeld in Sources */,
+				65DB3CC414C3B80C002DACC6 /* CalendarioViewController.m in Sources */,
+				65DB3CC514C3B80C002DACC6 /* MainViewController.m in Sources */,
+				65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */,
+				65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */,
+				65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */,
+				6588D18214C68B3C005D3FB8 /* ManejadorConexiones.m in Sources */,
+				6588D18314C68B3C005D3FB8 /* ManejadorDatos.m in Sources */,
+				6588D18414C68B3C005D3FB8 /* Parser.m in Sources */,
+				6588D18D14C68B5C005D3FB8 /* Calendario.m in Sources */,
+				6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */,
+				6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */,
+				6588D19014C68B5C005D3FB8 /* Tip.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		65DB3C9514C3B647002DACC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65DB3C9614C3B647002DACC6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65DB3CB814C3B74C002DACC6 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65DB3CA114C3B647002DACC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		65DB3CA214C3B647002DACC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65DB3CA414C3B647002DACC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlacasDF/PlacasDF-Prefix.pch";
+				INFOPLIST_FILE = "PlacasDF/PlacasDF-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		65DB3CA514C3B647002DACC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlacasDF/PlacasDF-Prefix.pch";
+				INFOPLIST_FILE = "PlacasDF/PlacasDF-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65DB3C8014C3B647002DACC6 /* Build configuration list for PBXProject "PlacasDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65DB3CA114C3B647002DACC6 /* Debug */,
+				65DB3CA214C3B647002DACC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65DB3CA314C3B647002DACC6 /* Build configuration list for PBXNativeTarget "PlacasDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65DB3CA414C3B647002DACC6 /* Debug */,
+				65DB3CA514C3B647002DACC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65DB3C9E14C3B647002DACC6 /* PlacasDF.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65DB3C9F14C3B647002DACC6 /* PlacasDF.xcdatamodel */,
+			);
+			currentVersion = 65DB3C9F14C3B647002DACC6 /* PlacasDF.xcdatamodel */;
+			name = PlacasDF.xcdatamodeld;
+			path = PlacasDF/PlacasDF.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 65DB3C7D14C3B647002DACC6 /* Project object */;
+}
