@@ -1,0 +1,927 @@
+TPlacasDF
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/Info.plist PlacasDF/PlacasDF-Info.plist
+cDataModelVersionCompile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld
+cProcessPCH /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth PlacasDF/PlacasDF-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF normal i386
+cGenerateDSYMFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF
+cCompileStoryboard /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard
+cCpResource no-circula.jpg build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg
+cCopyStringsFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/InfoPlist.strings PlacasDF/en.lproj/InfoPlist.strings
+cCpResource verifica.jpg build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg
+cCpResource id-card.png build/Debug-iphonesimulator/PlacasDF.app/id-card.png
+cCpResource navigation.png build/Debug-iphonesimulator/PlacasDF.app/navigation.png
+cCpResource calendar.png build/Debug-iphonesimulator/PlacasDF.app/calendar.png
+cCpResource radar.png build/Debug-iphonesimulator/PlacasDF.app/radar.png
+cCpResource gear2.png build/Debug-iphonesimulator/PlacasDF.app/gear2.png
+cTouch /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
+c000000004E9709DB0000000000000110
+t1318521307
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c000000004E72F2E600000000002C8C00
+t1316156134
+s2919424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004E72F1CC0000000000245480
+t1316155852
+s2380928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
+c000000004E78059F00000000000859A0
+t1316488607
+s547232
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F2960000000000353830
+t1316156054
+s3487792
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
+c000000004E7807EF00000000000D89E0
+t1316489199
+s887264
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004E7806AB00000000008F7390
+t1316488875
+s9401232
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/113-navigation.png
+c000000004CB898B00000000000000C1A
+t1287166128
+s3098
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/123-id-card.png
+c000000004CB898B40000000000000B8E
+t1287166132
+s2958
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/20-gear2.png
+c000000004CB898B80000000000000C79
+t1287166136
+s3193
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/73-radar.png
+c000000004CB898CA0000000000000DDF
+t1287166154
+s3551
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/83-calendar.png
+c000000004CB898CE0000000000000B49
+t1287166158
+s2889
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.h
+c000000004F1CBFB400000000000002A7
+t1327284148
+s679
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m
+c000000004F1CD60E0000000000001E93
+t1327289870
+s7827
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.h
+c000000004F1CBFB4000000000000015D
+t1327284148
+s349
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m
+c000000004F1CBFB400000000000000E9
+t1327284148
+s233
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.h
+c000000004F1CE5CE00000000000001F6
+t1327293902
+s502
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m
+c000000004F1CED370000000000000A4B
+t1327295799
+s2635
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CoreDataAdminProtocol.h
+c000000004F1CBFB4000000000000013E
+t1327284148
+s318
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.h
+c000000004F1CD60E00000000000001E4
+t1327289870
+s484
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m
+c000000004F1CD60E00000000000008EA
+t1327289870
+s2282
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Header.h
+c000000004F1CF64300000000000001B1
+t1327298115
+s433
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.h
+c000000004F1CD60E0000000000000121
+t1327289870
+s289
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m
+c000000004F1CD60E00000000000006EB
+t1327289870
+s1771
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.h
+c000000004F1CBFB400000000000002C9
+t1327284148
+s713
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m
+c000000004F1CEB610000000000001B46
+t1327295329
+s6982
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.h
+c000000004F1CD60E00000000000000E7
+t1327289870
+s231
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m
+c000000004F1CBFB400000000000000DE
+t1327284148
+s222
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.h
+c000000004F1CBFB400000000000001E4
+t1327284148
+s484
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m
+c000000004F1CBFB400000000000025FF
+t1327284148
+s9727
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.h
+c000000004F1CBFB40000000000000366
+t1327284148
+s870
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m
+c000000004F1CD60E0000000000003524
+t1327289870
+s13604
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.h
+c000000004F1CBFB40000000000000226
+t1327284148
+s550
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m
+c000000004F1CBFB4000000000000012D
+t1327284148
+s301
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.h
+c000000004F1CBFB400000000000000F3
+t1327284148
+s243
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m
+c000000004F1CBFB40000000000000FC8
+t1327284148
+s4040
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.h
+c000000004F1CBFB400000000000000CC
+t1327284148
+s204
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m
+c000000004F1CBFB400000000000000B7
+t1327284148
+s183
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF-Prefix.pch
+c000000004F1CBFB40000000000000161
+t1327284148
+s353
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld
+c000000004F1CBFB40000000000000088
+t1327284148
+s136
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.h
+c000000004F1CD60E0000000000000299
+t1327289870
+s665
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m
+c000000004F1CBFB40000000000000168
+t1327284148
+s360
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.h
+c000000004F1CBFB400000000000000F7
+t1327284148
+s247
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m
+c000000004F1CBFB4000000000000088D
+t1327284148
+s2189
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.h
+c000000004F1CBFB40000000000000154
+t1327284148
+s340
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m
+c000000004F1CBFB400000000000000D7
+t1327284148
+s215
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/InfoPlist.strings
+c000000004F1CBFB4000000000000002D
+t1327284148
+s45
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard
+c000000004F1CFAA5000000000000DB3B
+t1327299237
+s56123
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m
+c000000004F1CBFB40000000000000160
+t1327284148
+s352
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app
+t1327298124
+s476
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM
+t1327298123
+s102
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/113-navigation.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/123-id-card.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/20-gear2.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/73-radar.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/83-calendar.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/Info.plist
+t1327284272
+s867
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PkgInfo
+t1327284272
+s8
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF
+t1327298123
+s86756
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd
+t1327284272
+s170
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/calendar.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/InfoPlist.strings
+t1327284276
+s42
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/MainStoryboard.storyboardc
+t1327289886
+s442
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/gear2.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/id-card.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/navigation.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg
+t1327286741
+s213538
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/radar.png
+t2
+s0
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg
+t1327286741
+s50010
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o
+t1327289885
+s68204
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o
+t1327284275
+s1432
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o
+t1327298122
+s47068
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o
+t1327289885
+s50200
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o
+t1327289885
+s43828
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o
+t1327295348
+s64028
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o
+t1327289885
+s1192
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o
+t1327284275
+s26516
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o
+t1327298122
+s81976
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o
+t1327284275
+s1556
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o
+t1327284275
+s44516
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o
+t1327284275
+s1128
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PlacasDF.LinkFileList
+c000000004F1CD61D00000000000008B4
+t1327289885
+s2228
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o
+t1327289885
+s1656
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o
+t1327284275
+s42920
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o
+t1327284275
+s1396
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o
+t1327284275
+s2732
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/calendar.png
+c000000004CB898CE0000000000000B49
+t1287166158
+s2889
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/gear2.png
+c000000004CB898B80000000000000C79
+t1287166136
+s3193
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/id-card.png
+c000000004CB898B40000000000000B8E
+t1287166132
+s2958
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/navigation.png
+c000000004CB898B00000000000000C1A
+t1287166128
+s3098
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/no-circula.jpg
+c000000004F1CC4B20000000000034222
+t1327285426
+s213538
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/radar.png
+c000000004CB898CA0000000000000DDF
+t1287166154
+s3551
+
+N/Users/memo/Proyectos/HelloWorld/PlacasDF/verifica.jpg
+c000000004F1CC4BE000000000000C35A
+t1327285438
+s50010
+
+N/var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth
+t1327284274
+s4127624
+
+NPlacasDF/PlacasDF-Info.plist
+c000000004F1CBFB400000000000004FA
+t1327284148
+s1274
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m
+r0
+
+CBuild AST from /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies19e2902c32cdb441^0f0c242e32cdb441^---0#1#0#--18"Check dependencies36"F8B941C9-B628-4A72-B5F8-02A6C28F5699-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348982685.199278
+e348982685.456504
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m4f76339d0dcdb441^77dc749d0dcdb441^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m0000000000000000^2782"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o PlacasDF/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/AppDelegate.o36"548FFA69-27F3-4315-8E3F-2CF944309554-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.437323
+e348977075.463455
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m3b1970b3f7ccb441^fda476b3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@79"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m0000000000000000^2777"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o PlacasDF/Calendario.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Calendario.o36"F0F84AB9-C3F4-48C0-9E74-AA14ECB790AA-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348990920.437844
+e348990922.723993
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m3d4770c82dcdb441^e7fcccca2dcdb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m0000000000000000^2847"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o PlacasDF/CalendarioViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/CalendarioViewController.o36"11AEB049-4B7A-423A-B43B-59B2E95239C1-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348982685.459305
+e348982685.547894
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m63b9759d0dcdb441^5858b49d0dcdb441^---0#0#0#-19%DVTDocumentLocation2@98"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m0000000000000000^2872"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o PlacasDF/DetallePinTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/DetallePinTableViewController.o36"E064D915-ACF1-4807-B28F-C4E97F73B9A7-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348982685.460525
+e348982685.547544
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.mc008769d0dcdb441^2750b49d0dcdb441^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m0000000000000000^2887"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o PlacasDF/IngresarDatosTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/IngresarDatosTableViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/IngresarDatosTableViewController.o36"1E222422-631C-487D-B93F-9D8A49E12027-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348988146.426741
+e348988148.520764
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m3e5d6df222cdb441^875085f422cdb441^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m0000000000000000^2817"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o PlacasDF/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MainViewController.o36"55C39021-5E9F-4EE3-BAD0-8D72EB71E29D-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348982685.414678
+e348982685.455232
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.mb94f6a9d0dcdb441^9d9d749d0dcdb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m0000000000000000^2822"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o PlacasDF/ManejadorConexiones.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorConexiones.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorConexiones.o36"8D4691C3-0E43-4FD2-AFD1-6D6745FB070D-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.371884
+e348977075.436023
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.me65b5fb3f7ccb441^f19e6fb3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m0000000000000000^2797"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o PlacasDF/ManejadorDatos.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/ManejadorDatos.o36"FE33FE7C-35D3-4065-9E8C-DD9883D78BF8-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348990920.439105
+e348990922.756087
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m:77:14: warning: unused variable 'arrCorralones' [-Wunused-variable,12]
+o     NSArray *arrCorralones = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_CORRALON];
+o              ^
+o/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m:81:14: warning: unused variable 'arrVerificentros' [-Wunused-variable,12]
+o     NSArray *arrVerificentros = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_VERIFICENTRO];
+o              ^
+o2 warnings generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.md48170c82dcdb441^3f1bcdca2dcdb441^-534"/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m:77:14: warning: unused variable 'arrCorralones' [-Wunused-variable,12]     NSArray *arrCorralones = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_CORRALON];              ^/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m:81:14: warning: unused variable 'arrVerificentros' [-Wunused-variable,12]     NSArray *arrVerificentros = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_VERIFICENTRO];              ^2 warnings generated.2(21%IDEActivityLogMessage2@31"Unused variable 'arrCorralones'-348990922#0#144#-1#-23%DVTTextDocumentLocation3@88"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m0000000000000000^76#13#76#13#18446744073709551615#0#19"Unused Entity Issue--2@34"Unused variable 'arrVerificentros'-348990922#251#147#-1#-3@88"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m0000000000000000^80#13#80#13#18446744073709551615#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@88"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m0000000000000000^2822"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o PlacasDF/MapasViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MapasViewController.o36"B442F738-7443-4C09-A853-C2A6DC468B0A-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.437309
+e348977075.460772
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m6a1670b3f7ccb441^38f575b3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@74"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m0000000000000000^2752"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o PlacasDF/Multa.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Multa.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Multa.o36"8C2EC60B-92BC-4521-A3AD-6670C145C02D-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.326247
+e348977075.420671
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m87a753b3f7ccb441^d5b06bb3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m0000000000000000^2852"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o PlacasDF/MultasTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MultasTableViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/MultasTableViewController.o36"233DBB89-6240-4103-8B65-1248C36DF65D-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.422050
+e348977075.444200
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.mdd226cb3f7ccb441^c3b671b3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@75"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m0000000000000000^2757"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o PlacasDF/Parser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Parser.o36"41548CB5-2419-4400-9E39-794ACDE97CF9-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348982685.458108
+e348982685.487718
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m1b65759d0dcdb441^7ae37c9d0dcdb441^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m0000000000000000^2797"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o PlacasDF/PuntoVehicular.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PuntoVehicular.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PuntoVehicular.o36"2091EB6C-A5B7-4863-A083-141A60648A2E-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.329181
+e348977075.436490
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m4d6a54b3f7ccb441^c3bc6fb3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m0000000000000000^2862"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o PlacasDF/SettingsTableViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/SettingsTableViewController.o36"605F2700-3727-4838-8A7F-49949D949BF9-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.462132
+e348977075.482056
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m577976b3f7ccb441^7b687bb3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@72"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m0000000000000000^2742"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o PlacasDF/Tip.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Tip.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/Tip.o36"BF3575B0-A0F8-4288-BEBB-3BA2E610179C-
+
+CCompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977075.058218
+e348977075.323220
+r1
+xCompileC
+xbuild/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Compile /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m46420fb3f7ccb441^cdce52b3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m0000000000000000^2747"CompileC build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o PlacasDF/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -include /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch -MMD -MT dependencies -MF /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.d -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/main.o36"DF449835-756A-4FAF-8A59-AD82AC8FA03E-
+
+CCompileStoryboard /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard
+s348992046.317152
+e348992058.958659
+r1
+xCompileStoryboard
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"CompileStoryboard PlacasDF/en.lproj/MainStoryboard.storyboard1a52512e32cdb441^4e97f53a32cdb441^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard0000000000000000^813"CompileStoryboard PlacasDF/en.lproj/MainStoryboard.storyboard    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/MainStoryboard.storyboardc /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/MainStoryboard.storyboard --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"A70AA145-2B2D-4C89-AE8A-AE1028876815-
+
+CCopyStringsFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/InfoPlist.strings PlacasDF/en.lproj/InfoPlist.strings
+s348977076.300235
+e348977076.304731
+r1
+xCopyStringsFile
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj/InfoPlist.strings
+xPlacasDF/en.lproj/InfoPlist.strings
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy PlacasDF/en.lproj/InfoPlist.strings13ef4cb4f7ccb441^c5034eb4f7ccb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/en.lproj/InfoPlist.strings0000000000000000^583"CopyStringsFile build/Debug-iphonesimulator/PlacasDF.app/en.lproj/InfoPlist.strings PlacasDF/en.lproj/InfoPlist.strings    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/en.lproj -- PlacasDF/en.lproj/InfoPlist.strings36"1F780CFF-B252-498C-8F17-D002A9D3F390-
+
+CCpResource 113-navigation.png build/Debug-iphonesimulator/PlacasDF.app/113-navigation.png
+s348990924.024120
+e348990924.129628
+r1
+xCpResource
+x113-navigation.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/113-navigation.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Debug-iphonesimulator/PlacasDF.app/113-navigation.png7f160fcc2dcdb441^2d4221cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/113-navigation.png00f4dc0eddffdf42^588"CpResource 113-navigation.png build/Debug-iphonesimulator/PlacasDF.app/113-navigation.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/113-navigation.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"31689D74-B209-4142-BA68-0D28C5C78F8F-
+
+CCpResource 123-id-card.png build/Debug-iphonesimulator/PlacasDF.app/123-id-card.png
+s348990924.024096
+e348990924.129702
+r1
+xCpResource
+x123-id-card.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/123-id-card.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy build/Debug-iphonesimulator/PlacasDF.app/123-id-card.pnga0160fcc2dcdb441^d32f21cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/123-id-card.png00f4dc0eddffdf42^579"CpResource 123-id-card.png build/Debug-iphonesimulator/PlacasDF.app/123-id-card.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/123-id-card.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"69639E38-D016-42CE-A41D-43921343946F-
+
+CCpResource 20-gear2.png build/Debug-iphonesimulator/PlacasDF.app/20-gear2.png
+s348990924.131601
+e348990924.135503
+r1
+xCpResource
+x20-gear2.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/20-gear2.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/PlacasDF.app/20-gear2.png5cca21cc2dcdb441^fbb022cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/20-gear2.png00f4dc0eddffdf42^570"CpResource 20-gear2.png build/Debug-iphonesimulator/PlacasDF.app/20-gear2.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/20-gear2.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"9A56336F-7316-4DD2-83CD-CB96F7A6C57B-
+
+CCpResource 73-radar.png build/Debug-iphonesimulator/PlacasDF.app/73-radar.png
+s348990924.024824
+e348990924.129633
+r1
+xCpResource
+x73-radar.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/73-radar.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/PlacasDF.app/73-radar.png8b1b0fcc2dcdb441^094e21cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/73-radar.png00f4dc0eddffdf42^570"CpResource 73-radar.png build/Debug-iphonesimulator/PlacasDF.app/73-radar.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/73-radar.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"9B0B6F5B-4109-47B6-BE59-8155A356CA03-
+
+CCpResource 83-calendar.png build/Debug-iphonesimulator/PlacasDF.app/83-calendar.png
+s348990924.024819
+e348990924.129917
+r1
+xCpResource
+x83-calendar.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/83-calendar.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy build/Debug-iphonesimulator/PlacasDF.app/83-calendar.pnge3160fcc2dcdb441^7c6221cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/83-calendar.png00f4dc0eddffdf42^579"CpResource 83-calendar.png build/Debug-iphonesimulator/PlacasDF.app/83-calendar.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/83-calendar.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"B78EE612-51B1-4B11-8B9E-601AE52A6383-
+
+CCpResource calendar.png build/Debug-iphonesimulator/PlacasDF.app/calendar.png
+s348992046.318911
+e348992046.499797
+r1
+xCpResource
+xcalendar.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/calendar.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/PlacasDF.app/calendar.pngd0b3512e32cdb441^a6b5712f32cdb441^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/calendar.png00f4dc0eddffdf42^570"CpResource calendar.png build/Debug-iphonesimulator/PlacasDF.app/calendar.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/calendar.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"2AA22552-5ECB-4A2E-B837-373F104B64FE-
+
+CCpResource gear2.png build/Debug-iphonesimulator/PlacasDF.app/gear2.png
+s348992046.500542
+e348992046.507296
+r1
+xCpResource
+xgear2.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/gear2.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Copy build/Debug-iphonesimulator/PlacasDF.app/gear2.pngac39802e32cdb441^23bc712f32cdb441^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/gear2.png00f4dc0eddffdf42^561"CpResource gear2.png build/Debug-iphonesimulator/PlacasDF.app/gear2.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/gear2.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"DFECE328-F3CC-43EB-B279-8E079A249087-
+
+CCpResource id-card.png build/Debug-iphonesimulator/PlacasDF.app/id-card.png
+s348992046.318527
+e348992046.499795
+r1
+xCpResource
+xid-card.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/id-card.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Copy build/Debug-iphonesimulator/PlacasDF.app/id-card.pngd89a512e32cdb441^bcb0712f32cdb441^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/id-card.png00f4dc0eddffdf42^567"CpResource id-card.png build/Debug-iphonesimulator/PlacasDF.app/id-card.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/id-card.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"318018B1-DFC2-44F1-AE40-4BE7FD7BBA49-
+
+CCpResource navigation.png build/Debug-iphonesimulator/PlacasDF.app/navigation.png
+s348992046.318533
+e348992046.499128
+r1
+xCpResource
+xnavigation.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/navigation.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Debug-iphonesimulator/PlacasDF.app/navigation.png319a512e32cdb441^22a9712f32cdb441^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/navigation.png00f4dc0eddffdf42^576"CpResource navigation.png build/Debug-iphonesimulator/PlacasDF.app/navigation.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/navigation.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"7F626400-8EB3-44BA-A7EC-05C734E3D5B4-
+
+CCpResource no-circula.jpg build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg
+s348979541.072240
+e348979541.093708
+r1
+xCpResource
+xno-circula.jpg
+xbuild/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg3997125501cdb441^93fd175501cdb441^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg00f43498deffdf42^576"CpResource no-circula.jpg build/Debug-iphonesimulator/PlacasDF.app/no-circula.jpg    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/no-circula.jpg /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"F56C3223-6C1E-4222-8D0E-9ED0815E425B-
+
+CCpResource radar.png build/Debug-iphonesimulator/PlacasDF.app/radar.png
+s348992046.500530
+e348992046.507302
+r1
+xCpResource
+xradar.png
+xbuild/Debug-iphonesimulator/PlacasDF.app/radar.png
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Copy build/Debug-iphonesimulator/PlacasDF.app/radar.pnge23c802e32cdb441^61c1712f32cdb441^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/radar.png00f4dc0eddffdf42^561"CpResource radar.png build/Debug-iphonesimulator/PlacasDF.app/radar.png    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/radar.png /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"D2F2C992-D302-4A95-9257-7C5352194150-
+
+CCpResource verifica.jpg build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg
+s348979541.072315
+e348979541.079337
+r1
+xCpResource
+xverifica.jpg
+xbuild/Debug-iphonesimulator/PlacasDF.app/verifica.jpg
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg0b96125501cdb441^f44f145501cdb441^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg00f43498deffdf42^570"CpResource verifica.jpg build/Debug-iphonesimulator/PlacasDF.app/verifica.jpg    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/memo/Proyectos/HelloWorld/PlacasDF/verifica.jpg /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"C6D1DF98-B1E6-40D5-B069-FD35D155C9DC-
+
+CDataModelVersionCompile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld
+s348977072.275937
+e348977072.897836
+r1
+xDataModelVersionCompile
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"DataModelVersionCompile build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd PlacasDF/PlacasDF.xcdatamodelde6cc46b0f7ccb441^59dae5b0f7ccb441^---0#0#0#-19%DVTDocumentLocation2@89"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld/0000000000000000^769"DataModelVersionCompile build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd PlacasDF/PlacasDF.xcdatamodeld    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/momc -XD_MOMC_SDKROOT=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -XD_MOMC_IOS_TARGET_VERSION=5.0 -MOMC_PLATFORMS iphonesimulator -MOMC_PLATFORMS iphoneos -XD_MOMC_TARGET_VERSION=10.6 /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF.xcdatamodeld /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF.momd36"1506FCDC-361E-49BE-890C-34D1437D4EB9-
+
+CGenerateDSYMFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF
+s348990923.731105
+e348990924.013913
+r1
+xGenerateDSYMFile
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Generating /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM724fbbcb2dcdb441^7a8f03cc2dcdb441^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM/0000000000000000^570"GenerateDSYMFile build/Debug-iphonesimulator/PlacasDF.app.dSYM build/Debug-iphonesimulator/PlacasDF.app/PlacasDF    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app.dSYM36"D944CDCE-3E49-4607-86D1-B50642452155-
+
+CLd /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF normal i386
+s348990922.763961
+e348990923.723158
+r1
+xLd
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF
+xnormal
+xi386
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Link /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDFb2b8c3ca2dcdb441^1c23b9cb2dcdb441^---0#0#0#--1188"Ld build/Debug-iphonesimulator/PlacasDF.app/PlacasDF normal i386    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -filelist /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/Objects-normal/i386/PlacasDF.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -framework CoreLocation -framework MapKit -framework UIKit -framework Foundation -framework CoreGraphics -framework CoreData -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PlacasDF36"F7F6EFD1-8000-4A68-B3EE-5A3527E3637F-
+
+CProcessInfoPlistFile /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/Info.plist PlacasDF/PlacasDF-Info.plist
+s348977072.262511
+e348977072.267620
+r1
+xProcessInfoPlistFile
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/Info.plist
+xPlacasDF/PlacasDF-Info.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Process PlacasDF/PlacasDF-Info.plista35743b0f7ccb441^9bc84cb0f7ccb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF-Info.plist0000000000000000^664"ProcessInfoPlistFile build/Debug-iphonesimulator/PlacasDF.app/Info.plist PlacasDF/PlacasDF-Info.plist    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility PlacasDF/PlacasDF-Info.plist -genpkginfo /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app/Info.plist36"8C0358B4-4640-4C8B-8A00-E79BF1F6CE77-
+
+CProcessPCH /Users/memo/Library/Developer/Xcode/DerivedData/PlacasDF-cxutaakibwocslbqbkwfbgfedduo/Index/PrecompiledHeaders/PlacasDF-Prefix-hkdapyaodatuxqhgnewkdosfrkrq_ast/PlacasDF-Prefix.pch.pth PlacasDF/PlacasDF-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth PlacasDF/PlacasDF-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s348977072.275922
+e348977075.049499
+r1
+xProcessPCH
+x/var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth
+xPlacasDF/PlacasDF-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile PlacasDF/PlacasDF-Prefix.pch36ce46b0f7ccb441^19ac0cb3f7ccb441^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF-Prefix.pch0000000000000000^2762"ProcessPCH /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth PlacasDF/PlacasDF-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-generated-files.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-own-target-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-all-target-headers.hmap -iquote /Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/PlacasDF-project-headers.hmap -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/include -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources/i386 -I/Users/memo/Proyectos/HelloWorld/PlacasDF/build/PlacasDF.build/Debug-iphonesimulator/PlacasDF.build/DerivedSources -F/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator -c /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/PlacasDF-Prefix.pch -o /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6z/cnz027xd54lc7n4sd5530gmw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/PlacasDF-Prefix-gvkzarqblidzsjdzxekevlkknkcs/PlacasDF-Prefix.pch.d36"9E4C36F1-A70F-4C63-92DA-C3BD9357832C-
+
+CTouch /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app
+s348992058.966765
+e348992059.017994
+r1
+xTouch
+x/Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Touch /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app3f91f73a32cdb441^639b043b32cdb441^---0#0#0#--394"Touch build/Debug-iphonesimulator/PlacasDF.app    cd /Users/memo/Proyectos/HelloWorld/PlacasDF    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/memo/Proyectos/HelloWorld/PlacasDF/build/Debug-iphonesimulator/PlacasDF.app36"700EB8DC-09DE-485A-8589-C41F758960AC-
+
