@@ -61,9 +61,7 @@
         [self addTip:i++ tip:[tip valueForKey:@"descripcion"]];
     }
     
-    
-    
-    NSLog(@"hay :%d", [[self.fetchedResultsController fetchedObjects] count]);
+    // NSLog(@"hay :%d", [[self.fetchedResultsController fetchedObjects] count]);
 }
 
 - (void) saveTip:(NSMutableDictionary *) tipDiccionario {
@@ -77,7 +75,7 @@
     
     // Configuramos el nuevo objeto con los datos del diccionario
     
-    NSLog(@"%@ %@", [tipDiccionario valueForKey:@"tip_id"], [tipDiccionario valueForKey:@"descripcion"]);
+    // NSLog(@"%@ %@", [tipDiccionario valueForKey:@"tip_id"], [tipDiccionario valueForKey:@"descripcion"]);
     
     NSNumber * tip_id = [NSNumber numberWithInt:[[tipDiccionario valueForKey:@"tip_id"] intValue]];
     
@@ -95,13 +93,13 @@
         
     } else {
         
-        NSLog(@"Tip guardado: %@", [tipDiccionario valueForKey:@"descripcion"]);
+        // NSLog(@"Tip guardado: %@", [tipDiccionario valueForKey:@"descripcion"]);
     }
 }
 
 - (void) addTip:(int) posicion tip:(NSString *) text {
     
-    NSLog(@"%@ %d", text, posicion);
+    // NSLog(@"%@ %d", text, posicion);
     
     UILabel * tipLabel = [[UILabel alloc] init];
     

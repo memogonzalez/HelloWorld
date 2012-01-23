@@ -348,7 +348,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dB-Hm-EZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="XoQ-Ma-iuw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Main" id="gGa-Fe-bOJ"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="id-card.png" id="gGa-Fe-bOJ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yrH-KC-uiI">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -431,7 +431,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khH-nh-ROC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="pyO-Ss-OZc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="gyZ-Oq-bTl"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear2.png" id="gyZ-Oq-bTl"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lMz-IA-Sle">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -530,7 +530,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIf-S3-pBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="1sn-LU-W3I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendario" id="5T6-xO-NvJ"/>
+                    <tabBarItem key="tabBarItem" title="Calendario" image="calendar.png" id="5T6-xO-NvJ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="YcC-Xf-44h">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -545,7 +545,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhn-4G-I1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="mlE-2L-hUi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Multas" id="WOl-dk-mtT"/>
+                    <tabBarItem key="tabBarItem" title="Multas" image="navigation.png" id="WOl-dk-mtT"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="KFo-nZ-muy">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -560,7 +560,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hvl-Uf-brb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="6d8-ZA-Zqi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mapas" id="dag-Ql-56p"/>
+                    <tabBarItem key="tabBarItem" title="Mapas" image="radar.png" id="dag-Ql-56p"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IKU-Mr-KBc">
                         <rect key="frame" x="0.0" y="-74" width="0.0" height="74"/>
@@ -592,6 +592,13 @@
             <point key="canvasLocation" x="-3584" y="397"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar.png" width="23" height="25"/>
+        <image name="gear2.png" width="26" height="28"/>
+        <image name="id-card.png" width="24" height="17"/>
+        <image name="navigation.png" width="28" height="28"/>
+        <image name="radar.png" width="27" height="27"/>
+    </resources>
     <classes>
         <class className="CalendarioViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarioViewController.h"/>

@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+@property (strong, nonatomic) UIImageView * imageView; 
+
 -(void) colocaImagenCalendario:(kTIPO_CALENDARIO)kTipoCalendario;
 
 - (IBAction)seleccionaCalendario:(id)sender;

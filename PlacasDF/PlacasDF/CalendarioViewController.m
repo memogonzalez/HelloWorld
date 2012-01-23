@@ -12,6 +12,8 @@
 
 @synthesize segmentedControl = _segmentedControl;
 
+@synthesize imageView = _imageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,11 +65,16 @@
 
 - (IBAction)seleccionaCalendario:(id)sender {
     
-    NSLog(@"Entre");
-    
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     
     NSInteger segmentoSeleccionado = [segmentedControl selectedSegmentIndex];
+    
+    NSLog(@"Segmento seleccionado %d", segmentoSeleccionado);
+    
+    if (segmentoSeleccionado < 0) {
+
+        segmentoSeleccionado = 0;
+    }
     
     // Cargamos y mostramos los puntos vehiculares del tipo seleccionado
     [self colocaImagenCalendario:segmentoSeleccionado];
@@ -75,6 +82,9 @@
 
 -(void) colocaImagenCalendario:(kTIPO_CALENDARIO)kTipoCalendario {
     
+    NSLog(@"Tipo de calendario  %d", kTipoCalendario);
+    
+    [_imageView removeFromSuperview];
     
     UIImage * imagen;
     
@@ -87,11 +97,11 @@
         imagen = [UIImage imageNamed:@"verifica.jpg"];
     }
     
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:imagen];
+    _imageView = [[UIImageView alloc] initWithImage:imagen];
     
-    [imageView removeFromSuperview];
+    //UIImageView * imageView = [[UIImageView alloc] initWithImage:imagen];
     
-    [self.view addSubview:imageView];
+    [self.view addSubview:_imageView];
     
     
 }

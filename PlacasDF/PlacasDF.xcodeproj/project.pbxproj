@@ -32,6 +32,11 @@
 		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
 		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
 		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
+		BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64314CD2BCF009DD219 /* id-card.png */; };
+		BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64414CD2BCF009DD219 /* navigation.png */; };
+		BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64514CD2BCF009DD219 /* calendar.png */; };
+		BB6CE64B14CD2BCF009DD219 /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64614CD2BCF009DD219 /* radar.png */; };
+		BB6CE64C14CD2BCF009DD219 /* gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64714CD2BCF009DD219 /* gear2.png */; };
 		BBD6A94214CCFC61009FB864 /* no-circula.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94014CCFC61009FB864 /* no-circula.jpg */; };
 		BBD6A94314CCFC61009FB864 /* verifica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94114CCFC61009FB864 /* verifica.jpg */; };
 /* End PBXBuildFile section */
@@ -82,6 +87,11 @@
 		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
 		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		BB6CE64314CD2BCF009DD219 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
+		BB6CE64414CD2BCF009DD219 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
+		BB6CE64514CD2BCF009DD219 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		BB6CE64614CD2BCF009DD219 /* radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radar.png; sourceTree = "<group>"; };
+		BB6CE64714CD2BCF009DD219 /* gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear2.png; sourceTree = "<group>"; };
 		BBD6A94014CCFC61009FB864 /* no-circula.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-circula.jpg"; sourceTree = "<group>"; };
 		BBD6A94114CCFC61009FB864 /* verifica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = verifica.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +232,11 @@
 		BBD6A93E14CCFBB9009FB864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB6CE64314CD2BCF009DD219 /* id-card.png */,
+				BB6CE64414CD2BCF009DD219 /* navigation.png */,
+				BB6CE64514CD2BCF009DD219 /* calendar.png */,
+				BB6CE64614CD2BCF009DD219 /* radar.png */,
+				BB6CE64714CD2BCF009DD219 /* gear2.png */,
 				BBD6A94014CCFC61009FB864 /* no-circula.jpg */,
 				BBD6A94114CCFC61009FB864 /* verifica.jpg */,
 			);
@@ -283,6 +298,11 @@
 				65DB3CB914C3B74C002DACC6 /* MainStoryboard.storyboard in Resources */,
 				BBD6A94214CCFC61009FB864 /* no-circula.jpg in Resources */,
 				BBD6A94314CCFC61009FB864 /* verifica.jpg in Resources */,
+				BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */,
+				BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */,
+				BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */,
+				BB6CE64B14CD2BCF009DD219 /* radar.png in Resources */,
+				BB6CE64C14CD2BCF009DD219 /* gear2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
