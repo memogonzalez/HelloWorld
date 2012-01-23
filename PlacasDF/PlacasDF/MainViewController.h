@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataAdminProtocol.h"
 
-@interface MainViewController : UIViewController <CoreDataAdminProtocol>
+
+@interface MainViewController : UIViewController <CoreDataAdminProtocol, NSFetchedResultsControllerDelegate>
+
+// Controlador de objetos que devuelve el query a CoreData
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (void) addTip:(int) posicion tip:(NSString *) text;
+
+- (void) saveTip:(NSMutableDictionary *) tip;
+
+- (void) saveTip:(NSMutableDictionary *) tipDiccionario;
+
+- (NSArray *) getTips;
 
 @end
