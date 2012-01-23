@@ -204,8 +204,14 @@
                                 <segment title="Hoy no Circula"/>
                                 <segment title="Verificación"/>
                             </segments>
+                            <connections>
+                                <action selector="seleccionaCalendario:" destination="rYG-SV-R7G" eventType="valueChanged" id="feK-1D-g7y"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="9j8-Yx-bIF" id="dvC-sq-EPX"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-1758" y="536"/>
@@ -360,6 +366,10 @@
     <classes>
         <class className="CalendarioViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarioViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="seleccionaCalendario:"/>
+                <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>

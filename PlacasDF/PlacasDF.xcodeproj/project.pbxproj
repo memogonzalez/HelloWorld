@@ -30,6 +30,8 @@
 		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
 		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
 		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
+		BBD6A94214CCFC61009FB864 /* no-circula.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94014CCFC61009FB864 /* no-circula.jpg */; };
+		BBD6A94314CCFC61009FB864 /* verifica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94114CCFC61009FB864 /* verifica.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
 		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		BBD6A94014CCFC61009FB864 /* no-circula.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-circula.jpg"; sourceTree = "<group>"; };
+		BBD6A94114CCFC61009FB864 /* verifica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = verifica.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		65DB3C7B14C3B647002DACC6 = {
 			isa = PBXGroup;
 			children = (
+				BBD6A93E14CCFBB9009FB864 /* Resources */,
 				65C31E9914C7D670000703E9 /* Headers */,
 				6588D17914C68A57005D3FB8 /* Protocol CoreDataAdmin */,
 				65DB3CDF14C3BBDF002DACC6 /* Clases Manejadores */,
@@ -204,6 +209,15 @@
 			name = "Clases Manejadores";
 			sourceTree = "<group>";
 		};
+		BBD6A93E14CCFBB9009FB864 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBD6A94014CCFC61009FB864 /* no-circula.jpg */,
+				BBD6A94114CCFC61009FB864 /* verifica.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +271,8 @@
 			files = (
 				65DB3C9714C3B647002DACC6 /* InfoPlist.strings in Resources */,
 				65DB3CB914C3B74C002DACC6 /* MainStoryboard.storyboard in Resources */,
+				BBD6A94214CCFC61009FB864 /* no-circula.jpg in Resources */,
+				BBD6A94314CCFC61009FB864 /* verifica.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

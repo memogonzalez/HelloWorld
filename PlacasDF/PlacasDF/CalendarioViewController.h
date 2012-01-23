@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Header.h"
 
 @interface CalendarioViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+-(void) colocaImagenCalendario:(kTIPO_CALENDARIO)kTipoCalendario;
+
+- (IBAction)seleccionaCalendario:(id)sender;
 @end

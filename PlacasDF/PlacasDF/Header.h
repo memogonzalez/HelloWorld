@@ -16,4 +16,10 @@ typedef enum {
     
 }kTIPO_PUNTO_VEHICULAR;
 
+typedef enum {
+    
+    kTIPO_CALENDARIO_VERIFICACION = 0,
+    kTIPO_CALENDARIO_NO_CIRCULA
+    
+}kTIPO_CALENDARIO;
 #endif
