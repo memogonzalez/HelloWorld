@@ -9,7 +9,7 @@
 #import "MapasViewController.h"
 #define kENTITY_NAME    @"PuntoVehicular"       // Nombre de la Entidad a la que esta clase hace el query
 
-@interface MapasViewController () 
+@interface MapasViewController () <MKMapViewDelegate>
 
 - (void)agregarPuntoVehicularConDatos:(NSDictionary *)diccDatos;
 
@@ -19,6 +19,8 @@
 
 // Metodo que devuelve un arreglo de puntos vehiculares del tipo deseado
 - (NSArray *)puntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular;
+
+- (void)mostrarMasInformacionDePuntoVehicularSeleccionado;
 
 @end
 
@@ -45,6 +47,9 @@
 {
     [super viewDidLoad];
     
+    // Obtenemos el indice seleccionado del segmentedControl para cargar los puntos en el mapa
+    [self seleccionarPuntoVehicularTipo:_segmentedControl];
+    
     // TODO: 
     // Bloque para obtener los datos de Puntos Vehiculares desde un archivo o BD en el bundle
     // y cargarlos en coredata para tenerlos persistentes
@@ -70,11 +75,11 @@
     
     // Obtenemos los Puntos Vehiculares tipo Corralon
     NSArray *arrCorralones = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_CORRALON];
-    NSLog(@"Corralones: %@", arrCorralones);
+    //NSLog(@"Corralones: %@", arrCorralones);
     
     // Obtenemos los Puntos Vehiculares tipo Verificentro
     NSArray *arrVerificentros = [self puntosVehicularesTipo:kTIPO_PUNTO_VEHICULAR_VERIFICENTRO];
-    NSLog(@"Verficentros: %@", arrVerificentros);
+    //NSLog(@"Verficentros: %@", arrVerificentros);
     
     // TODO: Podemos guardar estos arreglos como propiedades de la clase para no ejecutar el fetch mas que una sola vez
     // y asi presentar los puntos en el mapa
@@ -97,11 +102,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // Obtenemos el indice seleccionado del segmentedControl para cargar los puntos en el mapa
-    [self seleccionarPuntoVehicularTipo:_segmentedControl];
-    
-    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -117,6 +117,11 @@
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     NSInteger segmentoSeleccionado = [segmentedControl selectedSegmentIndex];
     
+    // En caso de que el uisegmentedcontrol aun no este inicializado, seleccionamos el segmento 1
+    if (segmentoSeleccionado < 0) {
+        segmentoSeleccionado = 1;
+    }
+    
     // Cargamos y mostramos los puntos vehiculares del tipo seleccionado
     [self dropPuntosVehicularesTipo:segmentoSeleccionado enMapa:_mapa];
 }
@@ -126,6 +131,8 @@
 - (void)dropPuntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular enMapa:(MKMapView *)mapView
 {
     MKMapView *myMapView = mapView;
+    NSArray *annotations = [myMapView annotations];
+    [mapView removeAnnotations:annotations];
     
     // Hacemos el fetch de puntos segun el tipo seleccionado
     switch (kTipoPuntoVehicular) {
@@ -135,19 +142,18 @@
             NSLog(@"mostrando corralones");
             
             // Creamos un pin
-            MKPointAnnotation *puntoA = [[MKPointAnnotation alloc] init];
-            puntoA.title = @"Corralón";
-            puntoA.coordinate = CLLocationCoordinate2DMake(19.435478, -99.136479);
-            puntoA.subtitle = [NSString stringWithFormat:@"lat: %f long: %f", puntoA.coordinate.latitude, 
-                               puntoA.coordinate.longitude];
+            MKPointAnnotation *puntoCorralon = [[MKPointAnnotation alloc] init];
+            puntoCorralon.title = @"Corralón";
+            puntoCorralon.coordinate = CLLocationCoordinate2DMake(19.435478, -99.136479);
+            puntoCorralon.subtitle = [NSString stringWithFormat:@"lat: %f long: %f", puntoCorralon.coordinate.latitude, puntoCorralon.coordinate.longitude];
             
             // Lo agregamos al mapa
-            [myMapView addAnnotation:puntoA];
-            [myMapView setCenterCoordinate:puntoA.coordinate animated:YES];
+            [myMapView addAnnotation:puntoCorralon];
+            [myMapView setCenterCoordinate:puntoCorralon.coordinate animated:YES];
             
             // Zoom al mapa para mostrar solo la region donde esta el pin, con un span de 1000 mts de radio
             MKCoordinateRegion mapRegion;
-            mapRegion.center = puntoA.coordinate;
+            mapRegion.center = puntoCorralon.coordinate;
             mapRegion.span = MKCoordinateSpanMake(0.01, 0.01);
             [myMapView setRegion:mapRegion animated: YES];
         }
@@ -266,7 +272,6 @@
  @param kTipoPuntoVehicular: Enum que define el tipo de PuntoVehicular deseado
  @return (NSArray *): un arreglo con los objetos buscados
  */
-
 - (NSArray *)puntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular
 {
     // Obtenemos todos los puntos vehiculares
@@ -282,7 +287,6 @@
 /**
  Metodo para borrar todos los registros de la Entidad para esta clase
 */
-
 - (void)borrarTodo
 {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
@@ -299,4 +303,50 @@
         abort();
     }
 }
+
+#pragma mark MKMapView Delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // Creamos la vista de punto a desplegar
+    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinPuntoVehicular"];
+    
+    // FIXME: Manejar reuso de pines
+    
+    // Configuramos la vista del punto
+    [pinView setPinColor:MKPinAnnotationColorGreen];
+    [pinView setAnimatesDrop:YES];
+    [pinView setCanShowCallout:YES];
+    [pinView setCalloutOffset:CGPointMake(-8.0f, 0.0f)];
+    
+    [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
+    [(UIButton *)pinView.rightCalloutAccessoryView addTarget:self 
+                                                      action:@selector(mostrarMasInformacionDePuntoVehicularSeleccionado) 
+                                            forControlEvents:UIControlEventTouchUpInside];
+    
+    // Seleccionamos el pin para mostrar la informacion de inmediato
+    [mapView selectAnnotation:annotation animated:YES];
+    
+    return pinView;
+}
+
+// Metodo TEST
+- (void)mostrarMasInformacionDePuntoVehicularSeleccionado
+{
+    NSLog(@"mostrar mas informacion");
+    [self performSegueWithIdentifier:@"segue_detalle_pin" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"segue_detalle_pin"]) {
+        // Configurar la vista de detalle
+        id vistaDetalle = [segue destinationViewController];
+        [vistaDetalle setValue:@"nombre test" forKey:@"nombre"];
+        [vistaDetalle setValue:@"direccion test" forKey:@"direccion"];
+        [vistaDetalle setValue:@"telefono test" forKey:@"telefono"];
+        [vistaDetalle setValue:@"delegacion test" forKey:@"delegacion"];
+    }
+}
+
 @end

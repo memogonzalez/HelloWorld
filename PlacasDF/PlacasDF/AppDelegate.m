@@ -38,7 +38,7 @@
             [vc performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
     }
-
+    
     return YES;
 }
 
