@@ -131,8 +131,6 @@
 - (void)dropPuntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular enMapa:(MKMapView *)mapView
 {
     MKMapView *myMapView = mapView;
-    NSArray *annotations = [myMapView annotations];
-    [mapView removeAnnotations:annotations];
     
     // Hacemos el fetch de puntos segun el tipo seleccionado
     switch (kTipoPuntoVehicular) {
@@ -309,9 +307,13 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     // Creamos la vista de punto a desplegar
-    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinPuntoVehicular"];
+    // Reusando algun pin anterior
+    MKPinAnnotationView *pinView = nil;
+    pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinPuntoVehicular"];
     
-    // FIXME: Manejar reuso de pines
+    if (! pinView) {
+         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinPuntoVehicular"];
+    }
     
     // Configuramos la vista del punto
     [pinView setPinColor:MKPinAnnotationColorGreen];

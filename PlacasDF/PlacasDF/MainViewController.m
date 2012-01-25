@@ -32,9 +32,6 @@
 {
     [super viewDidLoad];
     
-    // TODO: Validar que sea la primera vez o que no haya datos del usuario
-    [self.tabBarController performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
-    
     [_scrollView setContentSize:CGSizeMake(3200, 100)];
     
     // NSArray * tips = [NSArray arrayWithObjects:@"tip1", @"tip2", @"tip3", @"tip4", @"tip5", @"tip6", @"tip7", @"tip8", @"tip9", nil];
@@ -120,7 +117,19 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    static NSString *placasListas = @"placasListas";
+    
+    if (! [userDefaults valueForKey:placasListas] || 
+        ! [[userDefaults valueForKey:placasListas] boolValue]) {
+        
+        [self performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
+        
+        // Cuando el usuario ha ingresado sus datos, entonces establecemos la bandera en el userDefaults
+        // que las placas ya estan listas
+        [userDefaults setValue:[NSNumber numberWithBool:YES] forKey:placasListas];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
