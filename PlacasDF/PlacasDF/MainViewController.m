@@ -124,11 +124,12 @@
     if (! [userDefaults valueForKey:placasListas] || 
         ! [[userDefaults valueForKey:placasListas] boolValue]) {
         
-        // [self performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
+        [self performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
         
         // Cuando el usuario ha ingresado sus datos, entonces establecemos la bandera en el userDefaults
         // que las placas ya estan listas
         [userDefaults setValue:[NSNumber numberWithBool:YES] forKey:placasListas];
+
     }
 }
 
