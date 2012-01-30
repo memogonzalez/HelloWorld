@@ -345,11 +345,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="XXt-QJ-dqe">
-                        <barButtonItem key="leftBarButtonItem" title="Placas" id="2m1-Os-lGR">
-                            <connections>
-                                <segue destination="Voc-rr-wJd" kind="modal" identifier="segue_modal_ingresa_datos" id="0Nz-2a-bll"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Placas" id="2m1-Os-lGR"/>
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="uqW-0e-Qsc" id="LQh-WZ-vDC"/>
@@ -628,14 +624,6 @@
         </class>
         <class className="DetallePinTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetallePinTableViewController.h"/>
-        </class>
-        <class className="IngresarDatosViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IngresarDatosViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="fieldPlacas" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pickerViewModelo" candidateClass="UIPickerView"/>
-            </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
