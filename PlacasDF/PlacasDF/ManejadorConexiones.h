@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ManejadorConexiones : NSObject
+@interface ManejadorConexiones : NSObject <NSURLConnectionDelegate> {
+    
+    NSMutableData * receivedData;
+}
 
 @end
 

@@ -1,2 +1,2 @@
-dependencies: /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Parser.h
+dependencies: /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Parser.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Parser.h

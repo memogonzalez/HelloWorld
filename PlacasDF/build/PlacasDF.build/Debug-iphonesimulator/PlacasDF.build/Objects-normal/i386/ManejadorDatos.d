@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/ManejadorDatos.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/ManejadorDatos.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/ManejadorDatos.h

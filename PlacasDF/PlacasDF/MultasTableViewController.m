@@ -8,6 +8,10 @@
 
 #import "MultasTableViewController.h"
 
+#import "ManejadorConexiones.h"
+
+#define URL @"http://www.caosinc.com/webservices/placa.php?placa=152tdk"
+
 
 @implementation MultasTableViewController
 
@@ -33,12 +37,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    receivedData = [[NSMutableData alloc] init];
+    
+    arrMultas = [[NSArray alloc] init];
+    
+    NSURL * url = [NSURL URLWithString:URL];
+    
+    NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
+    
+    NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
+    
+    [conexion start];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -79,8 +90,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return [arrMultas count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -89,6 +101,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    
+    NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
+    
+    cell.textLabel.text = [multa objectForKey:@"multa_id"];
+    
     return cell;
 }
 
@@ -143,5 +160,46 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
+// Manejo de conexión
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [receivedData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError * error;
+    
+    NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+    
+    NSDictionary * diccionario = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error];
+    
+    NSDictionary *multas = [diccionario objectForKey:@"multas"];
+    
+    arrMultas = [multas objectForKey:@"multa"];
+    
+    for (NSDictionary * multa in arrMultas) {
+        
+        NSLog(@"%@", [multa objectForKey:@"multa_id"]);
+        
+    }
+    
+    [self.tableView reloadData];
+}
+
 
 @end

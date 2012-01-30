@@ -1,3 +1,2 @@
-dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Calendario.h
+dependencies: /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Calendario.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Calendario.h

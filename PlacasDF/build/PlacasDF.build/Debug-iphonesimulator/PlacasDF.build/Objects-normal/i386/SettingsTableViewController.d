@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/SettingsTableViewController.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/SettingsTableViewController.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/SettingsTableViewController.h

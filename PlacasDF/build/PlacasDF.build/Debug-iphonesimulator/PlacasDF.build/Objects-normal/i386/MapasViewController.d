@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MapasViewController.h \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Header.h \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CoreDataAdminProtocol.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/MapasViewController.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/MapasViewController.h \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Header.h \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/CoreDataAdminProtocol.h

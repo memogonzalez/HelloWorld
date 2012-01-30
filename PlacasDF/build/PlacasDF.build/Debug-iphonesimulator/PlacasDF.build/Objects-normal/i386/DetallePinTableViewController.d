@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/DetallePinTableViewController.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/DetallePinTableViewController.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/DetallePinTableViewController.h
