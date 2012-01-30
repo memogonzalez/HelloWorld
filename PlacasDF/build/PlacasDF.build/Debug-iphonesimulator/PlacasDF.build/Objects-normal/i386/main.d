@@ -1,2 +1,2 @@
-dependencies: /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/main.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/AppDelegate.h
+dependencies: /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/main.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/AppDelegate.h

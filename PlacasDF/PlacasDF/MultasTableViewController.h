@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MultasTableViewController : UITableViewController
+@interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate> {
+    
+    NSMutableData * receivedData;
+    
+    NSArray * arrMultas;
+}
 
 @end

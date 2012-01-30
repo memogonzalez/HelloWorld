@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CalendarioViewController.h \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/Header.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/CalendarioViewController.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/CalendarioViewController.h \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/Header.h

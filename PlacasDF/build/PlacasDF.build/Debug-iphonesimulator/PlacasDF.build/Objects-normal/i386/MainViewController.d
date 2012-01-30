@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.m \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/MainViewController.h \
-  /Users/memo/Proyectos/HelloWorld/PlacasDF/PlacasDF/CoreDataAdminProtocol.h
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/MainViewController.m \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/MainViewController.h \
+  /Users/memo/Desktop/GitHub/PlacasDF/PlacasDF/CoreDataAdminProtocol.h
