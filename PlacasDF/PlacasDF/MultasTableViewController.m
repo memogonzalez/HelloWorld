@@ -10,10 +10,12 @@
 
 #import "ManejadorConexiones.h"
 
-#define URL @"http://www.caosinc.com/webservices/placa.php?placa=152tdk"
+#define URL @"http://www.caosinc.com/webservices/placa.php?placa=105val"
 
 
 @implementation MultasTableViewController
+
+@synthesize celdaMulta;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -96,17 +98,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"celda_multas_usuario";
+    static NSString *CellIdentifier = @"MultaCelda";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MultaCelda *cell = (MultaCelda *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if(cell == nil){
+        
+        [[NSBundle mainBundle] loadNibNamed:@"MultaCelda" owner:self options:nil];
+        
+        cell = celdaMulta;
+        
+        self.celdaMulta = nil;
+    }
     
     NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
     
-    cell.textLabel.text = [multa objectForKey:@"multa_id"];
+    NSString * imageName = ([[multa objectForKey:@"status"] isEqualToString:@"Pagada "]) ? @"ok.png": @"nook.png";
+    
+    UIImage * image = [UIImage imageNamed:imageName];
+    
+    cell.fecha.text = [multa objectForKey:@"fecha"];
+    
+    cell.sancion.text = [NSString stringWithFormat:@"%@ días de salario mínimo", [multa objectForKey:@"sancion"]];
+    
+    cell.motivo.text = [self formatString:[multa objectForKey:@"motivo"]];
+    
+    [cell.situacion setImage:image];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 92.0;
 }
 
 /*
@@ -199,6 +223,29 @@
     }
     
     [self.tableView reloadData];
+}
+
+- (NSString *) formatString:(NSString *) text {
+    
+    NSString * str = [text stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
+    
+    str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
+    
+    str = [str stringByReplacingOccurrencesOfString:@"&Eacute;" withString:@"É"];
+    
+    str = [str stringByReplacingOccurrencesOfString:@"&Iacute;" withString:@"Í"];
+    
+    str = [str stringByReplacingOccurrencesOfString:@"&Oacute;" withString:@"Ó"];
+    
+    str = [str stringByReplacingOccurrencesOfString:@"&Uacute;" withString:@"Ú"];
+    
+    str = [str lowercaseString];
+    
+    NSString * first = [[str substringWithRange:NSMakeRange(0, 1)] uppercaseString];
+    
+    str = [str stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:first];
+    
+    return str;
 }
 
 

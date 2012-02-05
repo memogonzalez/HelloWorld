@@ -37,6 +37,10 @@
 		BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64514CD2BCF009DD219 /* calendar.png */; };
 		BB6CE64B14CD2BCF009DD219 /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64614CD2BCF009DD219 /* radar.png */; };
 		BB6CE64C14CD2BCF009DD219 /* gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64714CD2BCF009DD219 /* gear2.png */; };
+		BBA20D4C14D6601E0029C12B /* MultaCelda.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA20D4B14D6601E0029C12B /* MultaCelda.xib */; };
+		BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA20D4E14D6615F0029C12B /* MultaCelda.m */; };
+		BBA20D5614D674EE0029C12B /* nook.png in Resources */ = {isa = PBXBuildFile; fileRef = BBA20D5414D674EE0029C12B /* nook.png */; };
+		BBA20D5714D674EE0029C12B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = BBA20D5514D674EE0029C12B /* ok.png */; };
 		BBD6A94214CCFC61009FB864 /* no-circula.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94014CCFC61009FB864 /* no-circula.jpg */; };
 		BBD6A94314CCFC61009FB864 /* verifica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBD6A94114CCFC61009FB864 /* verifica.jpg */; };
 /* End PBXBuildFile section */
@@ -92,6 +96,11 @@
 		BB6CE64514CD2BCF009DD219 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		BB6CE64614CD2BCF009DD219 /* radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radar.png; sourceTree = "<group>"; };
 		BB6CE64714CD2BCF009DD219 /* gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear2.png; sourceTree = "<group>"; };
+		BBA20D4B14D6601E0029C12B /* MultaCelda.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultaCelda.xib; sourceTree = "<group>"; };
+		BBA20D4D14D6615F0029C12B /* MultaCelda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultaCelda.h; sourceTree = "<group>"; };
+		BBA20D4E14D6615F0029C12B /* MultaCelda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultaCelda.m; sourceTree = "<group>"; };
+		BBA20D5414D674EE0029C12B /* nook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nook.png; sourceTree = "<group>"; };
+		BBA20D5514D674EE0029C12B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		BBD6A94014CCFC61009FB864 /* no-circula.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-circula.jpg"; sourceTree = "<group>"; };
 		BBD6A94114CCFC61009FB864 /* verifica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = verifica.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +141,7 @@
 		65DB3C7B14C3B647002DACC6 = {
 			isa = PBXGroup;
 			children = (
+				BBA20D4614D65B350029C12B /* Celdas */,
 				BBD6A93E14CCFBB9009FB864 /* Resources */,
 				65C31E9914C7D670000703E9 /* Headers */,
 				6588D17914C68A57005D3FB8 /* Protocol CoreDataAdmin */,
@@ -229,9 +239,21 @@
 			name = "Clases Manejadores";
 			sourceTree = "<group>";
 		};
+		BBA20D4614D65B350029C12B /* Celdas */ = {
+			isa = PBXGroup;
+			children = (
+				BBA20D4B14D6601E0029C12B /* MultaCelda.xib */,
+				BBA20D4D14D6615F0029C12B /* MultaCelda.h */,
+				BBA20D4E14D6615F0029C12B /* MultaCelda.m */,
+			);
+			name = Celdas;
+			sourceTree = "<group>";
+		};
 		BBD6A93E14CCFBB9009FB864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BBA20D5414D674EE0029C12B /* nook.png */,
+				BBA20D5514D674EE0029C12B /* ok.png */,
 				BB6CE64314CD2BCF009DD219 /* id-card.png */,
 				BB6CE64414CD2BCF009DD219 /* navigation.png */,
 				BB6CE64514CD2BCF009DD219 /* calendar.png */,
@@ -303,6 +325,9 @@
 				BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */,
 				BB6CE64B14CD2BCF009DD219 /* radar.png in Resources */,
 				BB6CE64C14CD2BCF009DD219 /* gear2.png in Resources */,
+				BBA20D4C14D6601E0029C12B /* MultaCelda.xib in Resources */,
+				BBA20D5614D674EE0029C12B /* nook.png in Resources */,
+				BBA20D5714D674EE0029C12B /* ok.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +355,7 @@
 				6588D19014C68B5C005D3FB8 /* Tip.m in Sources */,
 				65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */,
 				653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */,
+				BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

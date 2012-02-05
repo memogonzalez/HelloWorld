@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MultaCelda.h"
+
 
 @interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate> {
     
     NSMutableData * receivedData;
     
     NSArray * arrMultas;
+    
+    IBOutlet MultaCelda * celdaMulta;
 }
+
+@property (strong, nonatomic) IBOutlet MultaCelda * celdaMulta;
+
+- (NSString *) formatString:(NSString *) text;
 
 @end
