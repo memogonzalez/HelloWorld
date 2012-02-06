@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>multas</key>
+	<array>
+		<dict>
+			<key>descripcion</key>
+			<string>Estacionarse en lugar prohibido</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>5</integer>
+			<key>fundamento</key>
+			<string>Art. 62, primer y cuarto párrafo</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>Circular en un carril en contraflujo</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>5</integer>
+			<key>fundamento</key>
+			<string>Art. 70</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>No traer tarjeta de circulación</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>10</integer>
+			<key>fundamento</key>
+			<string> Art. 84­</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>No presentar holograma de verificación</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>0</integer>
+			<key>fundamento</key>
+			<string></string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>No traer licencia o permiso de circulación</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>10</integer>
+			<key>fundamento</key>
+			<string> Art. 84­</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>Alcohol en la sangre superior a 0.8 gramos o 0.4 miligramos por litro</string>
+			<key>corralon</key>
+			<integer>1</integer>
+			<key>multa</key>
+			<integer>0</integer>
+			<key>fundamento</key>
+			<string></string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>No traer casco al usar motocicleta</string>
+			<key>corralon</key>
+			<integer>0</integer>
+			<key>multa</key>
+			<integer>5</integer>
+			<key>fundamento</key>
+			<string></string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>Usar el celular u objetos que no permitan que impidan la conducción del vehículo</string>
+			<key>corralon</key>
+			<integer>0</integer>
+			<key>multa</key>
+			<integer>5</integer>
+			<key>fundamento</key>
+			<string> Art. 82­ VII</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>Realizar maniobras de ascenso o descenso en lugares prohibidos</string>
+			<key>corralon</key>
+			<integer>0</integer>
+			<key>multa</key>
+			<integer>10</integer>
+			<key>fundamento</key>
+			<string></string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>descripcion</key>
+			<string>No traer cinturón de seguridad</string>
+			<key>corralon</key>
+			<integer>0</integer>
+			<key>multa</key>
+			<integer>5</integer>
+			<key>fundamento</key>
+			<string> Art. 82 ­XI</string>
+			<key>puntos</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

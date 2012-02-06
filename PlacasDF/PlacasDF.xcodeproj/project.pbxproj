@@ -32,6 +32,7 @@
 		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
 		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
 		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
+		BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */; };
 		BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64314CD2BCF009DD219 /* id-card.png */; };
 		BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64414CD2BCF009DD219 /* navigation.png */; };
 		BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64514CD2BCF009DD219 /* calendar.png */; };
@@ -91,6 +92,7 @@
 		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
 		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MultasFrecuentes.plist; sourceTree = "<group>"; };
 		BB6CE64314CD2BCF009DD219 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
 		BB6CE64414CD2BCF009DD219 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
 		BB6CE64514CD2BCF009DD219 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		BBD6A93E14CCFBB9009FB864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */,
 				BBA20D5414D674EE0029C12B /* nook.png */,
 				BBA20D5514D674EE0029C12B /* ok.png */,
 				BB6CE64314CD2BCF009DD219 /* id-card.png */,
@@ -328,6 +331,7 @@
 				BBA20D4C14D6601E0029C12B /* MultaCelda.xib in Resources */,
 				BBA20D5614D674EE0029C12B /* nook.png in Resources */,
 				BBA20D5714D674EE0029C12B /* ok.png in Resources */,
+				BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

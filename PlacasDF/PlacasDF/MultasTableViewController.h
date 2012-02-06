@@ -8,19 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import "MultaCelda.h"
+#import "CoreDataAdminProtocol.h"
 
 
-@interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate> {
+@interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate, CoreDataAdminProtocol, NSFetchedResultsControllerDelegate> {
     
     NSMutableData * receivedData;
     
     NSArray * arrMultas;
     
+    NSArray * arrMultasFrecuentes;
+    
     IBOutlet MultaCelda * celdaMulta;
+    
+    bool isShowingList;
 }
 
 @property (strong, nonatomic) IBOutlet MultaCelda * celdaMulta;
 
+// Controlador de objetos que devuelve el query a CoreData
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
 - (NSString *) formatString:(NSString *) text;
+
+- (NSArray*) getMultasFrecuentes;
 
 @end
