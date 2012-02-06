@@ -12,10 +12,14 @@
 
 #define URL @"http://www.caosinc.com/webservices/placa.php?placa=105val"
 
+#define kENTITY_NAME    @"Multa"
 
 @implementation MultasTableViewController
 
 @synthesize celdaMulta;
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +36,7 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+    _fetchedResultsController = nil;
 }
 
 #pragma mark - View lifecycle
@@ -40,17 +45,27 @@
 {
     [super viewDidLoad];
     
+    isShowingList = NO;
+    
     receivedData = [[NSMutableData alloc] init];
     
     arrMultas = [[NSArray alloc] init];
     
     NSURL * url = [NSURL URLWithString:URL];
     
-    NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
+    arrMultas = [self.fetchedResultsController fetchedObjects];
     
-    NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
+    if ([arrMultas count] == 0) {
     
-    [conexion start];
+        NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
+    
+        NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
+    
+            [conexion start]; 
+            
+    }
+    
+    arrMultasFrecuentes = [self getMultasFrecuentes];
 
 }
 
@@ -83,18 +98,38 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [arrMultas count];
+    if (section == 0) {
+        
+        return (!isShowingList) ? 1: [arrMultasFrecuentes count];
+        
+    } else {
+        
+        return [arrMultas count];
+        
+    }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+        
+        return @"Infracciones más frecuentes";
+    
+    else
+        
+        return @"Tus Infracciones";
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -111,19 +146,53 @@
         self.celdaMulta = nil;
     }
     
-    NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
+    if ([indexPath section] == 1) {
     
-    NSString * imageName = ([[multa objectForKey:@"status"] isEqualToString:@"Pagada "]) ? @"ok.png": @"nook.png";
+        NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
     
-    UIImage * image = [UIImage imageNamed:imageName];
+        NSString * imageName = ([[multa objectForKey:@"status"] isEqualToString:@"Pagada "]) ? @"ok.png": @"nook.png";
     
-    cell.fecha.text = [multa objectForKey:@"fecha"];
+        UIImage * image = [UIImage imageNamed:imageName];
     
-    cell.sancion.text = [NSString stringWithFormat:@"%@ días de salario mínimo", [multa objectForKey:@"sancion"]];
+        cell.fecha.text = [multa objectForKey:@"fecha"];
     
-    cell.motivo.text = [self formatString:[multa objectForKey:@"motivo"]];
+        cell.sancion.text = [NSString stringWithFormat:@"%@ días de salario mínimo", [multa objectForKey:@"sancion"]];
     
-    [cell.situacion setImage:image];
+        cell.motivo.text = [self formatString:[multa objectForKey:@"motivo"]];
+    
+        [cell.situacion setImage:image];
+    
+    } else {
+        
+        if (isShowingList) {
+        
+            NSDictionary * multaFrecuente = [arrMultasFrecuentes objectAtIndex:[indexPath row]];
+            
+            NSNumber * corralon = [multaFrecuente objectForKey:@"corralon"];
+            
+            NSString * imageName = ([corralon isEqualToNumber:[NSNumber numberWithInt:1]]) ? @"ok.png": @"nook.png";
+            
+            UIImage * image = [UIImage imageNamed:imageName];
+
+            cell.motivo.text = [multaFrecuente objectForKey:@"descripcion"];
+        
+            cell.sancion = [NSString stringWithFormat:@"%@ días de salario mínimo", [multaFrecuente objectForKey:@"multa"]];
+            
+            cell.fecha.text = [multaFrecuente objectForKey:@"fundamento"];
+            
+            [cell.situacion setImage:image];
+            
+        } else {
+            
+            cell.motivo.text = @"Ver las multas más frecuentes";
+            
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            cell.fecha.text = @"";
+            
+            cell.sancion.text = @"";
+        }
+    }
     
     return cell;
 }
@@ -133,56 +202,21 @@
     return 92.0;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if ([indexPath section] == 0) {
+        
+        isShowingList = !isShowingList;
+        
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        
+    } else {
+        
+        return;
+    }
 }
 
 
@@ -248,5 +282,107 @@
     return str;
 }
 
+
+// CoreData protocol
+- (void) saveMulta:(NSMutableDictionary *) multaDiccionario {
+    
+    // Creamos una nueva instancia de la entidad manegada por el fetchedResultsController
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    // Configuramos el nuevo objeto con los datos del diccionario
+    
+    // NSLog(@"%@ %@", [tipDiccionario valueForKey:@"tip_id"], [tipDiccionario valueForKey:@"descripcion"]);
+    
+    NSNumber * situacion = [NSNumber numberWithInt:[[multaDiccionario valueForKey:@"situacion"] intValue]];
+    
+    NSNumber * sancion = [NSNumber numberWithInt:[[multaDiccionario valueForKey:@"sancion"] intValue]];
+    
+    [newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
+    
+    [newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
+    
+    [newManagedObject setValue:sancion forKey:@"multa_id"];
+    
+    [newManagedObject setValue:situacion forKey:@"multa_id"];
+    
+    [newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
+    
+    [newManagedObject setValue:[multaDiccionario valueForKey:@"fundamento"] forKey:@"fundamento"];
+    
+    // Guardamos el nuevo contexto
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+        
+    } else {
+        
+        // NSLog(@"Tip guardado: %@", [tipDiccionario valueForKey:@"descripcion"]);
+    }
+}
+
+// obtiene los resultados de la BD en Core Data
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    // Creamos el request para esta clase
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Editamos la entidad que se pide
+    NSEntityDescription *entity = [NSEntityDescription entityForName:kENTITY_NAME 
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Batch Size a 20 objetos a la vez
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Editamos un sort descriptor, devuelve los puntos vehiculares ordenados por titulo
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"folio" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = 
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+                                        managedObjectContext:self.managedObjectContext 
+                                          sectionNameKeyPath:nil 
+                                                   cacheName:@"MultaCache"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+	    /*
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+	     */
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    return _fetchedResultsController;
+}
+
+
+// leyendo la plist
+- (NSArray *) getMultasFrecuentes {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"MultasFrecuentes" ofType:@"plist"];
+    
+    NSDictionary *multas = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    return [multas objectForKey:@"multas"];
+}
 
 @end

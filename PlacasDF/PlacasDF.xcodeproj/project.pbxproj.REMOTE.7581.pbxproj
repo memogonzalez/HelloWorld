@@ -32,11 +32,7 @@
 		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
 		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
 		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
-<<<<<<< HEAD
-		65DEEF3D14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEEF3C14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.m */; };
-=======
 		BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */; };
->>>>>>> 884ba14918c29a9c991855fcb095c5e8d9c469a3
 		BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64314CD2BCF009DD219 /* id-card.png */; };
 		BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64414CD2BCF009DD219 /* navigation.png */; };
 		BB6CE64A14CD2BCF009DD219 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64514CD2BCF009DD219 /* calendar.png */; };
@@ -96,12 +92,7 @@
 		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
 		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		65DEEF3B14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaracteristicasAutoPublicoViewController.h; path = ../CaracteristicasAutoPublicoViewController.h; sourceTree = "<group>"; };
-		65DEEF3C14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaracteristicasAutoPublicoViewController.m; path = ../CaracteristicasAutoPublicoViewController.m; sourceTree = "<group>"; };
-=======
 		BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MultasFrecuentes.plist; sourceTree = "<group>"; };
->>>>>>> 884ba14918c29a9c991855fcb095c5e8d9c469a3
 		BB6CE64314CD2BCF009DD219 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
 		BB6CE64414CD2BCF009DD219 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
 		BB6CE64514CD2BCF009DD219 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -191,8 +182,6 @@
 				65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */,
 				653A5B9914D62BCA0028E12B /* IngresaDatosViewController.h */,
 				653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */,
-				65DEEF3B14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.h */,
-				65DEEF3C14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.m */,
 				65DB3C9B14C3B647002DACC6 /* AppDelegate.h */,
 				65DB3C9C14C3B647002DACC6 /* AppDelegate.m */,
 				65DB3CBC14C3B80C002DACC6 /* MainViewController.h */,
@@ -371,7 +360,6 @@
 				65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */,
 				653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */,
 				BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */,
-				65DEEF3D14DF649B00F72EF4 /* CaracteristicasAutoPublicoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
