@@ -15,6 +15,7 @@
 		6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18814C68B5B005D3FB8 /* Multa.m */; };
 		6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */; };
 		6588D19014C68B5C005D3FB8 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18C14C68B5C005D3FB8 /* Tip.m */; };
+		65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */; };
 		65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BAB51914CD002700653727 /* DetallePinTableViewController.m */; };
 		65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9414C7D5B7000703E9 /* MapKit.framework */; };
 		65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9714C7D609000703E9 /* CoreLocation.framework */; };
@@ -64,6 +65,8 @@
 		6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuntoVehicular.m; path = PlacasDF/PuntoVehicular.m; sourceTree = "<group>"; };
 		6588D18B14C68B5C005D3FB8 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tip.h; path = PlacasDF/Tip.h; sourceTree = "<group>"; };
 		6588D18C14C68B5C005D3FB8 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tip.m; path = PlacasDF/Tip.m; sourceTree = "<group>"; };
+		65AEE44714DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaracteristicasAutoPublicoViewController.h; sourceTree = "<group>"; };
+		65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaracteristicasAutoPublicoViewController.m; sourceTree = "<group>"; };
 		65BAB51814CD002700653727 /* DetallePinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetallePinTableViewController.h; sourceTree = "<group>"; };
 		65BAB51914CD002700653727 /* DetallePinTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetallePinTableViewController.m; sourceTree = "<group>"; };
 		65C31E9414C7D5B7000703E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -182,6 +185,8 @@
 				65DB3CB714C3B74C002DACC6 /* MainStoryboard.storyboard */,
 				653A5B9914D62BCA0028E12B /* IngresaDatosViewController.h */,
 				653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */,
+				65AEE44714DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.h */,
+				65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */,
 				65DB3C9B14C3B647002DACC6 /* AppDelegate.h */,
 				65DB3C9C14C3B647002DACC6 /* AppDelegate.m */,
 				65DB3CBC14C3B80C002DACC6 /* MainViewController.h */,
@@ -360,6 +365,7 @@
 				65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */,
 				653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */,
 				BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */,
+				65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
