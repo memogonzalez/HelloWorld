@@ -7,8 +7,8 @@
 //
 
 #import "MultasTableViewController.h"
-
 #import "ManejadorConexiones.h"
+#import "MultaCelda.h"
 
 #define URL @"http://www.caosinc.com/webservices/placa.php?placa=105val"
 
