@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MultaCelda.h"
 #import "CoreDataAdminProtocol.h"
 
+@class MultaCelda;
 
 @interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate, CoreDataAdminProtocol, NSFetchedResultsControllerDelegate> {
     

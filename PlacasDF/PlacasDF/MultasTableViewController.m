@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ManejadorConexiones.h"
 #import "Multa.h"
+#import "MultaCelda.h"
 
 #define URL @"http://www.caosinc.com/webservices/placa.php?placa="
 
