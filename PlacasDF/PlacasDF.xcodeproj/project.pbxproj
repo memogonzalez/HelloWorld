@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */; };
 		653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */; };
 		6588D18214C68B3C005D3FB8 /* ManejadorConexiones.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */; };
 		6588D18314C68B3C005D3FB8 /* ManejadorDatos.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65117C6314FB1D8A00B5D21E /* SettingsPlacas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPlacas.h; path = PlacasDF/SettingsPlacas.h; sourceTree = "<group>"; };
+		65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsPlacas.m; path = PlacasDF/SettingsPlacas.m; sourceTree = "<group>"; };
 		653A5B9914D62BCA0028E12B /* IngresaDatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngresaDatosViewController.h; sourceTree = "<group>"; };
 		653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngresaDatosViewController.m; sourceTree = "<group>"; };
 		6588D17B14C68B2B005D3FB8 /* CoreDataAdminProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataAdminProtocol.h; path = PlacasDF/CoreDataAdminProtocol.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		65DB3C7B14C3B647002DACC6 = {
 			isa = PBXGroup;
 			children = (
+				65117C6314FB1D8A00B5D21E /* SettingsPlacas.h */,
+				65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */,
 				BBA20D4614D65B350029C12B /* Celdas */,
 				BBD6A93E14CCFBB9009FB864 /* Resources */,
 				65C31E9914C7D670000703E9 /* Headers */,
@@ -299,7 +304,7 @@
 		65DB3C7D14C3B647002DACC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Caos Inc";
 			};
 			buildConfigurationList = 65DB3C8014C3B647002DACC6 /* Build configuration list for PBXProject "PlacasDF" */;
@@ -366,6 +371,7 @@
 				653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */,
 				BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */,
 				65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */,
+				65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

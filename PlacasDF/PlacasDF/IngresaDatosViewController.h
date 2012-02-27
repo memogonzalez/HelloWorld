@@ -34,6 +34,10 @@ typedef enum {
 
 @property (strong, nonatomic) IBOutlet UILabel *labelModeloSeleccionado;
 
+@property (strong, nonatomic) IBOutlet UIButton *botonCaracteristicas;
+
+@property (strong, nonatomic) IBOutlet UIButton *botonSeleccionar;
+
 @property (assign, nonatomic) kTipoVehiculoSeleccionado tipoVehiculoSeleccionado;
 
 - (IBAction)seleccionarVehiculo:(id)sender;
@@ -50,6 +54,9 @@ typedef enum {
 
 // Metodo para mostrar la cadena con la 'placa' seleccionada
 - (void)actualizarPlacaConStr:(NSString *)strPlaca;
+
+// Metodo para mostrar la cadena con el modelo seleccionado
+- (void)actualizarModeloConStr:(NSString *)strModelo;
 
 // Metodo de Animaciones para esconder o mostrar el botono de Caracteristicas cuando sea pertinente
 - (void)mostrarBotonCaracteristicas:(BOOL)mostrar;

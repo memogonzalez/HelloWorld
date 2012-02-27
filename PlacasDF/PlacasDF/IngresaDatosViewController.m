@@ -17,6 +17,11 @@
 @property (strong, nonatomic) NSArray *arrNumeros;
 @property (strong, nonatomic) NSArray *arrLetras;
 @property (strong, nonatomic) NSArray *arrModelos;      // Arreglo de anios
+
+/**
+ *  Bandera que indica si hay que actualizar la etiqueta de placas o de modelo
+ */
+@property (assign, nonatomic) BOOL actualizarPlacas;
 @end
 
 @implementation IngresaDatosViewController
@@ -30,13 +35,14 @@
 @synthesize arrNumeros = _arrNumeros;
 @synthesize arrLetras = _arrLetras;
 @synthesize arrModelos = _arrModelos;
+@synthesize botonSeleccionar = _botonSeleccionar;
+@synthesize botonCaracteristicas = _botonCaracteristicas;
+@synthesize actualizarPlacas = _actualizarPlacas;
 
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -46,17 +52,6 @@
 {
     [super viewDidLoad];
     
-    // Identificar el indice seleccionado al aparecer la vista
-    UISegmentedControl *sc = [[UISegmentedControl alloc] init];
-    [self seleccionarVehiculo:sc];
-    
-    // Llenamos los arreglos de numeros y letras
-//    NSMutableArray *mutArrNums = [[NSMutableArray alloc] initWithCapacity:0];
-//    for (int i=0; i<10; i++) {
-//        [mutArrNums addObject:[NSNumber numberWithInt:i]];
-//    }
-//    _arrNumeros = [mutArrNums copy];
-    
     NSMutableArray *mutArrLetras = [[NSMutableArray alloc] initWithCapacity:0];
     for (char c='A'; c <= 'Z'; c++) {
         [mutArrLetras addObject:[NSString stringWithFormat:@"%c", c]];
@@ -65,11 +60,15 @@
     
     // Creamos el arreglo de modelos
     NSMutableArray *mutArrModelos = [[NSMutableArray alloc] initWithCapacity:0];
-    for (NSInteger modelo=kMODELO_MIN; modelo <= kMODELO_MAX; modelo++) {
+    for (NSInteger modelo=kMODELO_MAX; modelo >= kMODELO_MIN; modelo--) {
         [mutArrModelos addObject:[NSString stringWithFormat:@"%d", modelo]];
     }
     _arrModelos = [mutArrModelos copy];
     
+    // Seleccionar ingresar placas para establecer la cadena de placas en el field de placas
+    [self ingresarPlacas:self];  
+    
+    _actualizarPlacas = YES;
 }
 
 - (void)viewDidUnload
@@ -162,14 +161,20 @@
 
 - (IBAction)ingresarPlacas:(id)sender
 {
-    NSLog(@"ingresar placas");
+    // Bandera que indica que se actualizara la etiqueta de placas 
+    _actualizarPlacas = YES;
+    
     // Volvemos a indicar el indice del uisegmentedcontrol actualmente seleccionado
     [self seleccionarVehiculo:_segmentedControl];
 }
 
 - (IBAction)ingresarModelo:(id)sender
 {
-    NSLog(@"ingresar modelo");
+    // Establecer la bandera para actualizar placas en falso
+    // asi se actualizan la etiqueta de modelo
+    _actualizarPlacas = NO;
+    
+    // Seleccionar 'Modelo' para mostrar el picker view con anios
     [self cargarPickerViewConDatosVehicularesTipo:kModeloVehiculo];
 }
 
@@ -177,7 +182,7 @@
 // Este metodo sirve para determinar el numero de columnas necesarias para mostrar la info de placas
 // segun el tipo de auto seleccionado
 - (void)cargarPickerViewConDatosVehicularesTipo:(kTipoVehiculoSeleccionado)tipoVehiculo
-{
+{    
     switch (tipoVehiculo) {
             
         case kModeloVehiculo:
@@ -223,15 +228,19 @@
     
     // Mandar a recargar el 'picker view'
     [_pickerView reloadAllComponents];
+
+    for (NSInteger numComponents=0; numComponents<[_pickerView numberOfComponents]; numComponents++) {
+        [_pickerView selectRow:0 inComponent:numComponents animated:NO];
+    }
 }
 
 - (void)mostrarBotonCaracteristicas:(BOOL)mostrar
 {
     // Animacion para mostrar / ocultar el boton de 'caracteristicas'
     if (mostrar) {
-        
+        [_botonCaracteristicas setHidden:NO];
     } else {
-        
+        [_botonCaracteristicas setHidden:YES];
     }
 }
 
@@ -269,11 +278,7 @@
         case kTipoVehiculoParticularDelEstado:
         {
             // Los 3 primeros digitos son letras
-            if (component < 3) {
-                numberRows = [_arrLetras count];
-            } else {
-                numberRows = 10;
-            }
+            (component < 3) ? (numberRows = [_arrLetras count]) : (numberRows = 10);
         }
             break;
             
@@ -332,12 +337,122 @@
 }
 
 #pragma mark - Picker View DataSource
-// TODO: Crear los UIViews para mostrar las etiquetas con mejor formato, centradas, etc.
-//
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-//{
-//    
-//}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UIView *viewForRow = nil;
+    
+    // Obtenemos el tamanio de cada vista dentro de cada fila en el pickerView
+    CGSize sizeForRow = [_pickerView rowSizeForComponent:component];
+    
+    // Construimos la vista de cada fila en el picker view
+    viewForRow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, sizeForRow.width, sizeForRow.height)];
+    UILabel *labelForRow = [[UILabel alloc] initWithFrame:viewForRow.frame];
+
+    // Configurar atributos de la etiqueta
+    [labelForRow setTextAlignment:UITextAlignmentCenter];
+    [labelForRow setBackgroundColor:[UIColor clearColor]];
+    [labelForRow setFont:[UIFont boldSystemFontOfSize:25.0f]];
+    
+    switch (_tipoVehiculoSeleccionado) {
+            
+        case kModeloVehiculo:
+        {
+            NSInteger modelo = [[_arrModelos objectAtIndex:row] integerValue];
+            // strLetra = [NSString stringWithFormat:@"%d", modelo];
+            [labelForRow setText:[NSString stringWithFormat:@"%d", modelo]];
+        }
+            break;
+    
+        case kTipoVehiculoParticular:
+        {
+            // Los tres primero digitos son numero
+            if (component < 3) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+            
+        case kTipoVehiculoParticularDelEstado:
+        {
+            // Los tres primero digitos son letra
+            if (component < 3) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+            
+        case kTipoVehiculoParticularAntiguo:
+        {
+            // Los dos primero digitos son letras
+            if (component < 2) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+            
+        case kTipoVehiculoParticularParaDiscapacitados:
+        {
+            // Los tres primero digitos son numero
+            if (component < 3) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+            
+            
+        case kTipoVehiculoPublico:      case kTipoVehiculoPublicoTaxi:
+        {
+            // Solo el primer digito es numero
+            if (component < 1) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }  
+            break;
+            
+            
+        case kTipoVehiculoMoto:
+        {
+            // Los 4 primeros digitos son numero
+            if (component < 4) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+            
+        case kTipoVehiculoDeCarga:
+        {
+            // Los 4 primeros digitos son numero
+            if (component < 4) {
+                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+            } else {
+                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+            }
+        }
+            break;
+
+        default:
+            // NSLog(@"%d", _tipoVehiculoSeleccionado);
+            break;
+    }
+    
+    // Agregar la etiqueta a la vista
+    [viewForRow addSubview:labelForRow];
+    
+    return viewForRow;
+}
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
@@ -441,13 +556,24 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    // TODO: Obtener el label del picker en cada row seleccionado
-    NSMutableString *strPlaca = nil;
-    for (NSInteger aComponent=0; aComponent < [pickerView numberOfComponents]; aComponent++) {
-        for (NSInteger aRow=0; aRow < [pickerView numberOfRowsInComponent:aComponent]; aRow++) {
-            UIView *viewSeleecionada = [pickerView viewForRow:aRow forComponent:aComponent];
-            NSLog(@"%@", viewSeleecionada);
-        }
+    // Creamos una cadena mutable que contendra la cadena actual seleccionada en el pickerView
+    NSMutableString *mutableString = [[NSMutableString alloc] initWithCapacity:[_pickerView numberOfComponents]];
+    
+    // Obtener todos los caracteres seleccionados actualmente en el pickerView
+    for (NSInteger componentIndex = 0; componentIndex < [_pickerView numberOfComponents]; componentIndex++) {
+        
+        UIView *viewForRow = [_pickerView viewForRow:[_pickerView selectedRowInComponent:componentIndex] forComponent:componentIndex];
+        UILabel *titleLabel = [[viewForRow subviews] lastObject];
+        NSString *characterSeleccionado = [titleLabel text];
+        
+        [mutableString appendString:[NSString stringWithFormat:@"%@", characterSeleccionado]];
+    }
+    
+    // Mandar actualizar la etiqueta correspondiente
+    if (_actualizarPlacas) {
+        [self actualizarPlacaConStr:mutableString];
+    } else {
+        [self actualizarModeloConStr:mutableString];
     }
 }
 
@@ -455,6 +581,11 @@
 {
     // Actulizar la etiqueta que muestra la placa
     [_labelPlacasSeleccionadas setText:strPlaca];
+}
+
+- (void)actualizarModeloConStr:(NSString *)strModelo
+{
+    [_labelModeloSeleccionado setText:strModelo];
 }
 
 @end
