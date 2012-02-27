@@ -22,6 +22,8 @@
     IBOutlet MultaCelda * celdaMulta;
     
     bool isShowingList;
+    
+    int sinPagar;
 }
 
 @property (strong, nonatomic) IBOutlet MultaCelda * celdaMulta;
@@ -32,5 +34,7 @@
 - (NSString *) formatString:(NSString *) text;
 
 - (NSArray*) getMultasFrecuentes;
+
+- (void)scheduleNotification;
 
 @end

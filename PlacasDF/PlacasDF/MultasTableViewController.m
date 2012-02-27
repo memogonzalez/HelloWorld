@@ -7,10 +7,12 @@
 //
 
 #import "MultasTableViewController.h"
+#import "AppDelegate.h"
 #import "ManejadorConexiones.h"
+#import "Multa.h"
 #import "MultaCelda.h"
 
-#define URL @"http://www.caosinc.com/webservices/placa.php?placa=105val"
+#define URL @"http://www.caosinc.com/webservices/placa.php?placa="
 
 #define kENTITY_NAME    @"Multa"
 
@@ -45,13 +47,21 @@
 {
     [super viewDidLoad];
     
+    sinPagar = 0;
+    
     isShowingList = NO;
     
     receivedData = [[NSMutableData alloc] init];
     
     arrMultas = [[NSArray alloc] init];
     
-    NSURL * url = [NSURL URLWithString:URL];
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString * placas = [userDefaults objectForKey:@"Placas"];
+    
+    NSLog(@"Mis placas son %@", placas);
+    
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", URL, placas]];
     
     arrMultas = [self.fetchedResultsController fetchedObjects];
     
@@ -61,7 +71,7 @@
     
         NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
     
-            [conexion start]; 
+        [conexion start]; 
             
     }
     
@@ -256,6 +266,12 @@
         
     }
     
+    sinPagar = 4;
+    
+    self.tabBarController.selectedViewController.tabBarItem.badgeValue = @"1";
+    
+    [self scheduleNotification];
+    
     [self.tableView reloadData];
 }
 
@@ -383,6 +399,28 @@
     NSDictionary *multas = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     return [multas objectForKey:@"multas"];
+}
+
+// Notificaciones
+- (void)scheduleNotification
+{
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    
+    if (localNotif == nil)
+        return;
+    
+    localNotif.fireDate = [[NSDate date] addTimeInterval:+(10)]; // 10 segundos :D
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    localNotif.alertBody = [NSString stringWithFormat:@"No haz pagado %d tenencias", sinPagar];
+    localNotif.alertAction = @"Ver detalles";
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.applicationIconBadgeNumber = sinPagar;
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"No Pagados" forKey:@"tenencias"];
+    localNotif.userInfo = infoDict;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = sinPagar;
+    NSLog(@"Se ha programado %d", sinPagar);
+
 }
 
 @end

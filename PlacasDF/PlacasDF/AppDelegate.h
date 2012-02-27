@@ -19,5 +19,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void) pintaBadgeWithNumber:(NSNumber *) n;
 
 @end

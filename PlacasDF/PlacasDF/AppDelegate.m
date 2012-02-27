@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "CoreDataAdminProtocol.h"
 
+@interface AppDelegate ()
+@property (strong, nonatomic) UIApplication *theApp;
+@end
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -16,9 +20,13 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize theApp = _theApp;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    _theApp = application;
+    
     // Referencia al tabBarController
     self.tabBarController = (UITabBarController *)self.window.rootViewController;
 
@@ -190,5 +198,4 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
 @end
