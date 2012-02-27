@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) IBOutlet UILabel * diasParaVerificar;
+
 - (void) addTip:(int) posicion tip:(NSString *) text;
 
 - (void) saveTip:(NSMutableDictionary *) tip;
@@ -24,5 +26,7 @@
 - (void) saveTip:(NSMutableDictionary *) tipDiccionario;
 
 - (NSArray *) getTips;
+
+- (NSInteger *) diasParaVerificar;
 
 @end

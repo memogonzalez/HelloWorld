@@ -15,6 +15,7 @@
 @synthesize managedObjectContext = _managedObjectContext;   // La propiedad se obtiene de la definicion del protocolo
 @synthesize scrollView = _scrollView;
 @synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize diasParaVerificar = _diasParaVerificar;
 
 - (void)didReceiveMemoryWarning
 {
@@ -25,12 +26,28 @@
     _fetchedResultsController = nil;
 }
 
+
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
 #pragma mark - View lifecycle
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSUserDefaults * usersDefault = [NSUserDefaults standardUserDefaults];
+    
+    [usersDefault setValue:@"152TDK" forKey:@"Placas"];
+    
+    [usersDefault setValue:@"2004" forKey:@"Modelo"];
+    
+    [usersDefault synchronize];
+    
+    [_diasParaVerificar setText:[NSString stringWithFormat:@"%d", [self diasParaVerificar]]];
     
     [_scrollView setContentSize:CGSizeMake(3200, 100)];
     
@@ -213,6 +230,20 @@
 	}
     
     return _fetchedResultsController;
+}
+
+- (NSInteger *) diasParaVerificar {
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString * placas = [userDefaults objectForKey:@"Placas"];
+    
+    NSNumber * terminacion = [NSNumber numberWithChar:([placas characterAtIndex:2] - 48)];
+    
+    NSLog(@"%d", [terminacion integerValue]);
+    
+    return 1;
+    
 }
 
 @end
