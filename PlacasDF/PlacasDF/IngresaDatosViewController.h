@@ -9,18 +9,17 @@
 #import <UIKit/UIKit.h>
  
 /* Enumeracion para identificar el tipo de vehiculo seleccionado */
-typedef enum {
-    
-    kModeloVehiculo = -100, /* Indica que se debe mostrar la lista de modelos de auto */
-    kTipoVehiculoParticular = 0,
+typedef enum kTipoVehiculoSeleccionado
+{
+    kTipoVehiculoParticular             =       1,
     kTipoVehiculoPublico,
     kTipoVehiculoMoto,
     kTipoVehiculoDeCarga,
-    kTipoVehiculoParticularDelEstado = 100,             /* Vehiculos Particulares con placas del Edo. de Mexico */
-    kTipoVehiculoParticularParaDiscapacitados = 200,    /* Vehiculos Particulares para Discapacitados */
-    kTipoVehiculoParticularAntiguo = 300,               /* Vehiculos Particulares Antiguos de mas de 8 anios */
-    kTipoVehiculoPublicoTaxi = 1000,                    /* Vehiculo Publico Tipo Taxi */
-    kTipoVehiculoPublicoMicrobus = 2000                 /* Vehiculo Publico Tipo Microbus */
+    kTipoVehiculoParticularDelEstado    =       100,            /* Vehiculos Particulares con placas del Edo. de Mexico */
+    kTipoVehiculoParticularParaDiscapacitados = 200,            /* Vehiculos Particulares para Discapacitados */
+    kTipoVehiculoParticularAntiguo      =       300,            /* Vehiculos Particulares Antiguos de mas de 8 anios */
+    kTipoVehiculoPublicoTaxi            =       1000,           /* Vehiculo Publico Tipo Taxi */
+    kTipoVehiculoPublicoMicrobus        =       2000            /* Vehiculo Publico Tipo Microbus */
 
 }kTipoVehiculoSeleccionado;
 
@@ -52,13 +51,24 @@ typedef enum {
 
 - (void)cargarPickerViewConDatosVehicularesTipo:(kTipoVehiculoSeleccionado)tipoVehiculo;
 
-// Metodo para mostrar la cadena con la 'placa' seleccionada
+/** 
+ *  Metodo para mostrar la cadena con la 'placa' seleccionada
+ */
 - (void)actualizarPlacaConStr:(NSString *)strPlaca;
 
-// Metodo para mostrar la cadena con el modelo seleccionado
+/** 
+ *  Metodo para mostrar la cadena con el modelo seleccionado
+ */
 - (void)actualizarModeloConStr:(NSString *)strModelo;
 
-// Metodo de Animaciones para esconder o mostrar el botono de Caracteristicas cuando sea pertinente
+/** 
+ *  Metodo de Animaciones para esconder o mostrar el botono de Caracteristicas cuando sea pertinente
+ */
 - (void)mostrarBotonCaracteristicas:(BOOL)mostrar;
+
+/**
+ *  Metodo para cancelar el ingreso de placas
+ */
+- (IBAction)cancelar:(id)sender;
 
 @end

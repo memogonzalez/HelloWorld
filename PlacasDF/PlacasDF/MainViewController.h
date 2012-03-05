@@ -19,6 +19,11 @@
 
 @property (strong, nonatomic) IBOutlet UILabel * diasParaVerificar;
 
+/*!
+ *  Vista que indica que el auto no circula el dia de hoy
+ */
+@property (strong, nonatomic) IBOutlet UIView *viewHoyNoCircula;
+
 - (void) addTip:(int) posicion tip:(NSString *) text;
 
 - (void) saveTip:(NSMutableDictionary *) tip;

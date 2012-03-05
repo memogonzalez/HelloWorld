@@ -7,21 +7,44 @@
 //
 
 #import "IngresaDatosViewController.h"
+#import "SettingsPlacas.h"
 
-#define kMODELO_MIN     1960
+#define kMODELO_MIN     1970
 #define kMODELO_MAX     2012            // TODO: Calcular el anio actual chavo
 
 @interface IngresaDatosViewController ()
+
 // Propiedades del 'picker View' para mostrar los datos correspondientes al tipo de vehiculo
 @property (assign, nonatomic) NSUInteger numeroColumnas;
 @property (strong, nonatomic) NSArray *arrNumeros;
-@property (strong, nonatomic) NSArray *arrLetras;
+@property (strong, nonatomic) NSArray *arrLetras;       // Arreglo de letras para contruir las placas
 @property (strong, nonatomic) NSArray *arrModelos;      // Arreglo de anios
+
+/**
+ *  Informacion guardada previamente
+ */
+@property (strong, nonatomic) SettingsPlacas *settingsPlacas;
 
 /**
  *  Bandera que indica si hay que actualizar la etiqueta de placas o de modelo
  */
 @property (assign, nonatomic) BOOL actualizarPlacas;
+
+/**
+ *  Metodo que obtiene los datos a mostrar en la vista en caso de haber guardados previamente
+ */
+- (SettingsPlacas *)informacionSettingsPlacasTipoVehiculo:(NSNumber *)numTipoVehiculo;
+
+/**
+ *  Metodo de recarga el pickerView con modelos de auto
+ */
+- (void)cargarPickerViewConDatosDeModelosDeAuto;
+
+/**
+ *  Metodo que limpia las etiquetas de placas y modelo
+ */
+- (void)limpiaLabelsPlacaModelo;
+
 @end
 
 @implementation IngresaDatosViewController
@@ -38,6 +61,7 @@
 @synthesize botonSeleccionar = _botonSeleccionar;
 @synthesize botonCaracteristicas = _botonCaracteristicas;
 @synthesize actualizarPlacas = _actualizarPlacas;
+@synthesize settingsPlacas = _settingsPlacas;
 
 - (void)didReceiveMemoryWarning
 {
@@ -52,6 +76,7 @@
 {
     [super viewDidLoad];
     
+    // Creamos el arreglo de letras
     NSMutableArray *mutArrLetras = [[NSMutableArray alloc] initWithCapacity:0];
     for (char c='A'; c <= 'Z'; c++) {
         [mutArrLetras addObject:[NSString stringWithFormat:@"%c", c]];
@@ -65,10 +90,8 @@
     }
     _arrModelos = [mutArrModelos copy];
     
-    // Seleccionar ingresar placas para establecer la cadena de placas en el field de placas
-    [self ingresarPlacas:self];  
-    
-    _actualizarPlacas = YES;
+    // Seleccionar el tipo de vehiculo 'Particular'
+    [self seleccionarVehiculo:_segmentedControl];
 }
 
 - (void)viewDidUnload
@@ -88,12 +111,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)cancelar:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 // El metodo que se llama al presionar el boton de caracteristicas
 // para determinar mas informacion del tipo de auto seleccionado
 - (IBAction)mostrarCaracteristicasVehiculo:(id)sender
 {
-    NSLog(@"mostrar caracteristicas");
-    
     // Determinamos el tipo de vehiculo seleccionado desde el uisegmentedcontrol
     switch ([_segmentedControl selectedSegmentIndex]) {
             
@@ -120,11 +146,10 @@
         // Obtener el indice seleccionado
         UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
         NSUInteger indiceSeleccionado = [segmentedControl selectedSegmentIndex];
-        
+
         switch (indiceSeleccionado) {
             
-            case -1:        /* En caso de que aun no exista el uiSegmentedControl */
-            case 0:         /* Forzamos que se elija la primera opcion */
+            case 0:
                 _tipoVehiculoSeleccionado = kTipoVehiculoParticular;
                 [self mostrarBotonCaracteristicas:YES];
                 break;
@@ -149,9 +174,12 @@
                 break;
         }
         
-        // Recargar los datos del 'picker View' respecto al tipo de vehiculo seleccionado
-        [self cargarPickerViewConDatosVehicularesTipo:_tipoVehiculoSeleccionado];
-    }
+        // limpiar las etiquetas
+        [self limpiaLabelsPlacaModelo];
+        
+        // Seleccionar el modo de edicion de la etiqueta 'placas'
+        [self ingresarPlacas:self];
+    } 
 }
 
 - (IBAction)buscar:(id)sender
@@ -161,11 +189,21 @@
 
 - (IBAction)ingresarPlacas:(id)sender
 {
+    // Cargar el pickerView con las columnas necesarias para el tipo de vehiculo seleccionado
+    [self cargarPickerViewConDatosVehicularesTipo:_tipoVehiculoSeleccionado];
+    
     // Bandera que indica que se actualizara la etiqueta de placas 
     _actualizarPlacas = YES;
     
-    // Volvemos a indicar el indice del uisegmentedcontrol actualmente seleccionado
-    [self seleccionarVehiculo:_segmentedControl];
+    // En caso de que exista texto en la etiqueta de placas
+    // Entonces, cargar el pickerView con los datos de la etiqueta
+    if ([[_labelPlacasSeleccionadas text] isEqualToString:@""]) {
+        
+        
+    } else {
+        
+    }
+
 }
 
 - (IBAction)ingresarModelo:(id)sender
@@ -175,7 +213,13 @@
     _actualizarPlacas = NO;
     
     // Seleccionar 'Modelo' para mostrar el picker view con anios
-    [self cargarPickerViewConDatosVehicularesTipo:kModeloVehiculo];
+    [self cargarPickerViewConDatosDeModelosDeAuto];
+    
+    if ([[_labelModeloSeleccionado text] isEqualToString:@""]) {
+        
+    } else {
+        
+    }
 }
 
 
@@ -184,11 +228,6 @@
 - (void)cargarPickerViewConDatosVehicularesTipo:(kTipoVehiculoSeleccionado)tipoVehiculo
 {    
     switch (tipoVehiculo) {
-            
-        case kModeloVehiculo:
-            _tipoVehiculoSeleccionado = kModeloVehiculo;
-            _numeroColumnas = 1;        // Solo desplegara una columna, la de anios disponibles
-            break;
             
         case kTipoVehiculoParticular:
             _numeroColumnas = 6;
@@ -206,7 +245,8 @@
             _numeroColumnas = 5;
             break;
             
-        case kTipoVehiculoPublico:  case kTipoVehiculoPublicoTaxi:
+        case kTipoVehiculoPublico:  
+        case kTipoVehiculoPublicoTaxi:
             _numeroColumnas = 6;
             break;
             
@@ -228,10 +268,17 @@
     
     // Mandar a recargar el 'picker view'
     [_pickerView reloadAllComponents];
+    
+//    for (NSInteger component = 0; component < [_pickerView numberOfComponents]; component++) {
+//        NSLog(@"component: %d", component);
+//        NSLog(@"val: %@", [[[[_pickerView viewForRow:[_pickerView selectedRowInComponent:component] forComponent:component] subviews] lastObject] text]);
+//    }
+}
 
-    for (NSInteger numComponents=0; numComponents<[_pickerView numberOfComponents]; numComponents++) {
-        [_pickerView selectRow:0 inComponent:numComponents animated:NO];
-    }
+- (void)cargarPickerViewConDatosDeModelosDeAuto
+{
+    _numeroColumnas = 1;        // Solo desplegara una columna, la de anios disponibles
+    [_pickerView reloadAllComponents];
 }
 
 - (void)mostrarBotonCaracteristicas:(BOOL)mostrar
@@ -257,80 +304,83 @@
 {
     NSInteger numberRows = 0;
     
-    switch (_tipoVehiculoSeleccionado) {
-            
-        case kModeloVehiculo:
-            // Numero de modelos disponibles
-            numberRows = [_arrModelos count];
-            break;
-            
-        case kTipoVehiculoParticular:
-        {
-            // Los tres primeros digitos son numero
-            if (component < 3) {
-                numberRows = 10;
-            } else {
-                numberRows = [_arrLetras count];
+    if (_actualizarPlacas) {
+        switch (_tipoVehiculoSeleccionado) {
+                
+            case kTipoVehiculoParticular:
+            {
+                // Los tres primeros digitos son numero
+                if (component < 3) {
+                    numberRows = 10;
+                } else {
+                    numberRows = [_arrLetras count];
+                }
             }
-        }
-            break;
-            
-        case kTipoVehiculoParticularDelEstado:
-        {
-            // Los 3 primeros digitos son letras
-            (component < 3) ? (numberRows = [_arrLetras count]) : (numberRows = 10);
-        }
-            break;
-            
-        case kTipoVehiculoParticularAntiguo:
-        {
-            // Los dos primeros digitos son letra
-            if (component < 2) {
-                numberRows = [_arrLetras count];
-            } else {
-                numberRows = 10;
+                break;
+                
+            case kTipoVehiculoParticularDelEstado:
+            {
+                // Los 3 primeros digitos son letras
+                if (component < 3) { 
+                    numberRows = [_arrLetras count];
+                } else {
+                    numberRows = 10;   
+                }
             }
-        }
-            break;
-            
-        case kTipoVehiculoPublico: case kTipoVehiculoPublicoTaxi:
-        {
-            // Solo el primero es letra
-            if (component < 1) {
-                numberRows = [_arrLetras count];
-            } else {
-                numberRows = 10;
+                break;
+                
+            case kTipoVehiculoParticularAntiguo:
+            {
+                // Los dos primeros digitos son letra
+                if (component < 2) {
+                    numberRows = [_arrLetras count];
+                } else {
+                    numberRows = 10;
+                }
             }
-        }
-            break;
-
-            
-        case kTipoVehiculoMoto:   
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                numberRows = 10;
-            } else {
-                numberRows = [_arrLetras count];
-            } 
-        
-        }    
-            break;
-            
-        case kTipoVehiculoDeCarga:
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                numberRows = 10;
-            } else {
-                numberRows = [_arrLetras count];
+                break;
+                
+            case kTipoVehiculoPublico: case kTipoVehiculoPublicoTaxi:
+            {
+                // Solo el primero es letra
+                if (component < 1) {
+                    numberRows = [_arrLetras count];
+                } else {
+                    numberRows = 10;
+                }
             }
+                break;
+                
+                
+            case kTipoVehiculoMoto:   
+            {
+                // Los 4 primeros digitos son numero
+                if (component < 4) {
+                    numberRows = 10;
+                } else {
+                    numberRows = [_arrLetras count];
+                } 
+                
+            }    
+                break;
+                
+            case kTipoVehiculoDeCarga:
+            {
+                // Los 4 primeros digitos son numero
+                if (component < 4) {
+                    numberRows = 10;
+                } else {
+                    numberRows = [_arrLetras count];
+                }
+            }
+                break;
+                
+            default:
+                break;
         }
-            break;
-            
-        default:
-            // NSLog(@"%d", _tipoVehiculoSeleccionado);
-            break;
+    } else {
+        // Numero de modelos disponibles
+        numberRows = [_arrModelos count];
     }
     
     return numberRows;
@@ -354,204 +404,103 @@
     [labelForRow setBackgroundColor:[UIColor clearColor]];
     [labelForRow setFont:[UIFont boldSystemFontOfSize:25.0f]];
     
-    switch (_tipoVehiculoSeleccionado) {
-            
-        case kModeloVehiculo:
-        {
-            NSInteger modelo = [[_arrModelos objectAtIndex:row] integerValue];
-            // strLetra = [NSString stringWithFormat:@"%d", modelo];
-            [labelForRow setText:[NSString stringWithFormat:@"%d", modelo]];
-        }
-            break;
+    [labelForRow setText:[_arrModelos objectAtIndex:row]];
     
-        case kTipoVehiculoParticular:
-        {
-            // Los tres primero digitos son numero
-            if (component < 3) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+    if (_actualizarPlacas) {
+        switch (_tipoVehiculoSeleccionado) {
+                
+            case kTipoVehiculoParticular:
+            {
+                // Los tres primero digitos son numero
+                if (component < 3) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
             }
+                break;
+                
+            case kTipoVehiculoParticularDelEstado:
+            {
+                // Los tres primero digitos son letra
+                if (component < 3) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }
+                break;
+                
+            case kTipoVehiculoParticularAntiguo:
+            {
+                // Los dos primero digitos son letras
+                if (component < 2) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }
+                break;
+                
+            case kTipoVehiculoParticularParaDiscapacitados:
+            {
+                // Los tres primero digitos son numero
+                if (component < 3) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }
+                break;
+                
+                
+            case kTipoVehiculoPublico:      case kTipoVehiculoPublicoTaxi:
+            {
+                // Solo el primer digito es numero
+                if (component < 1) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }  
+                break;
+                
+                
+            case kTipoVehiculoMoto:
+            {
+                // Los 4 primeros digitos son numero
+                if (component < 4) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }
+                break;
+                
+            case kTipoVehiculoDeCarga:
+            {
+                // Los 4 primeros digitos son numero
+                if (component < 4) {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                }
+            }
+                break;
+                
+            default:
+                break;
         }
-            break;
-            
-        case kTipoVehiculoParticularDelEstado:
-        {
-            // Los tres primero digitos son letra
-            if (component < 3) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoParticularAntiguo:
-        {
-            // Los dos primero digitos son letras
-            if (component < 2) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoParticularParaDiscapacitados:
-        {
-            // Los tres primero digitos son numero
-            if (component < 3) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }
-            break;
-            
-            
-        case kTipoVehiculoPublico:      case kTipoVehiculoPublicoTaxi:
-        {
-            // Solo el primer digito es numero
-            if (component < 1) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }  
-            break;
-            
-            
-        case kTipoVehiculoMoto:
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoDeCarga:
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-            } else {
-                [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
-            }
-        }
-            break;
-
-        default:
-            // NSLog(@"%d", _tipoVehiculoSeleccionado);
-            break;
+        
+    } else {
+        NSInteger modelo = [[_arrModelos objectAtIndex:row] integerValue];
+        [labelForRow setText:[NSString stringWithFormat:@"%d", modelo]];
     }
     
     // Agregar la etiqueta a la vista
     [viewForRow addSubview:labelForRow];
     
     return viewForRow;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSString *strLetra = nil;
-    
-    switch (_tipoVehiculoSeleccionado) {
-            
-        case kModeloVehiculo:
-        {
-            NSInteger modelo = [[_arrModelos objectAtIndex:row] integerValue];
-            strLetra = [NSString stringWithFormat:@"%d", modelo];
-        }
-            break;
-            
-        case kTipoVehiculoParticular:
-        {
-            // Los tres primero digitos son numero
-            if (component < 3) {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            } else {
-                strLetra = [_arrLetras objectAtIndex:row];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoParticularDelEstado:
-        {
-            // Los tres primero digitos son letra
-            if (component < 3) {
-                strLetra = [_arrLetras objectAtIndex:row];
-            } else {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoParticularAntiguo:
-        {
-            // Los dos primero digitos son letras
-            if (component < 2) {
-                strLetra = [_arrLetras objectAtIndex:row];
-            } else {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoParticularParaDiscapacitados:
-        {
-            // Los tres primero digitos son numero
-            if (component < 3) {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            } else {
-                strLetra = [_arrLetras objectAtIndex:row];
-            }
-        }
-            break;
-            
-            
-        case kTipoVehiculoPublico:      case kTipoVehiculoPublicoTaxi:
-        {
-            // Solo el primer digito es numero
-            if (component < 1) {
-                strLetra = [_arrLetras objectAtIndex:row];
-            } else {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            }
-        }  
-            break;
-            
-            
-        case kTipoVehiculoMoto:
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            } else {
-                strLetra = [_arrLetras objectAtIndex:row];
-            }
-        }
-            break;
-            
-        case kTipoVehiculoDeCarga:
-        {
-            // Los 4 primeros digitos son numero
-            if (component < 4) {
-                strLetra = [NSString stringWithFormat:@"%d", row];
-            } else {
-                strLetra = [_arrLetras objectAtIndex:row];
-            }
-        }
-            break;
-            
-        default:
-            // NSLog(@"%d", _tipoVehiculoSeleccionado);
-            break;
-    }
-    
-    return strLetra;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -579,13 +528,37 @@
 
 - (void)actualizarPlacaConStr:(NSString *)strPlaca
 {
-    // Actulizar la etiqueta que muestra la placa
+    // Actualizar la etiqueta que muestra la placa
     [_labelPlacasSeleccionadas setText:strPlaca];
 }
 
 - (void)actualizarModeloConStr:(NSString *)strModelo
 {
+    // Actualizar la etiqueta que muestra el modelo
     [_labelModeloSeleccionado setText:strModelo];
+}
+
+
+- (SettingsPlacas *)informacionSettingsPlacasTipoVehiculo:(NSNumber *)numTipoVehiculo
+{
+    SettingsPlacas *settingsPlacas = nil;
+    
+    // Obtener el objeto guardado en caso de que exista previamente
+    SettingsPlacas *sp = [[SettingsPlacas alloc] init];
+    [sp setNumTipoVehiculo:[NSNumber numberWithInteger:kTipoVehiculoMoto]];
+    [sp setStrPlacas:@"1760C"];
+    [sp setStrModelo:@"2010"];
+    [sp setDiccAttributes:nil];
+    
+    settingsPlacas = sp;
+    
+    return settingsPlacas;
+}
+
+- (void)limpiaLabelsPlacaModelo
+{
+    [_labelPlacasSeleccionadas setText:@""];
+    [_labelModeloSeleccionado setText:@""];
 }
 
 @end
