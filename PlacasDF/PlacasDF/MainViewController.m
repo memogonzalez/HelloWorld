@@ -22,6 +22,16 @@
 #define kNOVIEMBRE 11
 #define kDICIEMBRE 12
 
+@interface MainViewController ()
+
+/*!
+ *  Metodo que muestra o quita la vista de 'Hoy No Circula'
+ */
+- (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar;
+
+@end
+
+
 
 @implementation MainViewController
 
@@ -29,6 +39,7 @@
 @synthesize scrollView = _scrollView;
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize diasParaVerificar = _diasParaVerificar;
+@synthesize viewHoyNoCircula = _viewHoyNoCircula;
 
 - (void)didReceiveMemoryWarning
 {
@@ -161,6 +172,12 @@
         [userDefaults setValue:[NSNumber numberWithBool:YES] forKey:placasListas];
 
     }
+    
+    // ========================================
+    // TEST: Mostrar vista 'Hoy no Circulas'
+    [self performSelector:@selector(mostrarViewHoyNoCircula:) withObject:[NSNumber numberWithBool:NO] afterDelay:0.0];
+    [self performSelector:@selector(mostrarViewHoyNoCircula:) withObject:[NSNumber numberWithBool:YES] afterDelay:4.0];
+    // ========================================
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -349,4 +366,36 @@
     return [NSNumber numberWithInt:1];
 }
 
+- (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar
+{
+    if ([numMostrar boolValue]) {
+
+        CGRect frameVisible = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y - _viewHoyNoCircula.frame.size.height,
+                                         _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
+        
+        // Animacion: Mostrar la vista 'Hoy no Circulas'
+        [UIView animateWithDuration:0.7f 
+                              delay:0.0f 
+                            options:UIViewAnimationCurveEaseIn 
+                         animations:^{
+                             [_viewHoyNoCircula setFrame:frameVisible];
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+    } else {
+        
+        CGRect frameOculto = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y + _viewHoyNoCircula.frame.size.height,
+                                        _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
+        
+        // Animacion: Ocultar la vista 'Hoy no Circulas'
+        [UIView animateWithDuration:0.7f 
+                              delay:0.0f 
+                            options:UIViewAnimationCurveEaseIn 
+                         animations:^{
+                             [_viewHoyNoCircula setFrame:frameOculto];
+                         } completion:^(BOOL finished) {
+
+                         }];
+    }
+}
 @end
