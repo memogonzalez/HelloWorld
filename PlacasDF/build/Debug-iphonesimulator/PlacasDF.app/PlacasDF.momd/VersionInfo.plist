@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>PlacasDF</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>PlacasDF</key>
+		<dict>
+			<key>Calendario</key>
+			<data>
+			7lAE2kCXqE/Y3pVpOO24X8CsHc7Tihu3FP1Aw4wVic8=
+			</data>
+			<key>Multa</key>
+			<data>
+			Za8zEG/s75T4WbZMWM2vhO9kWxdiXNfDGGlJoIgvS5k=
+			</data>
+			<key>PuntoVehicular</key>
+			<data>
+			0LL0XAiHVLaJt9TZjuvT28Cydl+nwTMMNgApTirCCmQ=
+			</data>
+			<key>Tip</key>
+			<data>
+			gc6/jWlFCv/kAvWILcMcE3LFyw7JN0DjUJ0wfObkwd8=
+			</data>
+		</dict>
+	</dict>
+</dict>
+</plist>

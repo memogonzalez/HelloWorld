@@ -27,6 +27,12 @@
 
 - (NSArray *) getTips;
 
-- (NSInteger *) diasParaVerificar;
+- (NSNumber *) _diasParaVerificar;
+
+- (NSNumber *) diasParaVerificar;
+
+- (void) lastDateOfMonth;
+
+- (BOOL) estaEnPeriodoDeVerificacion:(int)terminacion;
 
 @end
