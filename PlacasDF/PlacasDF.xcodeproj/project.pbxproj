@@ -34,6 +34,7 @@
 		65DB3CC614C3B80C002DACC6 /* MapasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CBF14C3B80C002DACC6 /* MapasViewController.m */; };
 		65DB3CC714C3B80C002DACC6 /* MultasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */; };
 		65DB3CC814C3B80C002DACC6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */; };
+		BB2143C214FB4B9100527B56 /* NSDate+ADNExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2143C114FB4B9100527B56 /* NSDate+ADNExtensions.m */; };
 		BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */; };
 		BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64314CD2BCF009DD219 /* id-card.png */; };
 		BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64414CD2BCF009DD219 /* navigation.png */; };
@@ -98,6 +99,8 @@
 		65DB3CC114C3B80C002DACC6 /* MultasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultasTableViewController.m; sourceTree = "<group>"; };
 		65DB3CC214C3B80C002DACC6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		65DB3CC314C3B80C002DACC6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		BB2143C014FB4B9100527B56 /* NSDate+ADNExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ADNExtensions.h"; sourceTree = "<group>"; };
+		BB2143C114FB4B9100527B56 /* NSDate+ADNExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ADNExtensions.m"; sourceTree = "<group>"; };
 		BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MultasFrecuentes.plist; sourceTree = "<group>"; };
 		BB6CE64314CD2BCF009DD219 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
 		BB6CE64414CD2BCF009DD219 /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		65DB3C7B14C3B647002DACC6 = {
 			isa = PBXGroup;
 			children = (
+				BB2143C014FB4B9100527B56 /* NSDate+ADNExtensions.h */,
+				BB2143C114FB4B9100527B56 /* NSDate+ADNExtensions.m */,
 				65117C6314FB1D8A00B5D21E /* SettingsPlacas.h */,
 				65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */,
 				BBA20D4614D65B350029C12B /* Celdas */,
@@ -372,6 +377,7 @@
 				BBA20D4F14D6615F0029C12B /* MultaCelda.m in Sources */,
 				65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */,
 				65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */,
+				BB2143C214FB4B9100527B56 /* NSDate+ADNExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +455,7 @@
 				GCC_PREFIX_HEADER = "PlacasDF/PlacasDF-Prefix.pch";
 				INFOPLIST_FILE = "PlacasDF/PlacasDF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -460,6 +467,7 @@
 				GCC_PREFIX_HEADER = "PlacasDF/PlacasDF-Prefix.pch";
 				INFOPLIST_FILE = "PlacasDF/PlacasDF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,7 +7,20 @@
 //
 
 #import "MainViewController.h"
+#import "NSDate+ADNExtensions.h"
 #define kENTITY_NAME    @"Tip"
+#define kENERO 1
+#define kFEBRERO 2
+#define kMARZO 3
+#define kABRIL 4
+#define kMAYO 5
+#define kJUNIO 6
+#define kJULIO 7
+#define kAGOSTO 8
+#define kSEPTIEMBRE 9
+#define kOCTUBRE 10
+#define kNOVIEMBRE 11
+#define kDICIEMBRE 12
 
 @interface MainViewController ()
 
@@ -249,7 +262,7 @@
     return _fetchedResultsController;
 }
 
-- (NSInteger *) diasParaVerificar {
+- (NSNumber *) _diasParaVerificar {
     
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -259,8 +272,98 @@
     
     NSLog(@"%d", [terminacion integerValue]);
     
-    return 1;
+    // NSDate * fecha = [NSDate date];
     
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    NSInteger day = [components day];    
+    
+    NSInteger month = [components month];
+    
+    NSInteger year = [components year];
+    
+    NSLog(@"Dia %d Mes %d Año %d", day, month, year);
+    
+    
+    NSDate *startDate = [NSDate date];
+    
+    NSDate *endDate = [[NSDate date] dateByAddingTimeInterval:(10 * 60 * 60 * 24)];
+    
+    NSInteger difference = [startDate numberOfDaysUntil:endDate];
+    
+    NSLog(@"Diff = %d", difference);
+    
+    if ([self estaEnPeriodoDeVerificacion:[terminacion intValue]]) {
+        
+        NSLog(@"Está en mi periodo de verificación");        
+        
+    } else {
+        
+        NSLog(@"NO estoy en mi periodo de verificación");        
+    }
+    
+
+    
+    [self lastDateOfMonth];
+    
+    return [NSNumber numberWithInt:1];
+    
+}
+
+
+- (void) lastDateOfMonth {
+    
+    NSDate *curDate = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
+    
+    comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
+    // set last of month
+    [comps setMonth:[comps month]+1];
+    [comps setDay:0];
+    NSDate *tDateMonth = [calendar dateFromComponents:comps];
+    NSLog(@"%@", tDateMonth);
+}
+
+
+
+- (BOOL) estaEnPeriodoDeVerificacion:(int)terminacion {
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    
+    int mes = [components month];
+    
+    if ((terminacion == 5 || terminacion == 6) && (mes == kENERO || mes == kFEBRERO || mes == kJULIO || mes == kAGOSTO)) {
+        
+        return YES;
+        
+    } else if ((terminacion == 7 || terminacion == 8) && (mes == kFEBRERO || mes == kMARZO || mes == kAGOSTO || mes == kSEPTIEMBRE)) {
+        
+        return YES;
+        
+    } else if ((terminacion == 3 || terminacion == 4) && (mes == kMARZO || mes == kABRIL || mes == kSEPTIEMBRE || mes == kOCTUBRE)) {
+        
+        return YES;
+        
+    } else if ((terminacion == 1 || terminacion == 2) && (mes == kABRIL || mes == kMAYO || mes == kOCTUBRE || mes == kNOVIEMBRE)) { 
+        
+        return YES;
+    
+    } else if ((terminacion == 9 || terminacion == 0) && (mes == kMAYO || mes == kJUNIO || mes == kNOVIEMBRE || mes == kDICIEMBRE)) {
+        
+        return YES;
+        
+    } else {
+        
+        return NO;
+    }
+}
+
+- (NSNumber *) diasParaVerificar {
+    
+    
+    
+    return [NSNumber numberWithInt:1];
 }
 
 - (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar
