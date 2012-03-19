@@ -253,7 +253,7 @@
                     <navigationItem key="navigationItem" title="Main" id="XXt-QJ-dqe">
                         <barButtonItem key="leftBarButtonItem" title="Placas" id="2m1-Os-lGR">
                             <connections>
-                                <segue destination="4dO-aq-mFC" kind="modal" identifier="segue_modal_ingresa_datos" id="vNy-d6-6Ip"/>
+                                <segue destination="q5f-K7-Gmd" kind="modal" identifier="segue_modal_ingresa_datos" id="aVk-Jh-7w4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -544,7 +544,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ingresarPlacas:" destination="GB3-NN-7HN" eventType="touchUpInside" id="nzG-Np-Ee6"/>
+                                    <action selector="ingresarPlacas:" destination="GB3-NN-7HN" eventType="touchUpInside" id="aKa-CD-XYX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iR5-wg-5i5">
@@ -560,7 +560,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ingresarModelo:" destination="GB3-NN-7HN" eventType="touchUpInside" id="tFD-bb-2Ra"/>
+                                    <action selector="ingresarModelo:" destination="GB3-NN-7HN" eventType="touchUpInside" id="anK-pB-pX5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Placas" lineBreakMode="tailTruncation" minimumFontSize="10" id="fNo-9q-kic">
@@ -591,15 +591,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" id="SQh-V9-5rH">
-                                <rect key="frame" x="0.0" y="200" width="320" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="GB3-NN-7HN" id="nax-5J-X8D"/>
-                                    <outlet property="delegate" destination="GB3-NN-7HN" id="BrZ-dO-mcP"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="N1O-GD-bh6">
                                 <rect key="frame" x="20" y="147" width="135" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -612,7 +603,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buscar:" destination="GB3-NN-7HN" eventType="touchUpInside" id="hAg-rE-sWm"/>
+                                    <action selector="buscar:" destination="GB3-NN-7HN" eventType="touchUpInside" id="yvq-n2-qNn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d2c-lb-fvl">
@@ -627,9 +618,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="mostrarCaracteristicasVehiculo:" destination="GB3-NN-7HN" eventType="touchUpInside" id="YA0-x3-5y3"/>
+                                    <action selector="mostrarCaracteristicasVehiculo:" destination="GB3-NN-7HN" eventType="touchUpInside" id="Qbn-Xx-Pji"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" id="WJc-iE-K4h">
+                                <rect key="frame" x="0.0" y="200" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GB3-NN-7HN" id="Xb9-qP-1Q0"/>
+                                    <outlet property="delegate" destination="GB3-NN-7HN" id="a9n-17-mLA"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -646,14 +645,14 @@
                         <outlet property="botonSeleccionar" destination="N1O-GD-bh6" id="nmA-L7-II6"/>
                         <outlet property="labelModeloSeleccionado" destination="sab-Xh-G4G" id="YGQ-UW-cpG"/>
                         <outlet property="labelPlacasSeleccionadas" destination="QaM-ua-wPY" id="PVl-0Y-gEz"/>
-                        <outlet property="pickerView" destination="SQh-V9-5rH" id="uTw-Eh-vrd"/>
+                        <outlet property="pickerView" destination="WJc-iE-K4h" id="NGm-j5-Atb"/>
                         <outlet property="segmentedControl" destination="dbz-Zg-Kif" id="vhw-bx-CmX"/>
                         <segue destination="V03-QV-ssw" kind="push" identifier="caracteristicas_particular" id="sqV-tq-fWg"/>
                         <segue destination="wSk-zz-gmI" kind="push" identifier="caracteristicas_publico" id="jHL-In-cKZ"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-790" y="-2217"/>
+            <point key="canvasLocation" x="-694" y="-3189"/>
         </scene>
         <!--Table View Controller - Características-->
         <scene sceneID="7bx-j0-e5K">
@@ -754,7 +753,7 @@
                     <navigationItem key="navigationItem" title="Características" id="qCo-Qd-Iws"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-251" y="-2569"/>
+            <point key="canvasLocation" x="-155" y="-3541"/>
         </scene>
         <!--Caracteristicas Auto Publico View Controller - Características-->
         <scene sceneID="GIt-XZ-mUW">
@@ -808,7 +807,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-251" y="-1936"/>
+            <point key="canvasLocation" x="-155" y="-2908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0q8-ps-UIH">
@@ -828,11 +827,174 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1250" y="-2217"/>
+            <point key="canvasLocation" x="-1154" y="-3189"/>
+        </scene>
+        <!--Ingresa Datos View Controller-->
+        <scene sceneID="0eW-TS-LoP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmE-ck-Aex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="q5f-K7-Gmd" customClass="IngresaDatosViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C1U-sb-8Tv">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" id="4wt-Hg-ZSH">
+                                <rect key="frame" x="0.0" y="244" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="q5f-K7-Gmd" id="rch-Ar-Tj7"/>
+                                    <outlet property="delegate" destination="q5f-K7-Gmd" id="zBA-PK-eqI"/>
+                                </connections>
+                            </pickerView>
+                            <navigationBar contentMode="scaleToFill" id="FAY-Pm-F13">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.41478099270000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="v50-On-Z8b"/>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="tpA-SG-NL9">
+                                <rect key="frame" x="13" y="7" width="262" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Particular"/>
+                                    <segment title="Público"/>
+                                    <segment title="Moto"/>
+                                    <segment title="De carga"/>
+                                </segments>
+                                <connections>
+                                    <action selector="seleccionarTipoAuto:" destination="q5f-K7-Gmd" eventType="valueChanged" id="ajD-8s-UpK"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VzN-v4-zUK">
+                                <rect key="frame" x="20" y="99" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="entrarModoEdicion:" destination="q5f-K7-Gmd" eventType="touchDown" id="EXg-B5-gix"/>
+                                    <action selector="iniciaEdicionPlacas:" destination="q5f-K7-Gmd" eventType="touchUpInside" id="q9i-Kt-kjg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CLP-nt-XO5">
+                                <rect key="frame" x="20" y="144" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="entrarModoEdicion:" destination="q5f-K7-Gmd" eventType="touchDown" id="M09-j2-aRS"/>
+                                    <action selector="iniciaEdicionModelo:" destination="q5f-K7-Gmd" eventType="touchUpInside" id="Ykz-8H-ldt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Cw-6P-kK2">
+                                <rect key="frame" x="20" y="199" width="130" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Usar">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="usarButton:" destination="q5f-K7-Gmd" eventType="touchUpInside" id="0E0-Br-AvV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qsk-ox-w03">
+                                <rect key="frame" x="170" y="199" width="130" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Características">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Placas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="w6Y-o9-NOH">
+                                <rect key="frame" x="34" y="107" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Modelo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="f4c-0j-UtN">
+                                <rect key="frame" x="34" y="152" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tGr-Do-vx2">
+                                <rect key="frame" x="115" y="107" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="5Tk-71-ace">
+                                <rect key="frame" x="115" y="152" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CCc-61-9DO">
+                                <rect key="frame" x="287" y="44" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="cancelar.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="q5f-K7-Gmd" eventType="touchUpInside" id="3IB-wo-GXD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zHw-Io-0JE">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="CCc-61-9DO" id="4Dw-k0-13v"/>
+                        <outlet property="labelIndicadorModelo" destination="f4c-0j-UtN" id="EQU-Lg-CHH"/>
+                        <outlet property="labelIndicadorPlacas" destination="w6Y-o9-NOH" id="2DG-Od-eb3"/>
+                        <outlet property="labelModelo" destination="5Tk-71-ace" id="KJS-7L-EGd"/>
+                        <outlet property="labelPlacas" destination="tGr-Do-vx2" id="knC-eG-hLh"/>
+                        <outlet property="navBar" destination="FAY-Pm-F13" id="ABT-hS-evY"/>
+                        <outlet property="pickerView" destination="4wt-Hg-ZSH" id="2ej-ZJ-UEw"/>
+                        <outlet property="segmentedControl" destination="tpA-SG-NL9" id="3dU-9M-VRU"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1048" y="-2116"/>
         </scene>
     </scenes>
     <resources>
         <image name="calendar.png" width="23" height="25"/>
+        <image name="cancelar.png" width="20" height="20"/>
         <image name="gear2.png" width="26" height="28"/>
         <image name="id-card.png" width="24" height="17"/>
         <image name="navigation.png" width="28" height="28"/>
@@ -858,16 +1020,18 @@
         <class className="IngresaDatosViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IngresaDatosViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buscar:"/>
-                <relationship kind="action" name="cancelar:"/>
-                <relationship kind="action" name="ingresarModelo:"/>
-                <relationship kind="action" name="ingresarPlacas:"/>
-                <relationship kind="action" name="mostrarCaracteristicasVehiculo:"/>
-                <relationship kind="action" name="seleccionarVehiculo:"/>
-                <relationship kind="outlet" name="botonCaracteristicas" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="botonSeleccionar" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelModeloSeleccionado" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelPlacasSeleccionadas" candidateClass="UILabel"/>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="entrarModoEdicion:"/>
+                <relationship kind="action" name="iniciaEdicionModelo:"/>
+                <relationship kind="action" name="iniciaEdicionPlacas:"/>
+                <relationship kind="action" name="seleccionarTipoAuto:"/>
+                <relationship kind="action" name="usarButton:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="labelIndicadorModelo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelIndicadorPlacas" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelModelo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelPlacas" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>

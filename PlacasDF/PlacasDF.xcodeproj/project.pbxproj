@@ -20,6 +20,8 @@
 		65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BAB51914CD002700653727 /* DetallePinTableViewController.m */; };
 		65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9414C7D5B7000703E9 /* MapKit.framework */; };
 		65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9714C7D609000703E9 /* CoreLocation.framework */; };
+		65D8ED441516BEF8001F313D /* cancelar.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D8ED421516BEF8001F313D /* cancelar.png */; };
+		65D8ED451516BEF8001F313D /* cancelar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D8ED431516BEF8001F313D /* cancelar@2x.png */; };
 		65DB3C8B14C3B647002DACC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8A14C3B647002DACC6 /* UIKit.framework */; };
 		65DB3C8D14C3B647002DACC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8C14C3B647002DACC6 /* Foundation.framework */; };
 		65DB3C8F14C3B647002DACC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8E14C3B647002DACC6 /* CoreGraphics.framework */; };
@@ -75,6 +77,8 @@
 		65C31E9414C7D5B7000703E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65C31E9714C7D609000703E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65C31E9B14C7D735000703E9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = PlacasDF/Header.h; sourceTree = "<group>"; };
+		65D8ED421516BEF8001F313D /* cancelar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelar.png; sourceTree = "<group>"; };
+		65D8ED431516BEF8001F313D /* cancelar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancelar@2x.png"; sourceTree = "<group>"; };
 		65DB3C8614C3B647002DACC6 /* PlacasDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacasDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DB3C8A14C3B647002DACC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65DB3C8C14C3B647002DACC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,6 +268,8 @@
 		BBD6A93E14CCFBB9009FB864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65D8ED421516BEF8001F313D /* cancelar.png */,
+				65D8ED431516BEF8001F313D /* cancelar@2x.png */,
 				BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */,
 				BBA20D5414D674EE0029C12B /* nook.png */,
 				BBA20D5514D674EE0029C12B /* ok.png */,
@@ -342,6 +348,8 @@
 				BBA20D5614D674EE0029C12B /* nook.png in Resources */,
 				BBA20D5714D674EE0029C12B /* ok.png in Resources */,
 				BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */,
+				65D8ED441516BEF8001F313D /* cancelar.png in Resources */,
+				65D8ED451516BEF8001F313D /* cancelar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
