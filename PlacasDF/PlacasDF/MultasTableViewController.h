@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataAdminProtocol.h"
+#import "PullRefreshTableViewController.h"
+
+@class MBProgressHUD;
 
 @class MultaCelda;
 
-@interface MultasTableViewController : UITableViewController <NSURLConnectionDelegate, CoreDataAdminProtocol, NSFetchedResultsControllerDelegate> {
+@interface MultasTableViewController : PullRefreshTableViewController <NSURLConnectionDelegate, CoreDataAdminProtocol, NSFetchedResultsControllerDelegate> {
     
     NSMutableData * receivedData;
     
@@ -24,17 +27,29 @@
     bool isShowingList;
     
     int sinPagar;
+    
+    bool connectionError;
 }
 
 @property (strong, nonatomic) IBOutlet MultaCelda * celdaMulta;
 
+@property (strong, nonatomic) MBProgressHUD * mb;
+
 // Controlador de objetos que devuelve el query a CoreData
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) NSNumber * numeroMultas;
 
 - (NSString *) formatString:(NSString *) text;
 
 - (NSArray*) getMultasFrecuentes;
 
 - (void)scheduleNotification;
+
+- (IBAction) tweet:(id)sender;
+
+- (void) loadData;
+
+- (CGFloat) getHeightForText:(NSString *) text;
 
 @end

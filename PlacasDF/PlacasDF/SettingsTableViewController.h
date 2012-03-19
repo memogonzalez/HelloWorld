@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsTableViewController : UITableViewController {
+    
+    BOOL isShowingList;
+    
+    IBOutlet UISwitch * general;
+    
+    IBOutlet UISwitch * noCircula;
+    
+    IBOutlet UISwitch * refrendo;
+    
+    IBOutlet UISwitch * verificacion;
+    
+    IBOutlet UISwitch * infracciones;
+}
+
+- (IBAction) showSettings:(id)sender;
 
 @end
