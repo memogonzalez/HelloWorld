@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "IngresaDatosViewController.h"
+
 #import "NSDate+ADNExtensions.h"
 #define kENTITY_NAME    @"Tip"
 #define kENERO 1
@@ -22,13 +24,20 @@
 #define kNOVIEMBRE 11
 #define kDICIEMBRE 12
 
-@interface MainViewController ()
+@interface MainViewController() <IngresaDatosDelegate>
 
 /*!
  *  Metodo que muestra o quita la vista de 'Hoy No Circula'
  */
 - (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar;
-
+/**
+ *  Metodo para agregar dummies 'tips' en CoreData
+ */
+- (void)agregarDummiesTips;
+/**
+ *  Metodo para mostrar los tips guardados en el ScrollView
+ */
+- (void)showTipsInScrollView;
 @end
 
 
@@ -73,36 +82,13 @@
     
     [_diasParaVerificar setText:[NSString stringWithFormat:@"%d", [self diasParaVerificar]]];
     
-    [_scrollView setContentSize:CGSizeMake(3200, 100)];
     
-    // NSArray * tips = [NSArray arrayWithObjects:@"tip1", @"tip2", @"tip3", @"tip4", @"tip5", @"tip6", @"tip7", @"tip8", @"tip9", nil];
-    NSArray *tips = [self.fetchedResultsController fetchedObjects];
-    
-    //NSArray * tips = [self getTips];
-    
-//    NSMutableDictionary * diccionarioTip = [[NSMutableDictionary alloc] init];
-     
-     // guardamos algunos tips dummies :)
-//     for (int j = 0; j < 50; j++) {
-//     
-//     [diccionarioTip setValue:[NSString stringWithFormat:@"%d", j] forKey:@"tip_id"];
-//     
-//     [diccionarioTip setValue:[NSString stringWithFormat:@"Este es el tip %d", j] forKey:@"descripcion"];
-//     
-//     [self saveTip:diccionarioTip];
-//     }
-    
-    int i = 0;
-    
-    for (id tip in tips) {
-        
-        [self addTip:i++ tip:[tip valueForKey:@"descripcion"]];
-    }
-    
-    // NSLog(@"hay :%d", [[self.fetchedResultsController fetchedObjects] count]);
+    // TEST
+    //[self agregarDummiesTips];
+    //[self showTipsInScrollView];
 }
 
-- (void) saveTip:(NSMutableDictionary *) tipDiccionario {
+- (void) saveTip:(NSMutableDictionary *)tipDiccionario {
     
     // Creamos una nueva instancia de la entidad manegada por el fetchedResultsController
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
@@ -115,10 +101,9 @@
     
     // NSLog(@"%@ %@", [tipDiccionario valueForKey:@"tip_id"], [tipDiccionario valueForKey:@"descripcion"]);
     
-    NSNumber * tip_id = [NSNumber numberWithInt:[[tipDiccionario valueForKey:@"tip_id"] intValue]];
+    NSNumber *tip_id = [NSNumber numberWithInt:( [[tipDiccionario valueForKey:@"tip_id"] intValue] )];
     
     [newManagedObject setValue:tip_id forKey:@"tip_id"];
-    
     [newManagedObject setValue:[tipDiccionario valueForKey:@"descripcion"] forKey:@"descripcion"];
     
     // Guardamos el nuevo contexto
@@ -135,24 +120,50 @@
     }
 }
 
-- (void) addTip:(int) posicion tip:(NSString *) text {
+
+- (void)agregarDummiesTips
+{
+    NSMutableDictionary *diccionarioTip = [[NSMutableDictionary alloc] init];
     
-    // NSLog(@"%@ %d", text, posicion);
+    // guardamos algunos tips dummies :)
+    for (int j = 0; j < 50; j++) {
+        
+        [diccionarioTip setValue:[NSString stringWithFormat:@"%d", j] forKey:@"tip_id"];
+        [diccionarioTip setValue:[NSString stringWithFormat:@"Tip %d", j] forKey:@"descripcion"];
+        
+        [self saveTip:diccionarioTip];
+        [diccionarioTip removeAllObjects];
+    }
+}
+
+
+- (void)showTipsInScrollView
+{
+    NSArray *arrTips = [_fetchedResultsController fetchedObjects];
+    NSLog(@"%@", arrTips);
+}
+
+
+- (void)addTip:(int)posicion tip:(NSString *)text
+{
+    // Vista que contiene un Tip
+    UIView *viewForTip = [[UIView alloc] initWithFrame:CGRectMake(( posicion * 320 ), 0, _scrollView.frame.size.width, 100)];
+    [viewForTip setBackgroundColor:[UIColor grayColor]];
     
-    UILabel * tipLabel = [[UILabel alloc] init];
-    
+    // Etiqueta de cada tip
+    UILabel *tipLabel = [[UILabel alloc] initWithFrame:viewForTip.frame];
     [tipLabel setText:text];
+    [tipLabel setBackgroundColor:[UIColor clearColor]];
+    [tipLabel setTextAlignment:UITextAlignmentCenter];
+    [viewForTip addSubview:tipLabel];
     
-    tipLabel.frame = CGRectMake(posicion * 320, 40, 320, 100);
-    
-    [_scrollView addSubview:tipLabel];
+    // Agregar cada vista del tip al scrollView
+    [_scrollView addSubview:viewForTip];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -208,11 +219,10 @@
     if (!mutableFetchResults) {  
         // Handle the error.  
         // This is a serious error and should advise the user to restart the application  
-    }   
+    }
     
     return mutableFetchResults;
-    
-} 
+}
 
 #pragma mark - Fetched results controller
 
@@ -326,9 +336,8 @@
 }
 
 
-
-- (BOOL) estaEnPeriodoDeVerificacion:(int)terminacion {
-    
+- (BOOL)estaEnPeriodoDeVerificacion:(int)terminacion 
+{    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     
     int mes = [components month];
@@ -359,12 +368,12 @@
     }
 }
 
-- (NSNumber *) diasParaVerificar {
-    
-    
-    
+
+- (NSNumber *) diasParaVerificar 
+{
     return [NSNumber numberWithInt:1];
 }
+
 
 - (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar
 {
@@ -372,8 +381,9 @@
 
         CGRect frameVisible = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y - _viewHoyNoCircula.frame.size.height,
                                          _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
-        
-        // Animacion: Mostrar la vista 'Hoy no Circulas'
+        /*
+         *  Animacion: Mostrar la vista 'Hoy no Circulas'
+         */
         [UIView animateWithDuration:0.7f 
                               delay:0.0f 
                             options:UIViewAnimationCurveEaseIn 
@@ -387,7 +397,9 @@
         CGRect frameOculto = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y + _viewHoyNoCircula.frame.size.height,
                                         _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
         
-        // Animacion: Ocultar la vista 'Hoy no Circulas'
+        /* 
+         *  Animacion: Ocultar la vista 'Hoy no Circulas' 
+         */
         [UIView animateWithDuration:0.7f 
                               delay:0.0f 
                             options:UIViewAnimationCurveEaseIn 
@@ -398,4 +410,24 @@
                          }];
     }
 }
+
+
+#pragma mark - IngresarDatos Delegate
+
+- (void)ingresaDatosDismissViewController
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+#pragma mark - Prepare For Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"modal_ingresa_datos"]) {
+        IngresaDatosViewController *idvc = (IngresaDatosViewController *)[segue destinationViewController];
+        [idvc setDelegate:self];
+    }
+}
+
 @end

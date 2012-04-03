@@ -11,15 +11,7 @@
 #define kMODELO_MIN     1980
 #define kMODELO_MAX     2012            // TODO: Calcular el anio actual
 
-@interface IngresaDatosViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
-@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (strong, nonatomic) IBOutlet UILabel *labelPlacas;
-@property (strong, nonatomic) IBOutlet UILabel *labelModelo;
-@property (strong, nonatomic) IBOutlet UILabel *labelIndicadorPlacas;
-@property (strong, nonatomic) IBOutlet UILabel *labelIndicadorModelo;
-@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
+@interface IngresaDatosViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 
 /**
  *  Arreglo de letras para construir las placas
@@ -33,15 +25,21 @@
  *  Bandera que indica si la etiqueta 'placas' se estan editando,
  *  de lo contrario se asume que se edita la etiqueta de 'modelo de auto'
  */
-@property (assign, nonatomic) BOOL editandoPlacas;
+@property (nonatomic) BOOL editandoPlacas;
 /**
  *  Variable que indica el numero de columnas que debe tener el pickerView
  */
-@property (assign, nonatomic) NSUInteger columnsForPickerView;
+@property (nonatomic) NSInteger columnsForPickerView;
 /**
  *  Variable que indica el tipo de auto seleccionado
  */
-@property (assign, nonatomic) TipoVehiculoSeleccionado tipoVehiculoSeleccionado;
+@property (nonatomic) TipoVehiculoSeleccionado tipoVehiculoSeleccionado;
+/**
+ *  Variable que guarda el sender para cambiar de edicion de etiquetas,
+ *  sirve para recordar el ultimo sender y no cargar los datos al pickerView
+ */
+@property (nonatomic) id lastSender;
+
 /**
  *  Metodo que se llama al seleccionar un tipo de auto
  */
@@ -75,7 +73,7 @@
  */
 - (void)loadPickerViewComponentsFromString:(NSString *)str;
 /**
- *  Metodo que se llama cuando se presiona un boton de edicio de 'Placas' o 'Modelo'
+ *  Metodo que se llama cuando se presiona un boton de edicion de 'Placas' o 'Modelo'
  *  Para cambiar el tipo de letra de la etiqueta a bold
  */
 - (IBAction)entrarModoEdicion:(id)sender;
@@ -87,6 +85,8 @@
 
 @implementation IngresaDatosViewController
 
+@synthesize delegate = _delegate;
+@synthesize lastSender = _lastSender;
 @synthesize navBar = _navBar;
 @synthesize segmentedControl = _segmentedControl;
 @synthesize labelIndicadorPlacas = _labelIndicadorPlacas;
@@ -104,6 +104,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Somos delegados del pickerView
+    [_pickerView setDelegate:self];
+    [_pickerView setDataSource:self];
     
     // Navigation Bar
     [_navBar setFrame:CGRectMake(_navBar.frame.origin.x, _navBar.frame.origin.y, _navBar.frame.size.width, _navBar.frame.size.height + 37.0f)];
@@ -125,9 +129,6 @@
     [segmentedControl setFrame:CGRectMake(_segmentedControl.frame.origin.x, (_navBar.frame.size.height - _segmentedControl.frame.size.height) - 7, _segmentedControl.frame.size.width, _segmentedControl.frame.size.height)];
     [_navBar addSubview:segmentedControl];
     
-    // Edicion de placas primero
-    _editandoPlacas = YES;
-    
     // Construir el arreglo de modelos y letras para las placas
     // Creamos el arreglo de letras
     NSMutableArray *mutArrLetras = [[NSMutableArray alloc] initWithCapacity:0];
@@ -143,15 +144,21 @@
     }
     _arrModelos = [mutArrModelos copy];
     
-    // Seleccionar el tipo de auto 'Particular'
-    [self seleccionarTipoAuto:self];
+    // Edicion de placas primero
+    _editandoPlacas = YES;
+    
+    // Seleccionamos el tipo 'Particular' y recargamos el pickerView
+    _tipoVehiculoSeleccionado = tipoVehiculoParticular;
+    _columnsForPickerView = 6;
 }
+
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -161,7 +168,10 @@
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // Pedir al delegado que nos quite de aqui
+    if ([_delegate respondsToSelector:@selector(ingresaDatosDismissViewController)]) {
+        [_delegate ingresaDatosDismissViewController];
+    }
 }
 
 - (IBAction)seleccionarTipoAuto:(id)sender
@@ -191,14 +201,7 @@
         }
         
         // Recargar columnas del UIPickerView
-        //[self animateAndReloadPickerView];
         [self cargarPickerViewConDatosVehicularesTipo:_tipoVehiculoSeleccionado];
-        
-    } else {
-        // Seleccionamos el tipo 'Particular' y recargamos el pickerView
-        _tipoVehiculoSeleccionado = tipoVehiculoParticular;
-        _columnsForPickerView = 6;
-        [_pickerView reloadAllComponents];
     }
 }
 
@@ -213,23 +216,29 @@
                           delay:0.0f 
                         options:UIViewAnimationCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
+                         
                          _pickerView.frame = framePickerViewHidden;
                          
                      } completion:^(BOOL finished) {
                          if (finished) {
+                             
                              // borrar las etiquetas de 'placas' y 'modelo'
                              [_labelPlacas setText:@""];
                              [_labelModelo setText:@""];
                              
                              // Comenzar con la edicion de las placas
-                             [self iniciaEdicionPlacas:self];
+                             [self performSelectorOnMainThread:@selector(iniciaEdicionPlacas:) 
+                                                    withObject:self 
+                                                 waitUntilDone:YES];
                              
                              // Aparecer el picker View
                              [UIView animateWithDuration:0.4f 
                                                    delay:0.1f 
                                                  options:UIViewAnimationCurveEaseIn
                                               animations:^{
+                                                  
                                                   _pickerView.frame = framePickerViewVisible;
+                                                  
                                               } completion:^(BOOL finished) {
                                                   // --- 
                                               }];
@@ -240,6 +249,10 @@
 
 - (IBAction)iniciaEdicionPlacas:(id)sender
 {
+    // No llamar el metodo si el boton es presionado consecutivamente
+    if ([sender isKindOfClass:[UIButton class]] && _lastSender == sender) return;
+    _lastSender = sender;
+    
     // Establecer la bandera de edicion de placas solo si aun no esta establecida
     _editandoPlacas = YES;
     
@@ -248,7 +261,7 @@
     [_labelIndicadorModelo setFont:[UIFont systemFontOfSize:17.0f]];
     
     // Recargar el picker view
-    [_pickerView reloadAllComponents];
+    [_pickerView setNeedsLayout];
     
     // En caso de que la etiqueta de placas tenga texto, cargaremos el pickerView con esos datos
     [self loadPickerViewComponentsFromString:_labelPlacas.text];
@@ -257,12 +270,15 @@
 
 - (IBAction)iniciaEdicionModelo:(id)sender
 {
+    if ([sender isKindOfClass:[UIButton class]] && _lastSender == sender) return;
+    _lastSender = sender;
+    
     // Establecer la bandera de edicion de modelo solo si aun no esta establecida
     _editandoPlacas = NO;
     
     // Recargar el picker view
-    [_pickerView reloadAllComponents];
-    
+    [_pickerView setNeedsLayout];
+
     // En caso de que la etiqueta 'Modelo' tenga texto, cargamos el pickerView con esos datos
     [self loadPickerViewComponentsFromString:_labelModelo.text];
 }
@@ -317,29 +333,36 @@
             break;
             
         default:
-            _columnsForPickerView = 0;
+            abort();
             break;
     }
     
     // Recargar el picker view
-    //[_pickerView reloadAllComponents];
     [self animateAndReloadPickerView];
 }
 
-#pragma mark - UIPickceView DataSource
+
+#pragma mark - UIPickerView DataSource
+
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    NSInteger numberComponets = 1;
+    NSInteger numberComponents = 1;
+    
     if (_editandoPlacas) {
-        numberComponets = _columnsForPickerView;
+        numberComponents = _columnsForPickerView;
     }
-    return numberComponets;
+    
+    // NSLog(@"calculando number of components: %d", numberComponents);
+    
+    return numberComponents;
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
+    // NSLog(@"numero de filas para componente: %d", component);
+    
     NSInteger numberRows = 0;
     
     if (_editandoPlacas) {
@@ -456,7 +479,7 @@
     if ([_labelPlacas.text isEqualToString:@""] || [_labelModelo.text isEqualToString:@""]) {
         // Mostramos una alerta
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aun faltan datos" 
-                                                        message:@"Por favor ingresa los datos que te faltan"
+                                                        message:@"Por favor ingresa las placas y modelo de tu auto"
                                                        delegate:nil
                                               cancelButtonTitle:@"Aceptar" 
                                               otherButtonTitles:nil];
@@ -470,10 +493,13 @@
         // Mostramos una alerta
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Datos Completos" 
                                                         message:@"Descargando información de tu auto"
-                                                       delegate:nil
-                                              cancelButtonTitle:nil 
+                                                       delegate:self
+                                              cancelButtonTitle:@"Aceptar" 
                                               otherButtonTitles:nil];
         [alert show];
+        
+        UIButton *alertButton = (UIButton *)[alert viewWithTag:1];
+        [alertButton setHidden:YES];
         
         // Agregamos un ActivityIndicator a la alerta
         UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -483,10 +509,17 @@
         [alert addSubview:activityIndicatorView];
         
         // Quitamos la alerta de 'buscando informacion' despues de un tiempo
-        double delayInSeconds = 5.3;
+        double delayInSeconds = 2.3;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [alert dismissWithClickedButtonIndex:0 animated:YES];
+            
+            [alert setTitle:@"¡¡ Excelente !!"];
+            [alert setMessage:@"Los datos de tu auto han sido descargados"];
+            [activityIndicatorView stopAnimating];
+            [alertButton setHidden:NO];
+            
+// TODO: En caso de error mostrar titulo de error.
+            
         });
     }
 }
@@ -529,22 +562,38 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    UIView *viewForRow = nil;
+    // NSLog(@"creando vista para componente: %d y fila: %d", component, row);
+    
+    UIView *viewForRow = view;
+    UILabel *labelForRow = nil;
     
     // Obtenemos el tamanio de cada vista dentro de cada fila en el pickerView
     CGSize sizeForRow = [_pickerView rowSizeForComponent:component];
     
-    // Construimos la vista de cada fila en el picker view
-    viewForRow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, sizeForRow.width, sizeForRow.height)];
-    UILabel *labelForRow = [[UILabel alloc] initWithFrame:viewForRow.frame];
+    if (!viewForRow) {
+        
+        // Construimos la vista de cada fila en el picker view
+        viewForRow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, sizeForRow.width, sizeForRow.height)];
+        labelForRow = [[UILabel alloc] initWithFrame:viewForRow.frame];
+        
+        // Configurar atributos de la etiqueta
+        [labelForRow setTag:100];
+        [labelForRow setTextAlignment:UITextAlignmentCenter];
+        [labelForRow setBackgroundColor:[UIColor clearColor]];
+        [labelForRow setFont:[UIFont boldSystemFontOfSize:24.0f]];
+        
+        [labelForRow setText:[_arrModelos objectAtIndex:row]];
+        
+        // Agregar la etiqueta a la vista
+        [viewForRow addSubview:labelForRow];
+        
+    } else {
     
-    // Configurar atributos de la etiqueta
-    [labelForRow setTextAlignment:UITextAlignmentCenter];
-    [labelForRow setBackgroundColor:[UIColor clearColor]];
-    [labelForRow setFont:[UIFont boldSystemFontOfSize:24.0f]];
-    
-    [labelForRow setText:[_arrModelos objectAtIndex:row]];
-    
+        // Apuntar a la etiqueta dentro de la vista de cada row en el pickerView
+        labelForRow = (UILabel *)[viewForRow viewWithTag:100];
+    }
+        
+
     if (_editandoPlacas) {
         switch (_tipoVehiculoSeleccionado) {
                 
@@ -583,7 +632,7 @@
                 
             case tipoVehiculoParticularParaDiscapacitados:
             {
-                // Los tres primero digitos son numero
+                // Los tres primeros digitos son numero
                 if (component < 3) {
                     [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
                 } else {
@@ -596,11 +645,11 @@
             case tipoVehiculoPublico:
             case tipoVehiculoPublicoTaxi:
             {
-                // Solo el primer digito es numero
+                // Solo el primer digito es letra
                 if (component < 1) {
-                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
-                } else {
                     [labelForRow setText:[NSString stringWithFormat:@"%@", [_arrLetras objectAtIndex:row]]];
+                } else {
+                    [labelForRow setText:[NSString stringWithFormat:@"%d", row]];
                 }
             }  
                 break;
@@ -637,9 +686,6 @@
         [labelForRow setText:[NSString stringWithFormat:@"%d", modelo]];
     }
     
-    // Agregar la etiqueta a la vista
-    [viewForRow addSubview:labelForRow];
-    
     return viewForRow;
 }
 
@@ -661,6 +707,12 @@
     
     // Actulizar la etiqueta seleccionada para su edicion
     [self actualizarLabelEnEdicionConStr:mutableString];
+}
+
+#pragma mark AlertView Delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self performSelector:@selector(cancelButtonPressed:) withObject:self afterDelay:0.1f];
 }
 
 @end

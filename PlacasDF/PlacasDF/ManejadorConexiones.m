@@ -8,27 +8,44 @@
 
 #import "ManejadorConexiones.h"
 
+@interface ManejadorConexiones()
+
+@property (strong, nonatomic) NSMutableData *receivedData;
+
+@end
+
+
 @implementation ManejadorConexiones
 
--(id) init{
+@synthesize receivedData = _receivedData;
+@synthesize completionHanlder = _completionHanlder;
 
-    receivedData = [[NSMutableData alloc] init];
-    
+
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
     return self;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    [receivedData setLength:0];
-}
+
+#pragma mark - NSURLConnection Data Delegate
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    [receivedData appendData:data];
+    if (!_receivedData) {
+        _receivedData = [[NSMutableData alloc] initWithCapacity:0];
+    }
+    
+    [_receivedData appendData:data];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    _receivedData = nil;
+    
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
@@ -38,9 +55,9 @@
 {
     NSError * error;
     
-    NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+    NSLog(@"Succeeded! Received %d bytes of data",[_receivedData length]);
     
-    NSDictionary * diccionario = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error];
+    NSDictionary * diccionario = [NSJSONSerialization JSONObjectWithData:_receivedData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error];
     
     NSDictionary *multas = [diccionario objectForKey:@"multas"];
     
