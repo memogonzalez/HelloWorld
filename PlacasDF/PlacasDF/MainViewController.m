@@ -86,6 +86,7 @@
     // TEST
     //[self agregarDummiesTips];
     //[self showTipsInScrollView];
+    // Leer archivo de corralones y verificentros
 }
 
 - (void) saveTip:(NSMutableDictionary *)tipDiccionario {
@@ -176,7 +177,7 @@
     if (! [userDefaults valueForKey:placasListas] || 
         ! [[userDefaults valueForKey:placasListas] boolValue]) {
         
-        [self performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
+        [self performSegueWithIdentifier:@"modal_ingresa_datos" sender:self];
         
         // Cuando el usuario ha ingresado sus datos, entonces establecemos la bandera en el userDefaults
         // que las placas ya estan listas
@@ -429,5 +430,4 @@
         [idvc setDelegate:self];
     }
 }
-
 @end

@@ -16,12 +16,14 @@
 		6588D18414C68B3C005D3FB8 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18114C68B3C005D3FB8 /* Parser.m */; };
 		6588D18D14C68B5C005D3FB8 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18614C68B5B005D3FB8 /* Calendario.m */; };
 		6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18814C68B5B005D3FB8 /* Multa.m */; };
-		6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */; };
 		6588D19014C68B5C005D3FB8 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18C14C68B5C005D3FB8 /* Tip.m */; };
+		65A8EBD8152F956400F3339A /* corralones.json in Resources */ = {isa = PBXBuildFile; fileRef = 65A8EBD6152F956400F3339A /* corralones.json */; };
+		65A8EBD9152F956400F3339A /* verificentros.json in Resources */ = {isa = PBXBuildFile; fileRef = 65A8EBD7152F956400F3339A /* verificentros.json */; };
 		65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */; };
 		65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BAB51914CD002700653727 /* DetallePinTableViewController.m */; };
 		65C31E9514C7D5B7000703E9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9414C7D5B7000703E9 /* MapKit.framework */; };
 		65C31E9814C7D609000703E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C31E9714C7D609000703E9 /* CoreLocation.framework */; };
+		65CBF0401531652800D0F150 /* PuntoVehicular.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF03F1531652800D0F150 /* PuntoVehicular.m */; };
 		65DB3C8B14C3B647002DACC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8A14C3B647002DACC6 /* UIKit.framework */; };
 		65DB3C8D14C3B647002DACC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8C14C3B647002DACC6 /* Foundation.framework */; };
 		65DB3C8F14C3B647002DACC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB3C8E14C3B647002DACC6 /* CoreGraphics.framework */; };
@@ -41,8 +43,6 @@
 		BB224AB4150D41B50041805B /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB224AB3150D41B50041805B /* PullRefreshTableViewController.m */; };
 		BB2D42FF150D474400E2ED97 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2D42FD150D474400E2ED97 /* arrow.png */; };
 		BB2D4300150D474400E2ED97 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB2D42FE150D474400E2ED97 /* arrow@2x.png */; };
-		BB2D430C150D58DF00E2ED97 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2D4307150D58DF00E2ED97 /* SVProgressHUD.m */; };
-		BB2D430E150D58EA00E2ED97 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BB2D430D150D58EA00E2ED97 /* SVProgressHUD.bundle */; };
 		BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB3BD67114DF50CE0094E0A5 /* MultasFrecuentes.plist */; };
 		BB6CE64814CD2BCF009DD219 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64314CD2BCF009DD219 /* id-card.png */; };
 		BB6CE64914CD2BCF009DD219 /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = BB6CE64414CD2BCF009DD219 /* navigation.png */; };
@@ -76,10 +76,10 @@
 		6588D18614C68B5B005D3FB8 /* Calendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendario.m; path = PlacasDF/Calendario.m; sourceTree = "<group>"; };
 		6588D18714C68B5B005D3FB8 /* Multa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Multa.h; path = PlacasDF/Multa.h; sourceTree = "<group>"; };
 		6588D18814C68B5B005D3FB8 /* Multa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multa.m; path = PlacasDF/Multa.m; sourceTree = "<group>"; };
-		6588D18914C68B5B005D3FB8 /* PuntoVehicular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PuntoVehicular.h; path = PlacasDF/PuntoVehicular.h; sourceTree = "<group>"; };
-		6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuntoVehicular.m; path = PlacasDF/PuntoVehicular.m; sourceTree = "<group>"; };
 		6588D18B14C68B5C005D3FB8 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tip.h; path = PlacasDF/Tip.h; sourceTree = "<group>"; };
 		6588D18C14C68B5C005D3FB8 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tip.m; path = PlacasDF/Tip.m; sourceTree = "<group>"; };
+		65A8EBD6152F956400F3339A /* corralones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corralones.json; sourceTree = "<group>"; };
+		65A8EBD7152F956400F3339A /* verificentros.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = verificentros.json; sourceTree = "<group>"; };
 		65AEE44714DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaracteristicasAutoPublicoViewController.h; sourceTree = "<group>"; };
 		65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaracteristicasAutoPublicoViewController.m; sourceTree = "<group>"; };
 		65BAB51814CD002700653727 /* DetallePinTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetallePinTableViewController.h; sourceTree = "<group>"; };
@@ -87,6 +87,8 @@
 		65C31E9414C7D5B7000703E9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65C31E9714C7D609000703E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65C31E9B14C7D735000703E9 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = PlacasDF/Header.h; sourceTree = "<group>"; };
+		65CBF03E1531652800D0F150 /* PuntoVehicular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuntoVehicular.h; sourceTree = "<group>"; };
+		65CBF03F1531652800D0F150 /* PuntoVehicular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuntoVehicular.m; sourceTree = "<group>"; };
 		65DB3C8614C3B647002DACC6 /* PlacasDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacasDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DB3C8A14C3B647002DACC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65DB3C8C14C3B647002DACC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -242,6 +244,8 @@
 		65DB3C9314C3B647002DACC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65A8EBD6152F956400F3339A /* corralones.json */,
+				65A8EBD7152F956400F3339A /* verificentros.json */,
 				65DB3C9414C3B647002DACC6 /* PlacasDF-Info.plist */,
 				65DB3C9514C3B647002DACC6 /* InfoPlist.strings */,
 				65DB3C9814C3B647002DACC6 /* main.m */,
@@ -254,12 +258,12 @@
 			isa = PBXGroup;
 			children = (
 				65DB3C9E14C3B647002DACC6 /* PlacasDF.xcdatamodeld */,
+				65CBF03E1531652800D0F150 /* PuntoVehicular.h */,
+				65CBF03F1531652800D0F150 /* PuntoVehicular.m */,
 				6588D18514C68B5B005D3FB8 /* Calendario.h */,
 				6588D18614C68B5B005D3FB8 /* Calendario.m */,
 				6588D18714C68B5B005D3FB8 /* Multa.h */,
 				6588D18814C68B5B005D3FB8 /* Multa.m */,
-				6588D18914C68B5B005D3FB8 /* PuntoVehicular.h */,
-				6588D18A14C68B5B005D3FB8 /* PuntoVehicular.m */,
 				6588D18B14C68B5C005D3FB8 /* Tip.h */,
 				6588D18C14C68B5C005D3FB8 /* Tip.m */,
 			);
@@ -391,9 +395,10 @@
 				BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */,
 				BB2D42FF150D474400E2ED97 /* arrow.png in Resources */,
 				BB2D4300150D474400E2ED97 /* arrow@2x.png in Resources */,
-				BB2D430E150D58EA00E2ED97 /* SVProgressHUD.bundle in Resources */,
 				658671521516CBD600D246C3 /* cancelar.png in Resources */,
 				658671531516CBD600D246C3 /* cancelar@2x.png in Resources */,
+				65A8EBD8152F956400F3339A /* corralones.json in Resources */,
+				65A8EBD9152F956400F3339A /* verificentros.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +422,6 @@
 				6588D18414C68B3C005D3FB8 /* Parser.m in Sources */,
 				6588D18D14C68B5C005D3FB8 /* Calendario.m in Sources */,
 				6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */,
-				6588D18F14C68B5C005D3FB8 /* PuntoVehicular.m in Sources */,
 				6588D19014C68B5C005D3FB8 /* Tip.m in Sources */,
 				65BAB51A14CD002700653727 /* DetallePinTableViewController.m in Sources */,
 				653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */,
@@ -426,8 +430,8 @@
 				65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */,
 				BB2143C214FB4B9100527B56 /* NSDate+ADNExtensions.m in Sources */,
 				BB224AB4150D41B50041805B /* PullRefreshTableViewController.m in Sources */,
-				BB2D430C150D58DF00E2ED97 /* SVProgressHUD.m in Sources */,
 				BBFA0ACB150D77A50030CDF7 /* MBProgressHUD.m in Sources */,
+				65CBF0401531652800D0F150 /* PuntoVehicular.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

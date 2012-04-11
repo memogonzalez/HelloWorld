@@ -2,7 +2,7 @@
 //  PuntoVehicular.m
 //  PlacasDF
 //
-//  Created by David Hernández on 1/17/12.
+//  Created by David Hernández on 4/8/12.
 //  Copyright (c) 2012 Caos Inc. All rights reserved.
 //
 
@@ -11,13 +11,12 @@
 
 @implementation PuntoVehicular
 
-@dynamic descripcion;
+@dynamic delegacion;
 @dynamic direccion;
 @dynamic latitud;
 @dynamic longitud;
+@dynamic telefono;
 @dynamic tipo;
 @dynamic titulo;
-@dynamic telefono;
-@dynamic delegacion;
 
 @end

@@ -11,7 +11,6 @@
 #import "ManejadorConexiones.h"
 #import "Multa.h"
 #import "MultaCelda.h"
-#import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 
 #define URL @"http://www.caosinc.com/webservices/placa.php?placa="
