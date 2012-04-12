@@ -420,7 +420,7 @@
          pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinPuntoVehicular"];
         
         // Configuramos la vista del punto        
-        [pinView setAnimatesDrop:NO];
+        [pinView setAnimatesDrop:YES];
         [pinView setCanShowCallout:YES];
         [pinView setCalloutOffset:CGPointMake(-8.0f, 0.0f)];
         
