@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "IngresaDatosViewController.h"
+
 #import "NSDate+ADNExtensions.h"
 #define kENTITY_NAME    @"Tip"
 #define kENERO 1
@@ -22,12 +24,22 @@
 #define kNOVIEMBRE 11
 #define kDICIEMBRE 12
 
-@interface MainViewController ()
+@interface MainViewController() <IngresaDatosDelegate>
 
-/*!
+/**
  *  Metodo que muestra o quita la vista de 'Hoy No Circula'
  */
 - (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar;
+
+/**
+ *  Metodo para mostrar los tips guardados en el ScrollView
+ */
+- (void)showTipsInScrollView;
+
+/**
+ *  Metodo que lee el archivo JSON que contiene los tips iniciales y devuelve un array de tips
+ */
+- (NSArray *)obtenerTipsFromJSONFile;
 
 @end
 
@@ -48,6 +60,9 @@
     
     // Release any cached data, images, etc that aren't in use.
     _fetchedResultsController = nil;
+    _scrollView = nil;
+    _diasParaVerificar = nil;
+    _viewHoyNoCircula = nil;
 }
 
 
@@ -63,47 +78,28 @@
 {
     [super viewDidLoad];
     
+    // Obtener los tips precargados
+    //[self obtenerTipsFromJSONFile];
+    [self getTips];
+    
     NSUserDefaults * usersDefault = [NSUserDefaults standardUserDefaults];
     
-    [usersDefault setValue:@"152TDK" forKey:@"Placas"];
+    [usersDefault setValue:@"122UML" forKey:@"Placas"]; //737MZM
     
-    [usersDefault setValue:@"2004" forKey:@"Modelo"];
+    [usersDefault setValue:@"2001" forKey:@"Modelo"];
     
     [usersDefault synchronize];
     
     [_diasParaVerificar setText:[NSString stringWithFormat:@"%d", [self diasParaVerificar]]];
     
-    [_scrollView setContentSize:CGSizeMake(3200, 100)];
     
-    // NSArray * tips = [NSArray arrayWithObjects:@"tip1", @"tip2", @"tip3", @"tip4", @"tip5", @"tip6", @"tip7", @"tip8", @"tip9", nil];
-    NSArray *tips = [self.fetchedResultsController fetchedObjects];
-    
-    //NSArray * tips = [self getTips];
-    
-//    NSMutableDictionary * diccionarioTip = [[NSMutableDictionary alloc] init];
-     
-     // guardamos algunos tips dummies :)
-//     for (int j = 0; j < 50; j++) {
-//     
-//     [diccionarioTip setValue:[NSString stringWithFormat:@"%d", j] forKey:@"tip_id"];
-//     
-//     [diccionarioTip setValue:[NSString stringWithFormat:@"Este es el tip %d", j] forKey:@"descripcion"];
-//     
-//     [self saveTip:diccionarioTip];
-//     }
-    
-    int i = 0;
-    
-    for (id tip in tips) {
-        
-        [self addTip:i++ tip:[tip valueForKey:@"descripcion"]];
-    }
-    
-    // NSLog(@"hay :%d", [[self.fetchedResultsController fetchedObjects] count]);
+    // TEST
+    //[self agregarDummiesTips];
+    [self showTipsInScrollView];
 }
 
-- (void) saveTip:(NSMutableDictionary *) tipDiccionario {
-    
+- (void)saveTipWithProperties:(NSDictionary *)tipProperties
+{    
     // Creamos una nueva instancia de la entidad manegada por el fetchedResultsController
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     
@@ -112,14 +108,9 @@
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // Configuramos el nuevo objeto con los datos del diccionario
-    
-    // NSLog(@"%@ %@", [tipDiccionario valueForKey:@"tip_id"], [tipDiccionario valueForKey:@"descripcion"]);
-    
-    NSNumber * tip_id = [NSNumber numberWithInt:[[tipDiccionario valueForKey:@"tip_id"] intValue]];
-    
+    NSNumber *tip_id = [NSNumber numberWithInt:( [[tipProperties valueForKey:@"tip_id"] intValue] )];
     [newManagedObject setValue:tip_id forKey:@"tip_id"];
-    
-    [newManagedObject setValue:[tipDiccionario valueForKey:@"descripcion"] forKey:@"descripcion"];
+    [newManagedObject setValue:[tipProperties valueForKey:@"descripcion"] forKey:@"descripcion"];
     
     // Guardamos el nuevo contexto
     NSError *error = nil;
@@ -130,29 +121,75 @@
         abort();
         
     } else {
-        
-        // NSLog(@"Tip guardado: %@", [tipDiccionario valueForKey:@"descripcion"]);
+        NSLog(@"Tip guardado: %@", [tipProperties valueForKey:@"descripcion"]);
     }
 }
 
-- (void) addTip:(int) posicion tip:(NSString *) text {
+// TODO: Fade-In Fade-Out para cada tip, en lugar de un scrollView
+- (void)showTipsInScrollView
+{
+    NSArray *arrTips = [_fetchedResultsController fetchedObjects];
     
-    // NSLog(@"%@ %d", text, posicion);
+    // Ampliamos la longitud del contenido del scrollView
+    [_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width * [arrTips count], _scrollView.frame.size.height)];
+    [_scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     
-    UILabel * tipLabel = [[UILabel alloc] init];
+    // Creamos al vuelo 10 vistas que se agregan al scrollView y muestran cada tip
+    int offsetX = 0;
+    float contentInsetLabelWidth = 12.0f;           // Margen a los costados que se le da a la etiqueta que muestra cada tip
+    for (id tip in arrTips) 
+    {
+        // Vista que contiene el tip
+        UIView *viewTip = [[UIView alloc] initWithFrame:CGRectMake(_scrollView.frame.size.width * offsetX++, 0, 
+                                                                   _scrollView.frame.size.width, _scrollView.frame.size.height)];
+        [viewTip setBackgroundColor:[UIColor colorWithRed:45.0f/255.0f green:96.0f/255.0f blue:149.0f/255.0f alpha:1.0f]];
+        
+        // Etiqueta que contiene la descripcion de cada tip
+        UILabel *labelTip = [[UILabel alloc] initWithFrame:CGRectMake(contentInsetLabelWidth, 0, 
+                                                                      viewTip.frame.size.width - (contentInsetLabelWidth * 2), viewTip.frame.size.height)];
+        
+        // Configurar cada etiqueta
+        [labelTip setText:[tip valueForKey:@"descripcion"]];
+        [labelTip setTextColor:[UIColor whiteColor]];
+        [labelTip setFont:[UIFont systemFontOfSize:14.0f]];
+        [labelTip setNumberOfLines:4];
+        [labelTip setTextAlignment:UITextAlignmentCenter];
+        [labelTip setBackgroundColor:[UIColor clearColor]];
+        
+        // Agregar la etiqueta a la vista
+        [viewTip addSubview:labelTip];
+        
+        // Agregar la vista al scrollView
+        [_scrollView addSubview:viewTip];
+    }
+}
+
+
+- (void)addTip:(int)posicion tip:(NSString *)text
+{
+    // Vista que contiene un Tip
+    UIView *viewForTip = [[UIView alloc] initWithFrame:CGRectMake(( posicion * 320 ), 0, _scrollView.frame.size.width, 100)];
+    [viewForTip setBackgroundColor:[UIColor grayColor]];
     
+    // Etiqueta de cada tip
+    UILabel *tipLabel = [[UILabel alloc] initWithFrame:viewForTip.frame];
     [tipLabel setText:text];
+    [tipLabel setBackgroundColor:[UIColor clearColor]];
+    [tipLabel setTextAlignment:UITextAlignmentCenter];
+    [viewForTip addSubview:tipLabel];
     
-    tipLabel.frame = CGRectMake(posicion * 320, 40, 320, 100);
-    
-    [_scrollView addSubview:tipLabel];
+    // Agregar cada vista del tip al scrollView
+    [_scrollView addSubview:viewForTip];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
+    _fetchedResultsController = nil;
+    _scrollView = nil;
+    _diasParaVerificar = nil;
+    _viewHoyNoCircula = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -165,7 +202,7 @@
     if (! [userDefaults valueForKey:placasListas] || 
         ! [[userDefaults valueForKey:placasListas] boolValue]) {
         
-        [self performSegueWithIdentifier:@"segue_modal_ingresa_datos" sender:self];
+        [self performSegueWithIdentifier:@"modal_ingresa_datos" sender:self];
         
         // Cuando el usuario ha ingresado sus datos, entonces establecemos la bandera en el userDefaults
         // que las placas ya estan listas
@@ -189,30 +226,46 @@
 
 #pragma mark - Fetched results controller
 
-// obtenemos todas las categorías del core :D
-- (NSArray *) getTips {   
+// obtenemos todas las categorias del core :D
+- (NSArray *)getTips 
+{       
+    // Liberera los objetos recolectados anteriormente para volver a realizar el fetch
+    self.fetchedResultsController = nil;
     
-    // Define our table/entity to use  
-    NSEntityDescription *entity = [NSEntityDescription entityForName:kENTITY_NAME inManagedObjectContext:self.managedObjectContext];   
+    // Obtenemos todos los puntos vehiculares
+    NSArray *arrTips = [self.fetchedResultsController fetchedObjects];
     
-    // Setup the fetch request  
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    // En caso de que no haya objetos guardados, los obtenemos del JSON local 'tips.json' y los metemos a CoreData
+    if ([arrTips count] == 0) 
+    {
+        arrTips = [self obtenerTipsFromJSONFile];
+        
+        // Para cada diccionario obtenido, guardamos en CoreData un objeto
+        NSMutableDictionary *mutDictOfTips = [[NSMutableDictionary alloc] initWithCapacity:0];
+        
+        int tip_id = 0;
+        for (NSDictionary *diccTip in arrTips) 
+        {
+            // Construir el diccionario para un tip
+            [mutDictOfTips setValue:[diccTip valueForKey:@"_Tip__description"] forKey:@"descripcion"];
+            [mutDictOfTips setValue:[NSNumber numberWithInt:tip_id++] forKey:@"tip_id"];
+                        
+            // Agregamos los datos a CoreData
+            [self saveTipWithProperties:mutDictOfTips];
+            
+            // Limpiamos el diccionario de las llaves agregadas
+            [mutDictOfTips removeAllObjects];
+        }
+        
+        // Hacemos un re-fetch de los nuevos objetos guardados
+        arrTips = nil;
+        NSArray *nuevosTips = [self getTips];
+        
+        return nuevosTips;
+    }
     
-    [request setEntity:entity];
-    
-    // Fetch the records and handle an error  
-    NSError *error;  
-    
-    NSArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];   
-    
-    if (!mutableFetchResults) {  
-        // Handle the error.  
-        // This is a serious error and should advise the user to restart the application  
-    }   
-    
-    return mutableFetchResults;
-    
-} 
+    return arrTips;
+}
 
 #pragma mark - Fetched results controller
 
@@ -244,7 +297,7 @@
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
                                         managedObjectContext:self.managedObjectContext 
                                           sectionNameKeyPath:nil 
-                                                   cacheName:@"MainCache"];
+                                                   cacheName:@"MainTipsCache"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -317,7 +370,6 @@
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
     
-    comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
     // set last of month
     [comps setMonth:[comps month]+1];
     [comps setDay:0];
@@ -326,9 +378,8 @@
 }
 
 
-
-- (BOOL) estaEnPeriodoDeVerificacion:(int)terminacion {
-    
+- (BOOL)estaEnPeriodoDeVerificacion:(int)terminacion 
+{    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     
     int mes = [components month];
@@ -359,21 +410,22 @@
     }
 }
 
-- (NSNumber *) diasParaVerificar {
-    
-    
-    
+
+- (NSNumber *) diasParaVerificar 
+{
     return [NSNumber numberWithInt:1];
 }
 
+
 - (void)mostrarViewHoyNoCircula:(NSNumber *)numMostrar
 {
-    if ([numMostrar boolValue]) {
-
+    if ([numMostrar boolValue]) 
+    {
         CGRect frameVisible = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y - _viewHoyNoCircula.frame.size.height,
                                          _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
-        
-        // Animacion: Mostrar la vista 'Hoy no Circulas'
+        /*
+         *  Animacion: Mostrar la vista 'Hoy no Circulas'
+         */
         [UIView animateWithDuration:0.7f 
                               delay:0.0f 
                             options:UIViewAnimationCurveEaseIn 
@@ -382,12 +434,15 @@
                          } completion:^(BOOL finished) {
                              
                          }];
-    } else {
-        
+    } 
+    else 
+    {    
         CGRect frameOculto = CGRectMake(_viewHoyNoCircula.frame.origin.x, _viewHoyNoCircula.frame.origin.y + _viewHoyNoCircula.frame.size.height,
                                         _viewHoyNoCircula.frame.size.width, _viewHoyNoCircula.frame.size.height);
         
-        // Animacion: Ocultar la vista 'Hoy no Circulas'
+        /* 
+         *  Animacion: Ocultar la vista 'Hoy no Circulas' 
+         */
         [UIView animateWithDuration:0.7f 
                               delay:0.0f 
                             options:UIViewAnimationCurveEaseIn 
@@ -398,4 +453,45 @@
                          }];
     }
 }
+
+
+#pragma mark - IngresarDatos Delegate
+
+- (void)ingresaDatosDismissViewController
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+#pragma mark - Prepare For Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"modal_ingresa_datos"]) 
+    {
+        IngresaDatosViewController *idvc = (IngresaDatosViewController *)[segue destinationViewController];
+        [idvc setDelegate:self];
+    }
+}
+
+#pragma mark - Manejo de Archivo JSON con tips
+
+- (NSArray *)obtenerTipsFromJSONFile
+{
+    // Leemos el archivo JSON con los datos de puntos vehiculares
+    NSString *strPathTips = [[NSBundle mainBundle] pathForResource:@"tips" ofType:@"json"];
+    NSData *dataPuntosVehiculares = [NSData dataWithContentsOfFile:strPathTips];
+    
+    // Cargamos un diccionario con el contenido del archivo especificado
+    NSError *error = nil;
+    NSDictionary *diccDatos = [NSJSONSerialization JSONObjectWithData:dataPuntosVehiculares 
+                                                              options:NSJSONReadingMutableLeaves | NSJSONReadingMutableContainers| NSJSONReadingAllowFragments 
+                                                                error:&error];
+    
+    NSArray *arrTips = [diccDatos valueForKey:@"tips"];
+    // NSLog(@"%@", arrTips);
+    
+    return arrTips;
+}
+
 @end

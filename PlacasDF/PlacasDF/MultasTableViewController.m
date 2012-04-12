@@ -11,21 +11,30 @@
 #import "ManejadorConexiones.h"
 #import "Multa.h"
 #import "MultaCelda.h"
+#import "MBProgressHUD.h"
 
 #define URL @"http://www.caosinc.com/webservices/placa.php?placa="
-
+// #define URL @"http://localhost:8888/webservices/placa.php?placa="
 #define kENTITY_NAME    @"Multa"
+#define kPULLDOWN   @"1"
+#define kWITHOUTDOWN @"2"
 
 @implementation MultasTableViewController
 
 @synthesize celdaMulta;
 
 @synthesize managedObjectContext = _managedObjectContext;
+
 @synthesize fetchedResultsController = _fetchedResultsController;
+
+@synthesize mb = _mb;
+
+@synthesize numeroMultas = _numeroMultas;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
+    
     if (self) {
         // Custom initialization
     }
@@ -34,10 +43,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
-    // Release any cached data, images, etc that aren't in use.
     _fetchedResultsController = nil;
 }
 
@@ -47,43 +54,52 @@
 {
     [super viewDidLoad];
     
+    // animamos la carga de datos
+    _mb = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    [_mb setLabelText:@"Cargando"];
+    
+    [_mb show:YES];
+    
+    // Inicializamos variables
+    _numeroMultas = [NSNumber numberWithInt:0];
+    
     sinPagar = 0;
     
     isShowingList = NO;
+    
+    connectionError = NO;
     
     receivedData = [[NSMutableData alloc] init];
     
     arrMultas = [[NSArray alloc] init];
     
+    // cargamos información de UserDefaults
     NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSString * placas = [userDefaults objectForKey:@"Placas"];
     
-    NSLog(@"Mis placas son %@", placas);
-    
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", URL, placas]];
     
+    // verificamos si existen datos en CoreData, de lo contrario cargamos datos desde el WebService
     arrMultas = [self.fetchedResultsController fetchedObjects];
     
     if ([arrMultas count] == 0) {
-    
+        
         NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
-    
+        
         NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
-    
+        
         [conexion start]; 
-            
     }
     
+    // pedimos las multas frecuentes
     arrMultasFrecuentes = [self getMultasFrecuentes];
-
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -111,12 +127,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+// Dos secciones (Multas Frecuentes, Infracciones del usuario)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -126,19 +142,62 @@
     } else {
         
         return [arrMultas count];
-        
     }
 }
 
+// Este método carga los datos desde CoreData para multas frecuentes y desde el WebService para las multas del usuario
+- (void) loadData {
+    
+    NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString * placas = [userDefaults objectForKey:@"Placas"];
+    
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", URL, placas]];
+    
+    arrMultas = [self.fetchedResultsController fetchedObjects];
+    
+    if ([arrMultas count] == 0) {
+        
+        NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
+        
+        NSURLConnection * conexion = [NSURLConnection connectionWithRequest:request delegate:self];
+        
+        [conexion start]; 
+    }
+    
+    arrMultasFrecuentes = [self getMultasFrecuentes];
+    
+    [self.tableView reloadData];
+    
+    [self stopLoading];
+}
+
+
+// Al hacer el pull down, refresca los datos
+- (void) refresh {
+    
+    [_mb hide:YES];
+    
+    _mb = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    [_mb setLabelText:@"Cargando"];
+    
+    [_mb show:YES];
+    
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:2.0];
+}
+
+// Títulos de las secciones
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    if(section == 0)
+    if(section == 0) {
         
         return @"Infracciones más frecuentes";
     
-    else
+    } else {
         
         return @"Tus Infracciones";
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,23 +215,34 @@
         self.celdaMulta = nil;
     }
     
-    if ([indexPath section] == 1) {
+    if ([indexPath section] == 1) { // Infracciones del usuario
+        
+        if (connectionError) {
+            
+            cell.motivo.text = @"Hubo un error en la comunicación, vuelve a intentarlo";
+            
+        } else if ([_numeroMultas intValue] > 0) {
     
-        NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
+            NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
     
-        NSString * imageName = ([[multa objectForKey:@"status"] isEqualToString:@"Pagada "]) ? @"ok.png": @"nook.png";
+            NSString * imageName = ([[multa objectForKey:@"status"] isEqualToString:@"Pagada"]) ? @"ok.png": @"nook.png";
     
-        UIImage * image = [UIImage imageNamed:imageName];
+            UIImage * image = [UIImage imageNamed:imageName];
     
-        cell.fecha.text = [multa objectForKey:@"fecha"];
+            cell.fecha.text = [multa objectForKey:@"fecha"];
     
-        cell.sancion.text = [NSString stringWithFormat:@"%@ días de salario mínimo", [multa objectForKey:@"sancion"]];
+            cell.sancion.text = [NSString stringWithFormat:@"%@ días de salario mínimo", [multa objectForKey:@"sancion"]];
     
-        cell.motivo.text = [self formatString:[multa objectForKey:@"motivo"]];
+            cell.motivo.text = [self formatString:[multa objectForKey:@"motivo"]];
     
-        [cell.situacion setImage:image];
+            [cell.situacion setImage:image];
+            
+        } else {
+
+            cell.motivo.text = @"Yay, no tienes multas!";
+        }
     
-    } else {
+    } else { // Multas más frecuentes
         
         if (isShowingList) {
         
@@ -209,7 +279,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 92.0;
+    
+    if ([indexPath section] == 3) {
+    
+        NSDictionary * multa = [arrMultas objectAtIndex:[indexPath row]];
+    
+        NSString * text = [self formatString:[multa objectForKey:@"motivo"]];
+        
+        return [self getHeightForText:text];
+        
+    } else {
+        
+        return 92.0;
+    }
 }
 
 
@@ -241,13 +323,25 @@
     [receivedData appendData:data];
 }
 
+// Error de conexión
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    
+    connectionError = YES;
+    
+    arrMultas = [NSArray arrayWithObject:@"Error de conexión"];
+    
+    [_mb setLabelText:@"Error"];
+    
+    [_mb hide:YES];
+    
+    // [self.tableView reloadData];
+    
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 }
 
+// conectividad correcta
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError * error;
@@ -256,25 +350,48 @@
     
     NSDictionary * diccionario = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error];
     
+    connectionError = NO;
+    
     NSDictionary *multas = [diccionario objectForKey:@"multas"];
     
-    arrMultas = [multas objectForKey:@"multa"];
+    NSString * stringMultas = [diccionario objectForKey:@"infracciones"];
     
-    for (NSDictionary * multa in arrMultas) {
+    _numeroMultas = [NSNumber numberWithInteger:[stringMultas integerValue]];
+    
+    NSLog(@"Multas totales %@", stringMultas);
+    
+    // verificamos si el usuario tiene multas
+    if ([_numeroMultas intValue] > 0) {
         
-        NSLog(@"%@", [multa objectForKey:@"multa_id"]);
+        sinPagar = 0;
         
+        arrMultas = [multas objectForKey:@"multa"];
+    
+        for (NSDictionary * multa in arrMultas) {
+        
+            sinPagar = ([[multa objectForKey:@"status"] isEqualToString:@"No pagada"]) ? sinPagar + 1: sinPagar;
+        
+            NSLog(@"%@", [multa objectForKey:@"multa_id"]);        
+        }
+        
+    } else {
+        
+        arrMultas = [NSArray arrayWithObject:@"Sin multas"];
     }
     
-    sinPagar = 4;
-    
-    self.tabBarController.selectedViewController.tabBarItem.badgeValue = @"1";
+    if (sinPagar > 0) {
+        
+        self.tabBarController.selectedViewController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", sinPagar];
+    }
     
     [self scheduleNotification];
     
-    [self.tableView reloadData];
+    [_mb hide:YES];
+    
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 }
 
+// Realiza un replace de HTML entities
 - (NSString *) formatString:(NSString *) text {
     
     NSString * str = [text stringByReplacingOccurrencesOfString:@"&Ntilde;" withString:@"Ñ"];
@@ -319,7 +436,7 @@
     
     [newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
     
-    [newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
+    //[newManagedObject setValue:[multaDiccionario valueForKey:@"motivo"] forKey:@"motivo"];
     
     [newManagedObject setValue:sancion forKey:@"multa_id"];
     
@@ -352,9 +469,10 @@
     
     // Creamos el request para esta clase
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
     // Editamos la entidad que se pide
-    NSEntityDescription *entity = [NSEntityDescription entityForName:kENTITY_NAME 
-                                              inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:kENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+    
     [fetchRequest setEntity:entity];
     
     // Batch Size a 20 objetos a la vez
@@ -362,21 +480,21 @@
     
     // Editamos un sort descriptor, devuelve los puntos vehiculares ordenados por titulo
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"folio" ascending:NO];
+    
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = 
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                        managedObjectContext:self.managedObjectContext 
-                                          sectionNameKeyPath:nil 
-                                                   cacheName:@"MultaCache"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"MultaCache"];
+    
     aFetchedResultsController.delegate = self;
+    
     self.fetchedResultsController = aFetchedResultsController;
     
 	NSError *error = nil;
+    
 	if (![self.fetchedResultsController performFetch:&error]) {
 	    /*
 	     Replace this implementation with code to handle the error appropriately.
@@ -384,6 +502,7 @@
 	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
 	     */
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        
 	    abort();
 	}
     
@@ -391,7 +510,7 @@
 }
 
 
-// leyendo la plist
+// Se len las multas más frecuentes desde una plist
 - (NSArray *) getMultasFrecuentes {
     
     NSString *path = [[NSBundle mainBundle] pathForResource: @"MultasFrecuentes" ofType:@"plist"];
@@ -401,26 +520,54 @@
     return [multas objectForKey:@"multas"];
 }
 
-// Notificaciones
+// Se programan las notificaciones
 - (void)scheduleNotification
 {
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
     
-    if (localNotif == nil)
+    if (localNotif == nil) {
+        
         return;
+    }
     
     localNotif.fireDate = [[NSDate date] addTimeInterval:+(10)]; // 10 segundos :D
+    
     localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    
     localNotif.alertBody = [NSString stringWithFormat:@"No haz pagado %d tenencias", sinPagar];
+    
     localNotif.alertAction = @"Ver detalles";
+    
     localNotif.soundName = UILocalNotificationDefaultSoundName;
+    
     localNotif.applicationIconBadgeNumber = sinPagar;
+    
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"No Pagados" forKey:@"tenencias"];
+    
     localNotif.userInfo = infoDict;
+    
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    
     [UIApplication sharedApplication].applicationIconBadgeNumber = sinPagar;
+    
     NSLog(@"Se ha programado %d", sinPagar);
-
 }
+
+- (IBAction) tweet:(id)sender {
+    
+    // [self performSegueWithIdentifier:@"TweetSegue" sender:self];
+}
+
+- (CGFloat) getHeightForText:(NSString *) text {
+    
+    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:12.0];
+    
+    CGSize constraintSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 100, MAXFLOAT);
+    
+    CGSize labelSize = [text sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    
+    return labelSize.height + 20;
+}
+
 
 @end

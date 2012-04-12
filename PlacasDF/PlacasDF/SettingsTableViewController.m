@@ -41,8 +41,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    NSLog(@"sii");
 }
 
 - (void)viewDidUnload
@@ -81,14 +79,29 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {        
-    return (isShowingList) ? 5: 1;
+    if (section == 0) {
+        
+        return (isShowingList) ? 2: 1;
+        
+    } else if (section == 1) {
+        
+        return 1;
+        
+    } else if (section == 2) {
+        
+        return 5;
+        
+    } else {
+        
+        return 5;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,6 +118,8 @@
 - (IBAction) showSettings:(id)sender {
     
     UISwitch * mySwitch = sender;
+    
+    NSLog(@"%d", mySwitch.tag);
     
     if ([mySwitch isOn]) {
         

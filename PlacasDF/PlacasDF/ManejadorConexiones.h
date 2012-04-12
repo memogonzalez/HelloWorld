@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ManejadorConexiones : NSObject <NSURLConnectionDelegate> {
-    
-    NSMutableData * receivedData;
-}
+@interface ManejadorConexiones : NSObject <NSURLConnectionDataDelegate>
+
+typedef void (^CompletionHandler)(BOOL finished);
+
+@property (copy, nonatomic) CompletionHandler completionHanlder;
 
 @end
 

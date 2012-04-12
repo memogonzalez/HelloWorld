@@ -10,9 +10,15 @@
 
 
 @implementation DetallePinTableViewController
+
+@synthesize titulo = _titulo;
+@synthesize labelNombre = _labelNombre;
 @synthesize nombre = _nombre;
+@synthesize labelTelefono = _labelTelefono;
 @synthesize telefono = _telefono;
+@synthesize labelDireccion = _labelDireccion;
 @synthesize direccion = _direccion;
+@synthesize lableDelegacion = _lableDelegacion;
 @synthesize delegacion = _delegacion;
 
 - (void)didReceiveMemoryWarning
@@ -21,6 +27,11 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+    _titulo = nil;
+    _nombre = nil;
+    _direccion = nil;
+    _telefono = nil;
+    _delegacion = nil;
 }
 
 #pragma mark - View lifecycle
@@ -29,8 +40,11 @@
 {
     [super viewDidLoad];
     
-    // El titulo de la vista es el nombre del Punto Vehicular
-    self.title = _nombre;
+    if (_titulo) {
+        self.title = _titulo;
+    } else {
+        self.title = @"Punto Vehicular";
+    }
 }
 
 - (void)viewDidUnload
@@ -38,6 +52,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    _titulo = nil;
+    _nombre = nil;
+    _direccion = nil;
+    _telefono = nil;
+    _delegacion = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,19 +97,10 @@
 
 - (void)configureElementosTabla
 {
-    UITableViewCell *celda = nil;
-    
-    // Celda de direccion
-    celda = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    celda.detailTextLabel.text = _direccion;
-    
-    // Celda de telefono
-    celda = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    celda.detailTextLabel.text = _telefono;
-    
-    // Celda de delegacion
-    celda = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-    celda.detailTextLabel.text = _delegacion;
+    _labelNombre.text = _nombre;
+    _labelDireccion.text = _direccion;
+    _labelTelefono.text = _telefono;
+    _lableDelegacion.text = _delegacion;
 }
 
 @end
