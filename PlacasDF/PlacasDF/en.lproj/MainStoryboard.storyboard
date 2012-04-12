@@ -190,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="-1758" y="-845"/>
         </scene>
-        <!--Main View Controller - Main-->
+        <!--Main View Controller - Info Placas-->
         <scene sceneID="0Is-iL-WsK">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WML-iY-5OC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,10 +264,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tap tip to skip it" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="xyy-Lw-5uv">
+                                <rect key="frame" x="190" y="20" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main" id="XXt-QJ-dqe">
+                    <navigationItem key="navigationItem" title="Info Placas" id="XXt-QJ-dqe">
                         <barButtonItem key="leftBarButtonItem" title="Placas" id="2m1-Os-lGR">
                             <connections>
                                 <segue destination="e5L-wT-PHr" kind="modal" identifier="modal_ingresa_datos" id="dYI-Ga-Bzv"/>

@@ -20,13 +20,18 @@
 
 - (void)borrarTodo;
 
+/**
+ *  Metodo que se encarga de mostrar los puntos vehiculares del tipo seleccionado en el mapa
+ */
 - (void)dropPuntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular enMapa:(MKMapView *)mapView;
 
-// Metodo que devuelve un arreglo de puntos vehiculares del tipo deseado
+/**
+ *  Metodo que devuelve un arreglo de puntos vehiculares del tipo deseado
+ */
 - (NSArray *)puntosVehicularesTipo:(kTIPO_PUNTO_VEHICULAR)kTipoPuntoVehicular;
 
 /**
- *  
+ *  Metodo que se llama al momento de seleccionar un punto del mapa
  */
 - (void)mostrarMasInformacionDePuntoVehicularSeleccionado;
 

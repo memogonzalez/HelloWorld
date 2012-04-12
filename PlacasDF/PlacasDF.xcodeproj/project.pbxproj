@@ -17,6 +17,7 @@
 		6588D18D14C68B5C005D3FB8 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18614C68B5B005D3FB8 /* Calendario.m */; };
 		6588D18E14C68B5C005D3FB8 /* Multa.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18814C68B5B005D3FB8 /* Multa.m */; };
 		6588D19014C68B5C005D3FB8 /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D18C14C68B5C005D3FB8 /* Tip.m */; };
+		65893B2C1536A017002C5F93 /* tips.json in Resources */ = {isa = PBXBuildFile; fileRef = 65893B2B1536A017002C5F93 /* tips.json */; };
 		65A8EBD8152F956400F3339A /* corralones.json in Resources */ = {isa = PBXBuildFile; fileRef = 65A8EBD6152F956400F3339A /* corralones.json */; };
 		65A8EBD9152F956400F3339A /* verificentros.json in Resources */ = {isa = PBXBuildFile; fileRef = 65A8EBD7152F956400F3339A /* verificentros.json */; };
 		65AEE44914DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AEE44814DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.m */; };
@@ -78,6 +79,7 @@
 		6588D18814C68B5B005D3FB8 /* Multa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multa.m; path = PlacasDF/Multa.m; sourceTree = "<group>"; };
 		6588D18B14C68B5C005D3FB8 /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tip.h; path = PlacasDF/Tip.h; sourceTree = "<group>"; };
 		6588D18C14C68B5C005D3FB8 /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tip.m; path = PlacasDF/Tip.m; sourceTree = "<group>"; };
+		65893B2B1536A017002C5F93 /* tips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tips.json; sourceTree = "<group>"; };
 		65A8EBD6152F956400F3339A /* corralones.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corralones.json; sourceTree = "<group>"; };
 		65A8EBD7152F956400F3339A /* verificentros.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = verificentros.json; sourceTree = "<group>"; };
 		65AEE44714DFA5AC0045B005 /* CaracteristicasAutoPublicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaracteristicasAutoPublicoViewController.h; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		65DB3C9314C3B647002DACC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65893B2B1536A017002C5F93 /* tips.json */,
 				65A8EBD6152F956400F3339A /* corralones.json */,
 				65A8EBD7152F956400F3339A /* verificentros.json */,
 				65DB3C9414C3B647002DACC6 /* PlacasDF-Info.plist */,
@@ -399,6 +402,7 @@
 				658671531516CBD600D246C3 /* cancelar@2x.png in Resources */,
 				65A8EBD8152F956400F3339A /* corralones.json in Resources */,
 				65A8EBD9152F956400F3339A /* verificentros.json in Resources */,
+				65893B2C1536A017002C5F93 /* tips.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
