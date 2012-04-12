@@ -7,6 +7,9 @@
 //
 
 #import "IngresaDatosViewController.h"
+#import "AsyncFileDownloader.h"
+
+#define kURL_CAOS_PLACAS @"http://www.caosinc.com/webservices/placa.php?placa="
 
 #define kMODELO_MIN     1980
 #define kMODELO_MAX     2012            // TODO: Calcular el anio actual
@@ -81,6 +84,12 @@
  *  Metodo para quitar la vista
  */
 - (IBAction)cancelButtonPressed:(id)sender;
+
+/**
+ *  Metodo que crea una vista del tamanio del scrollView de placas y modelos
+ *  y la pone detras para que se visualice cuando el pickerView baja
+ */
+- (void)makeViewForBackgroundOf:(UIPickerView *)pickerView;
 @end
 
 @implementation IngresaDatosViewController
@@ -104,6 +113,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Agregamos una vista de background para el pickerView
+    [self makeViewForBackgroundOf:_pickerView];
     
     // Somos delegados del pickerView
     [_pickerView setDelegate:self];
@@ -508,19 +520,35 @@
         [activityIndicatorView startAnimating];
         [alert addSubview:activityIndicatorView];
         
-        // Quitamos la alerta de 'buscando informacion' despues de un tiempo
-        double delayInSeconds = 2.3;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        // Comenzamos la conexion con el servidor para obtener la info necesaria dadas las placas
+        NSURL *urlWS = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kURL_CAOS_PLACAS, _labelPlacas.text]];
+        AsyncFileDownloader *asyncFileDownloader = [[AsyncFileDownloader alloc] initWithURL:urlWS];
+        
+        // Especificamos la accion a tomar con el resultado de la descarga de datos
+        [asyncFileDownloader setFileDownloaderCompletionBlock:^(BOOL finished){
             
-            [alert setTitle:@"¡¡ Excelente !!"];
-            [alert setMessage:@"Los datos de tu auto han sido descargados"];
-            [activityIndicatorView stopAnimating];
-            [alertButton setHidden:NO];
-            
-// TODO: En caso de error mostrar titulo de error.
-            
-        });
+            if (finished) {
+    
+                // Mostramos una alerta de exito  
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [alert setTitle:@"¡¡ Excelente !!"];
+                    [alert setMessage:@"Los datos de tu auto han sido descargados"];
+                    [activityIndicatorView stopAnimating];
+                    [alertButton setHidden:NO];
+                });
+                
+// TODO: Manejar el archivo JSON descargado para que la vista de 'MultasTableViewController' lo pueda usar
+                
+            } else {
+                // Mostramos una alerta de error de descarga
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [alert setTitle:@"Grrrrrrrr :\\"];
+                    [alert setMessage:@"No se ha podido descargar información. ¿Intentas más tarde?"];
+                    [activityIndicatorView stopAnimating];
+                    [alertButton setHidden:NO];
+                });
+            }
+        }];
     }
 }
 
@@ -707,6 +735,16 @@
     
     // Actulizar la etiqueta seleccionada para su edicion
     [self actualizarLabelEnEdicionConStr:mutableString];
+}
+
+
+- (void)makeViewForBackgroundOf:(UIPickerView *)pickerView
+{
+    UIView *viewbg = [[UIView alloc] initWithFrame:pickerView.frame];
+    [viewbg setBackgroundColor:[UIColor colorWithRed:51.0f/255.0f green:51.0f/255.0f blue:51.0f/255.0f alpha:1.0f]];
+    
+    [self.view addSubview:viewbg];
+    [self.view sendSubviewToBack:viewbg];
 }
 
 #pragma mark AlertView Delegate

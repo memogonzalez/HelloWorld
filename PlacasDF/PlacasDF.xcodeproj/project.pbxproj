@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */; };
+		65263D341537588C004ACAF2 /* AsyncFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65263D331537588C004ACAF2 /* AsyncFileDownloader.m */; };
 		653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */; };
 		6588D18214C68B3C005D3FB8 /* ManejadorConexiones.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */; };
 		6588D18314C68B3C005D3FB8 /* ManejadorDatos.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */; };
@@ -60,6 +61,8 @@
 /* Begin PBXFileReference section */
 		65117C6314FB1D8A00B5D21E /* SettingsPlacas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPlacas.h; path = PlacasDF/SettingsPlacas.h; sourceTree = "<group>"; };
 		65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsPlacas.m; path = PlacasDF/SettingsPlacas.m; sourceTree = "<group>"; };
+		65263D321537588C004ACAF2 /* AsyncFileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncFileDownloader.h; sourceTree = "<group>"; };
+		65263D331537588C004ACAF2 /* AsyncFileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncFileDownloader.m; sourceTree = "<group>"; };
 		653A5B9914D62BCA0028E12B /* IngresaDatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngresaDatosViewController.h; sourceTree = "<group>"; };
 		653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngresaDatosViewController.m; sourceTree = "<group>"; };
 		658671501516CBD600D246C3 /* cancelar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancelar.png; path = ../../iOS/Placas/Placas/cancelar.png; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				6588D17F14C68B3B005D3FB8 /* ManejadorDatos.m */,
 				6588D18014C68B3B005D3FB8 /* Parser.h */,
 				6588D18114C68B3C005D3FB8 /* Parser.m */,
+				65263D321537588C004ACAF2 /* AsyncFileDownloader.h */,
+				65263D331537588C004ACAF2 /* AsyncFileDownloader.m */,
 			);
 			name = "Clases Manejadores";
 			sourceTree = "<group>";
@@ -396,8 +401,6 @@
 				BB3BD67214DF50CE0094E0A5 /* MultasFrecuentes.plist in Resources */,
 				BB2D42FF150D474400E2ED97 /* arrow.png in Resources */,
 				BB2D4300150D474400E2ED97 /* arrow@2x.png in Resources */,
-				658671521516CBD600D246C3 /* cancelar.png in Resources */,
-				658671531516CBD600D246C3 /* cancelar@2x.png in Resources */,
 				65A8EBD8152F956400F3339A /* corralones.json in Resources */,
 				65A8EBD9152F956400F3339A /* verificentros.json in Resources */,
 				65893B2C1536A017002C5F93 /* tips.json in Resources */,
@@ -434,6 +437,7 @@
 				BB224AB4150D41B50041805B /* PullRefreshTableViewController.m in Sources */,
 				BBFA0ACB150D77A50030CDF7 /* MBProgressHUD.m in Sources */,
 				65CBF0401531652800D0F150 /* PuntoVehicular.m in Sources */,
+				65263D341537588C004ACAF2 /* AsyncFileDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
