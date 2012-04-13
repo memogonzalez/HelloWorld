@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65117C6514FB1D8A00B5D21E /* SettingsPlacas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */; };
+		651F333715377B9300FDAD71 /* JSONDataSerializator.m in Sources */ = {isa = PBXBuildFile; fileRef = 651F333615377B9300FDAD71 /* JSONDataSerializator.m */; };
+		651F333B15377E9100FDAD71 /* CoreDataObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 651F333A15377E9100FDAD71 /* CoreDataObjectManager.m */; };
 		65263D341537588C004ACAF2 /* AsyncFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 65263D331537588C004ACAF2 /* AsyncFileDownloader.m */; };
 		653A5B9B14D62BCA0028E12B /* IngresaDatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A5B9A14D62BCA0028E12B /* IngresaDatosViewController.m */; };
 		6588D18214C68B3C005D3FB8 /* ManejadorConexiones.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */; };
@@ -61,6 +63,10 @@
 /* Begin PBXFileReference section */
 		65117C6314FB1D8A00B5D21E /* SettingsPlacas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPlacas.h; path = PlacasDF/SettingsPlacas.h; sourceTree = "<group>"; };
 		65117C6414FB1D8A00B5D21E /* SettingsPlacas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsPlacas.m; path = PlacasDF/SettingsPlacas.m; sourceTree = "<group>"; };
+		651F333515377B9300FDAD71 /* JSONDataSerializator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDataSerializator.h; sourceTree = "<group>"; };
+		651F333615377B9300FDAD71 /* JSONDataSerializator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONDataSerializator.m; sourceTree = "<group>"; };
+		651F333915377E9100FDAD71 /* CoreDataObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataObjectManager.h; sourceTree = "<group>"; };
+		651F333A15377E9100FDAD71 /* CoreDataObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataObjectManager.m; sourceTree = "<group>"; };
 		65263D321537588C004ACAF2 /* AsyncFileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncFileDownloader.h; sourceTree = "<group>"; };
 		65263D331537588C004ACAF2 /* AsyncFileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncFileDownloader.m; sourceTree = "<group>"; };
 		653A5B9914D62BCA0028E12B /* IngresaDatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngresaDatosViewController.h; sourceTree = "<group>"; };
@@ -277,6 +283,8 @@
 		65DB3CDF14C3BBDF002DACC6 /* Clases Manejadores */ = {
 			isa = PBXGroup;
 			children = (
+				651F333915377E9100FDAD71 /* CoreDataObjectManager.h */,
+				651F333A15377E9100FDAD71 /* CoreDataObjectManager.m */,
 				6588D17C14C68B3B005D3FB8 /* ManejadorConexiones.h */,
 				6588D17D14C68B3B005D3FB8 /* ManejadorConexiones.m */,
 				6588D17E14C68B3B005D3FB8 /* ManejadorDatos.h */,
@@ -285,6 +293,8 @@
 				6588D18114C68B3C005D3FB8 /* Parser.m */,
 				65263D321537588C004ACAF2 /* AsyncFileDownloader.h */,
 				65263D331537588C004ACAF2 /* AsyncFileDownloader.m */,
+				651F333515377B9300FDAD71 /* JSONDataSerializator.h */,
+				651F333615377B9300FDAD71 /* JSONDataSerializator.m */,
 			);
 			name = "Clases Manejadores";
 			sourceTree = "<group>";
@@ -438,6 +448,8 @@
 				BBFA0ACB150D77A50030CDF7 /* MBProgressHUD.m in Sources */,
 				65CBF0401531652800D0F150 /* PuntoVehicular.m in Sources */,
 				65263D341537588C004ACAF2 /* AsyncFileDownloader.m in Sources */,
+				651F333715377B9300FDAD71 /* JSONDataSerializator.m in Sources */,
+				651F333B15377E9100FDAD71 /* CoreDataObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

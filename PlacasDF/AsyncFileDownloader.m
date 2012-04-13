@@ -80,9 +80,9 @@
 {
     NSLog(@"%@ finished", [self class]);
     
-    // Mandamos llamar el bloque de finalizacion de la clase
+    // Mandamos llamar el bloque de finalizacion de la clase y enviar los datos obtenidos
     if (_fileDownloaderCompletionBlock) {
-        _fileDownloaderCompletionBlock(YES);
+        _fileDownloaderCompletionBlock(YES, datosDescargados);
     }
 }
 
@@ -90,8 +90,11 @@
 {
     NSLog(@"%@ Error descarga", [self class]);
     
+    // Borrar los posibles datos descargados
+    datosDescargados = nil;
+    
     if (_fileDownloaderCompletionBlock) {
-        _fileDownloaderCompletionBlock(NO);
+        _fileDownloaderCompletionBlock(NO, nil);
     }
 }
 @end

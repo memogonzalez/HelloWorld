@@ -8,6 +8,8 @@
 
 #import "IngresaDatosViewController.h"
 #import "AsyncFileDownloader.h"
+#import "JSONDataSerializator.h"
+#import "CoreDataObjectManager.h"
 
 #define kURL_CAOS_PLACAS @"http://www.caosinc.com/webservices/placa.php?placa="
 
@@ -90,6 +92,12 @@
  *  y la pone detras para que se visualice cuando el pickerView baja
  */
 - (void)makeViewForBackgroundOf:(UIPickerView *)pickerView;
+
+/**
+ *  Metodo que se encarga de interpretar y administrar los datos descargados
+ */
+- (void)manageDownloadedData:(id)data;
+
 @end
 
 @implementation IngresaDatosViewController
@@ -109,6 +117,20 @@
 @synthesize arrLetras = _arrLetras;
 @synthesize arrModelos = _arrModelos;
 @synthesize cancelButton = _cancelButton;
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    _navBar = nil;
+    _segmentedControl = nil;
+    _pickerView = nil;
+    _labelPlacas = nil;
+    _labelModelo = nil;
+    _labelIndicadorPlacas = nil;
+    _labelIndicadorModelo = nil;
+    _cancelButton = nil;
+}
 
 - (void)viewDidLoad
 {
@@ -169,6 +191,15 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    
+    _navBar = nil;
+    _segmentedControl = nil;
+    _pickerView = nil;
+    _labelPlacas = nil;
+    _labelModelo = nil;
+    _labelIndicadorPlacas = nil;
+    _labelIndicadorModelo = nil;
+    _cancelButton = nil;
 }
 
 
@@ -525,10 +556,9 @@
         AsyncFileDownloader *asyncFileDownloader = [[AsyncFileDownloader alloc] initWithURL:urlWS];
         
         // Especificamos la accion a tomar con el resultado de la descarga de datos
-        [asyncFileDownloader setFileDownloaderCompletionBlock:^(BOOL finished){
-            
-            if (finished) {
-    
+        [asyncFileDownloader setFileDownloaderCompletionBlock:^(BOOL finished, NSData *datosDescargados){    
+            if (finished) 
+            {
                 // Mostramos una alerta de exito  
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [alert setTitle:@"¡¡ Excelente !!"];
@@ -537,9 +567,14 @@
                     [alertButton setHidden:NO];
                 });
                 
-// TODO: Manejar el archivo JSON descargado para que la vista de 'MultasTableViewController' lo pueda usar
-                
-            } else {
+                // Manejo de datos descargados
+                id container = [JSONDataSerializator serializeData:datosDescargados];
+                [self performSelectorOnMainThread:@selector(manageDownloadedData:) 
+                                       withObject:container 
+                                    waitUntilDone:NO];
+            } 
+            else 
+            {
                 // Mostramos una alerta de error de descarga
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [alert setTitle:@"Grrrrrrrr :\\"];
@@ -550,6 +585,52 @@
             }
         }];
     }
+}
+
+- (void)manageDownloadedData:(id)data
+{
+    if ([data isKindOfClass:[NSDictionary class]]) 
+    {
+        // Se van a guardar datos nuevos, borraremos los anteriores
+        [CoreDataObjectManager removeObjectsForEntityName:@"Multa"];
+        
+        NSDictionary *diccMultas = [(NSDictionary *)data objectForKey:@"multas"];
+        NSArray *arrMultas = [diccMultas objectForKey:@"multa"];
+        
+        // Para cada multa obtenida
+        NSMutableArray *arrObjetos = [[NSMutableArray alloc] initWithCapacity:[arrMultas count]];
+        
+        for (NSDictionary *multa in arrMultas) 
+        {
+            NSMutableDictionary *diccAttributes = [[NSMutableDictionary alloc] initWithCapacity:0];
+            
+            // TODO: construir una fecha a partir de una cadna
+            [diccAttributes setValue:( [NSDate date]/*[multa valueForKey:@"fecha"]*/ ) forKey:@"fecha_infraccion"];
+            
+            [diccAttributes setValue:[multa valueForKey:@"fundamento"] forKey:@"fundamento"];
+            [diccAttributes setValue:[multa valueForKey:@"motivo"] forKey:@"motivo"];
+            [diccAttributes setValue:[multa valueForKey:@"multa_id"] forKey:@"folio"];
+            
+            [diccAttributes setValue:( [NSNumber numberWithInt:( [[multa valueForKey:@"sancion"] intValue] )] ) forKey:@"sancion"];
+            [diccAttributes setValue:( [NSNumber numberWithInt:( [[multa valueForKey:@"situacion"] intValue] )] ) forKey:@"situacion"];
+            
+            // NSLog(@"%@", diccAttributes);
+            
+            [arrObjetos addObject:diccAttributes];
+        }
+        
+        // NSLog(@"%@", arrObjetos);
+        
+        // Crear un objeto tipo 'Multa' en CoreData a partir de los atributos encontrados
+        [CoreDataObjectManager addObjects:arrObjetos forEntityName:@"Multa"];
+        
+        arrObjetos = nil;
+        arrMultas = nil;
+        diccMultas = nil;
+    }
+    
+    NSArray *arrObjs = [CoreDataObjectManager objectsForEntityName:@"Multa"];
+    NSLog(@"%@", arrObjs);
 }
 
 

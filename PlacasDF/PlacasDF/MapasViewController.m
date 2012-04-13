@@ -209,7 +209,7 @@
 // TODO: Todos los puntos deben tener coordenadas para que la funcion funcione!!
 // TODO: Cambiar el arreglo desde el cual se obtienen los puntos de referencia
 // TODO: Una vez que se calculan los valores, guardarlos y regresarlos sin calcular nuevamente los mismos datos
-    mapRegion.span = MKCoordinateSpanMake(0.30, 0.30);
+    mapRegion.span = MKCoordinateSpanMake(0.20, 0.20);
     [myMapView setRegion:mapRegion animated: YES];
 }
 

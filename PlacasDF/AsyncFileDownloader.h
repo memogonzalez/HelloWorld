@@ -10,7 +10,7 @@
 /*
  *  Block que se ejecuta cuando se termino de descargar un archivo
  */
-typedef void (^FileDownloaderCompletionBlock)(BOOL finished);
+typedef void (^FileDownloaderCompletionBlock)(BOOL finished, NSData *datosDescargados);
 
 @interface AsyncFileDownloader : NSObject
 
